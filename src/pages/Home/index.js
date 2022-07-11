@@ -5,7 +5,12 @@ export default function Home() {
    return (
       <div>
          
+         
+         
+         <section >
+            
          <DefaultButton title={"Подробнее о курсе"}/>
+         </section>
       </div>
    )
 }
