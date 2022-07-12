@@ -8,3 +8,10 @@ body {
 code {
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+/* couse section */
+
+.bgCourse{
+  background-color: #F3F3FB;
+  border-radius: 40px;
+}

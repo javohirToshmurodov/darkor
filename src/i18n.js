@@ -22,7 +22,7 @@ i18n
    .use(LanguageDetector)
    .init({
       resources,
-      lng: "uz",
+      lng: "ru",
 
    })
 
