@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
     -webkit-font-smoothing: antialiased;
@@ -14,4 +17,30 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 .bgCourse{
   background-color: #F3F3FB;
   border-radius: 40px;
+}
+.carousel .control-dots{
+  position: absolute;
+  left: 0 !important;
+  width: auto !important;
+  height: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px !important;
+  margin: 0 !important;
+}
+.carousel .control-dots .dot {
+  transition: opacity .25s ease-in;
+  opacity: .3;
+  filter: alpha(opacity=30);
+  box-shadow: 1px 1px 2px rgb(0 0 0 / 90%);
+  background: rgba(5, 104, 253, 1) !important;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 8px;
 }
