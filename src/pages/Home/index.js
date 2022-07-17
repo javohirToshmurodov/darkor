@@ -7,6 +7,7 @@ import undraw from "../../assets/images/undraw.svg";
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 import Carousel from "../../components/Carousel";
+import CourseKadr from "../../components/CourseKadr";
 export default function Home() {
   const { t, i18n } = useTranslation();
   const [courses, setCourses] = useState([
@@ -56,9 +57,12 @@ export default function Home() {
       <section>
         <Carousel />
       </section>
+      <section>
+        <CourseKadr />
+      </section>
       <section className="">
-        <div className="container bgCourse px-5 py-5">
-          <div className="row px-3 align-items-center">
+        <div className="container px-5 py-5 bgCourse">
+          <div className="px-3 row align-items-center">
             <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
               <TitleH1 title={t("courseTitleH1")} />
               <div className="mt-3">
@@ -69,7 +73,7 @@ export default function Home() {
               <img className="img-fluid" src={undraw} alt="" />
             </div>
           </div>
-          <div className="row mt-5 px-3">
+          <div className="px-3 mt-5 row">
             {courses.map((e, i) => (
               <>
                 <DefaultCard
