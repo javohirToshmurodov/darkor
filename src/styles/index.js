@@ -35,7 +35,7 @@ font-size: 20px;
       opacity: 1;
       transform: translateX(5px);
    }
-   border: 1.5px solid transparent;
+   border: 1px solid transparent;
 }
 `
 export const TextH1 = styled.h1`
