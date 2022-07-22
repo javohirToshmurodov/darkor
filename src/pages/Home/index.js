@@ -8,6 +8,7 @@ import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 import Carousel from "../../components/Carousel";
 import CourseKadr from "../../components/CourseKadr";
+import Partnership from "../../components/Partnership";
 export default function Home() {
    const { t, i18n } = useTranslation();
    const [courses, setCourses] = useState([
@@ -86,6 +87,9 @@ export default function Home() {
                   ))}
                </div>
             </div>
+         </section>
+         <section id="partnership">
+            <Partnership />
          </section>
       </div>
    );

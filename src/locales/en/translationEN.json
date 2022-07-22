@@ -1,10 +1,13 @@
 {
   "btnText": "About course",
   "courseTitleH1": "Skills in demand today, which we teach",
-  "allcourse":"All courses",
+  "allcourse": "All courses",
   "Ourcourses": "Our courses",
   "Ourcoursestools": "Courses allow you to gain skills and learn tools",
   "coursenumber": "Course 25 ",
   "Ourpersonnel": "Our personnel",
-  "personnelnumber": "personnel 1500+"
+  "personnelnumber": "personnel 1500+",
+  "partnershipP": "Partnerships",
+  "parnterwith": "We cooperate with leading companies",
+  "partnershipSubtitle": "We collect the best vacancies in the industry, prepare for interviews and recommend you to partner companies."
 }
