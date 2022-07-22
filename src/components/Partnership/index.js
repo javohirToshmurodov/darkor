@@ -24,7 +24,6 @@ const Partnership = () => {
                   <PartnersCard img={bank} />
                   <PartnersCard img={bank} />
                   <PartnersCard img={bank} />
-
                </div>
             </div>
          </PartnershipWrapper>

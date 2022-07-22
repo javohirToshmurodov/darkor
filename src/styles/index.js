@@ -79,9 +79,24 @@ display: flex;
 justify-content: center;
 align-items: center;
 overflow: hidden;
+&:hover{
+  cursor: pointer;
+}
 `
-export default ContactButtonWrapper = styled.div`
-    background: #0568FD;
+export const ContactButtonWrapper = styled.div`
+padding: 3px 28px;
+gap: 16px;
+font-weight: 400;
+font-size: 14px !important;
+line-height: 48px;
+width: 182px;
+height: 54px;
+color: white;
+background: #0568FD;
 border-radius: 10px;
-  
+transition: .3s;
+&:hover{
+  background: #054ab0;
+  cursor: pointer;
+}
 `
