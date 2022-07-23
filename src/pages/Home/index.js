@@ -11,6 +11,7 @@ import CourseKadr from "../../components/CourseKadr";
 import Partnership from "../../components/Partnership";
 import ContactButton from "../../components/ContactButton";
 import ContactWithUs from "../../components/ContactWithUs";
+import Footer from "../../components/Footer";
 export default function Home() {
    const { t, i18n } = useTranslation();
    const [courses, setCourses] = useState([
@@ -95,6 +96,9 @@ export default function Home() {
          </section>
          <section id="contactus" className="p-5">
             <ContactWithUs />
+         </section>
+         <section className="mt-5">
+            <Footer />
          </section>
       </div>
    );

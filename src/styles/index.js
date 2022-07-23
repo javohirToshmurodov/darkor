@@ -100,3 +100,21 @@ transition: .3s;
   cursor: pointer;
 }
 `
+export const FooterWrapper = styled.div`
+h1{
+font-weight: 700;
+font-size: 44px;
+line-height: 140%;
+letter-spacing: -0.03em;
+}
+.label{
+  margin-bottom: 8px;
+  font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+opacity: 0.6 !important;
+}
+svg{
+  font-size: 20px;
+}
+`
