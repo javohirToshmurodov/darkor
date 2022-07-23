@@ -1,14 +1,52 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-
+import React, { useState } from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
+import { FaCommentDots, FaQuestion, FaList } from "react-icons/fa"
+import { AdminMenuWrapper } from "../../styles"
+import { useNavigate } from 'react-router-dom';
 const Admin = () => {
+   const navigate = useNavigate()
+   const [menuItems, setMenuItems] = useState([
+      {
+         pathname: "courses",
+         icon: <FaList />,
+         name: "Courses"
+      },
+      {
+         pathname: "courses_info",
+         icon: <FaCommentDots />,
+         name: "Courses_info"
+      },
+      {
+         pathname: "faq",
+         icon: <FaQuestion />,
+         name: "FAQ"
+      },
+   ])
    return (
-      <div className='text-white'>
+      <div className=''>
          <div className="bg-dark py-3 d-flex gap-4 align-items-center justify-content-center text-white">
             <h4 className='text-white'>Admin Dashboard</h4>
          </div>
 
-
+         <div className="container-fluid">
+            <div className="row">
+               <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12">
+                  <AdminMenuWrapper>
+                     <ul className='p-5'>
+                        {
+                           menuItems.map((e, i) => <li className='d-flex gap-2 mb-2 align-items-center' onClick={() => navigate(`${e.pathname}`)} key={i}>
+                              {e.icon}
+                              {e.name}
+                           </li>)
+                        }
+                     </ul>
+                  </AdminMenuWrapper>
+               </div>
+               <div className="col-xl-10 col-lg-9 col-md-8 col-sm-6 col-12 p-5">
+                  <Outlet />
+               </div>
+            </div>
+         </div>
       </div>
    )
 }

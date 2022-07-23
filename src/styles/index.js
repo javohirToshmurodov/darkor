@@ -118,3 +118,20 @@ svg{
   font-size: 20px;
 }
 `
+export const AdminMenuWrapper = styled.div`
+ul{
+  background-color:#212529;
+  li{
+    color: white;
+    font-size: 20px;
+    transition: .3s;
+    border-radius: 5px;
+    padding: 5px 5px;
+    &:hover{
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+`
