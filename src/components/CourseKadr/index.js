@@ -6,6 +6,7 @@ import { FaGraduationCap } from 'react-icons/fa'
 import TitleH1 from '../TitleH1'
 import DefaultButton from '../DefaultButton'
 import "./CourseCadr.css"
+import DefaultAllCourseButton from "../../components/DefaultAllCourseButton";
 
 function CourseKadr(props) {
   const { t, i18n } = useTranslation()
@@ -20,7 +21,7 @@ function CourseKadr(props) {
         <p className='text-xl not-italic font-semibold leading-7 text-fontColor max-w-[348px] mt-4 mb-28'>
           {t('Ourcoursestools')}
         </p>
-        <DefaultButton title={t('coursenumber')} className='mt-10' />
+        <DefaultAllCourseButton title={t('coursenumber')} className='mt-10' />
       </div>
       <div className='p-4 hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl md:w-[588px] cardshadow max-h-[400px]'>
         <img src={PersonCrop} width='50px' className='w-[40px]' />

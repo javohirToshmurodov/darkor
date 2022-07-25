@@ -12,6 +12,7 @@ import Partnership from "../../components/Partnership";
 import ContactButton from "../../components/ContactButton";
 import ContactWithUs from "../../components/ContactWithUs";
 import Footer from "../../components/Footer";
+import DefaultAllCourseButton from "../../components/DefaultAllCourseButton";
 export default function Home() {
    const { t, i18n } = useTranslation();
    const [courses, setCourses] = useState([
@@ -70,7 +71,7 @@ export default function Home() {
                   <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
                      <TitleH1 title={t("courseTitleH1")} />
                      <div className="mt-3">
-                        <DefaultButton title={t("allcourse")} />
+                        <DefaultAllCourseButton title={t("allcourse")} />
                      </div>
                   </div>
                   <div className="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">

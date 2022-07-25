@@ -16,5 +16,8 @@
   "footerLabel": "Телефон номер",
   "footerAdress": "Адрес офиса",
   "footerWork": "Мы работаем",
-  "footerWorkdays": "Понедельник - Пятницы: 9:00 - 21:00 "
+  "footerWorkdays": "Понедельник - Пятницы: 9:00 - 21:00 ",
+  "coursename": "Имя курса",
+  "overviewCourse": "ОБЗОР Курс Профессия",
+  "singupnow": "Запишитесь сейчас"
 }

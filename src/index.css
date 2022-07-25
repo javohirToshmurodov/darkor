@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html{
+   scroll-behavior: smooth;
+}
 .footer {
    background: #0568FD;
 }
@@ -16,4 +19,15 @@ ul {
 
 body {
    font-family: 'Segoe UI', sans-serif !important;
+}
+
+.circlePrice{
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #F2F2F7;
+   color: #0568FD;
 }

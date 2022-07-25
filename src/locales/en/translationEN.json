@@ -16,5 +16,8 @@
   "footerLabel": "Phone number",
   "footerAdress": "Office address",
   "footerWork": "Work days",
-  "footerWorkdays": "Monday - Friday: 9:00 - 21:00"
+  "footerWorkdays": "Monday - Friday: 9:00 - 21:00",
+  "coursename": "Course name",
+  "overviewCourse": "OVERVIEW Course Profession",
+  "signupnow": "Sign up now"
 }

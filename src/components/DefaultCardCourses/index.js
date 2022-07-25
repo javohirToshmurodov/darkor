@@ -9,11 +9,11 @@ export default function DefaultCard(props) {
       <DefaultCardWrapper>
         <img className='img-fluid' src={props.img} alt="" />
         <div className="pe-3">
-          <h5 className='title mt-2'>{props.title}</h5>
+          <h5 className='title mt-2'>{t("coursename")}: {props.title}</h5>
           <p className='subtitle'>{props.subtitle}</p>
         </div>
         <div className="line"></div>
-        <DefaultButton title={t("btnText")} />
+        <DefaultButton title={t("btnText")} id={props.code} />
       </DefaultCardWrapper>
 
     </div>

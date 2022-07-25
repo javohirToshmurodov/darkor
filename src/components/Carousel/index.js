@@ -23,9 +23,9 @@ function CarouselSlider(props) {
     <div className="container p-0 max-h-[540px] mb-5">
       <Carousel autoPlay showStatus={false} showArrows={false}>
         {slider.map((e, i) => (
-          <>
+          <div key={i}>
             <Slider key={i} img={e.img} />
-          </>
+          </div>
         ))}
       </Carousel>
     </div>
