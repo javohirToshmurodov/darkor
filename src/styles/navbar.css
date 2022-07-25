@@ -1,0 +1,43 @@
+.phone {
+  width: 40px;
+  height: 40px;
+  background-color: #61c465;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.phone_container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 14px;
+  margin-left: 14px;
+}
+
+.phone_container span {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.nav-link {
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 600 !important;
+font-family: 'Segoe UI', sans-serif;
+}
+
+.line {
+  width: 1px;
+  height: 30px;
+  background: #48484a;
+}
+.custom-btn {
+  background: #e5e5ea;
+  border: none;
+  color: #2c2c2e;
+}
+.navbar{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white !important;
+}
