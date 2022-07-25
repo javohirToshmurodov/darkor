@@ -16,5 +16,12 @@
   "footerLabel": "Phone number",
   "footerAdress": "Office address",
   "footerWork": "Work days",
-  "footerWorkdays": "Monday - Friday: 9:00 - 21:00"
+  "footerWorkdays": "Monday - Friday: 9:00 - 21:00",
+  "employmentResults": "Graduate employment results",
+  "results": "in numbers",
+  "statistic1": "students receive the requested internship",
+  "statistic2": "graduates are employed",
+  "statistic3": "graduates are employed during the work of the Career Center",
+  "statistic4": "graduates received project orders",
+  "statistic5": "employers offer employment to Darkor 22 graduates"
 }
