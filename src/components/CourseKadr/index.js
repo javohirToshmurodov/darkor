@@ -22,7 +22,6 @@ function CourseKadr(props) {
         </p>
         <DefaultButton title={t('coursenumber')} className='mt-10' />
       </div>
-      {/* Salom */}
       <div className='p-4 hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl md:w-[588px] cardshadow max-h-[400px]'>
         <img src={PersonCrop} width='50px' className='w-[40px]' />
         <h3 className='text-[32px] font-bold not-italic leading-10 mt-3'>
