@@ -11,6 +11,7 @@ const CoursesCrud = () => {
    const [descriptionUz, setDescriptionUz] = useState("")
    const [descriptionRu, setDescriptionRu] = useState("")
    const [descriptionEn, setDescriptionEn] = useState("")
+   const [imgObject, setImgObject] = useState({})
    const [courseData, setCourseData] = useState({})
    const handleCourseSubmit = (e) => {
       e.preventDefault()
@@ -19,10 +20,11 @@ const CoursesCrud = () => {
    const handleFileMediaUz = (e) => {
       console.log(e);
       const formData = new FormData()
-      formData.append("fileUz", e)
+      formData.append("file", e)
 
-      instance.post("upload/MEDIA").then((res) => {
+      instance.post("/upload/MEDIA", formData).then((res) => {
          console.log(res.data);
+         setImgObject({ ...res.data })
       }).catch((err) => {
          console.log(err);
       })
