@@ -20,13 +20,13 @@ function CarouselSlider(props) {
     },
   ]);
   return (
-    <div className="container p-0 max-h-[540px] mb-5">
+    <div className="container p-0 max-h-[540px] md:mb-5 mb-2 px-3 ">
       <Carousel autoPlay showStatus={false} showArrows={false}>
-        {slider.map((e, i) => (
-          <div key={i}>
+        {
+          slider.map((e, i) => (
             <Slider key={i} img={e.img} />
-          </div>
-        ))}
+          ))
+        }
       </Carousel>
     </div>
   );

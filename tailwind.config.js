@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "hoverBgColor": "#F3F3FB"
+        "hoverBgColor": "#F3F3FB",
+        "blueColor": "rgba(5, 104, 253, 1)"
       }
     },
   },

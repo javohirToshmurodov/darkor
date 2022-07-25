@@ -13,6 +13,7 @@ import ContactButton from "../../components/ContactButton";
 import ContactWithUs from "../../components/ContactWithUs";
 import Footer from "../../components/Footer";
 import DefaultAllCourseButton from "../../components/DefaultAllCourseButton";
+import Statistics from "../../components/Statistics";
 export default function Home() {
    const { t, i18n } = useTranslation();
    const [courses, setCourses] = useState([
@@ -64,6 +65,9 @@ export default function Home() {
          </section>
          <section>
             <CourseKadr />
+         </section>
+         <section>
+            <Statistics />
          </section>
          <section className="">
             <div className="container px-5 py-5 bgCourse">
