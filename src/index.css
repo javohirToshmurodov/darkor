@@ -1,12 +1,19 @@
-.footer{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.footer {
    background: #0568FD;
 }
-ul li{
+
+ul li {
    list-style-type: none;
 }
-ul{
+
+ul {
    margin-left: -30px;
 }
-body{
+
+body {
    font-family: 'Segoe UI', sans-serif !important;
 }
