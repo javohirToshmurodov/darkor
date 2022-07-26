@@ -64,8 +64,8 @@ const CourseDetails = () => {
                   {
                      courseDetail.file[0]?.url && <img className='mt-5' src={courseDetail.file[0]?.url} alt="" />
                   }
-
-               </div>
+                     
+                  </div>
             </div>
             <div className="row mt-4">
 
