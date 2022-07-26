@@ -46,14 +46,14 @@ function OffcanvasExample() {
 
   return (
     <Container>
-      <Navbar collapseOnSelect expand="lg" variant="light">
+      <Navbar className="my-4" collapseOnSelect expand="lg" variant="light">
         <Container>
           <Link to={"/"}>
             <Logo className="me-4" />
           </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="me-auto align-items-center">
               {menu.map((item, index) =>
                 item.dropdown.length ? (
                   <NavDropdown

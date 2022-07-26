@@ -10,6 +10,8 @@ import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Experts from "./pages/Experts"
 import About from "./pages/AboutCompany"
+import Courses from './pages/Courses'
+import CourseDetails from './pages/Courses/CourseDetail'
 function App() {
   return (
     <>
@@ -19,6 +21,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />} />
+        <Route path='courses' element={<Courses />} >
+        </Route>
+        <Route path='courses/:id' element={<CourseDetails />} />
         <Route path='services' element={<Services />} />
         <Route path='experts' element={<Experts />} />
         <Route path='admin' element={<Admin />} >
