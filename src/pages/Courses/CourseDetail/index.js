@@ -7,30 +7,54 @@ import { useTranslation } from 'react-i18next'
 import { CoursePriceCardWrapper } from '../../../styles/index'
 import { ThunderboltOutlined } from '@ant-design/icons'
 import TitleH1 from '../../../components/TitleH1'
+import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
+import Title from 'antd/lib/skeleton/Title'
 const CourseDetails = () => {
    const { id } = useParams()
    const { t, i18n } = useTranslation()
-   const [courseDetail, setCourseDetail] = useState({})
+   const [courseDetail, setCourseDetails] = useState({})
    const [data, setData] = useState(false)
-   const [loading, setLoading] = useState(false)
-   const getCourseDetails = () => {
-      setLoading(true)
-      instance.get(`/api/v1/courseDetails/get/?id=${id}`).then((res) => {
+   const [loading, setLoading] = useState(true)
+   const [skills, setSkills] = useState([])
+
+   const getEmployeeDetails = () => {
+      instance.get(`api/v1/employee/get_by_course/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
          console.log(res.data);
-         setCourseDetail({ ...res.data.body })
-         setData(true)
       }).catch((err) => {
          console.log(err);
       })
-      setLoading(false)
    }
+   const getCourseDetails = async () => {
+      try {
+         const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
+         console.log(res.data.body);
+         setCourseDetails(res.data.body)
+         setData(true)
+         setLoading(false)
 
+      } catch (err) {
+         console.log(err);
+         setLoading(false)
+      }
+   }
+   const getSkills = () => {
+      instance.get("/api/v1/skill/list?size=10&page=0").then((res) => {
+         setSkills([...res.data.body])
+         console.log(res.data.body);
+      }).catch((err) => {
+         console.log(err);
+      })
+   }
    useEffect(() => {
       getCourseDetails()
-      console.log("coursedetail", courseDetail);
-   }, [])
+      getSkills()
+      getEmployeeDetails()
+   }, [id])
+   useEffect(() => {
+   }, [courseDetail])
    return (
-      <Spin spinning={loading}>
+
+      <Spin spinning={loading} >
          <div className="container">
             <CarouselSlider />
 
@@ -39,30 +63,115 @@ const CourseDetails = () => {
 
                </div>
                <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
-                  <p className='m-0 d-flex justify-content-center align-items-center'>
-                     {t("overviewCourse")} {courseDetail?.course?.name}
-                  </p>
-                  <TitleH1 title={courseDetail?.titleDescription} />
-                  <p>
+                  <div className="row mt-4">
                      {
-                        courseDetail?.bodyDescription
+                        courseDetail?.course?.name && <p className='m-0 d-flex align-items-center mt-5'>
+                           {t("overviewCourse")} {courseDetail?.course?.name}
+                        </p>
                      }
-
+                     {
+                        courseDetail?.titleDescription && <TitleH1 title={courseDetail?.titleDescription} />
+                     }
+                     {
+                        courseDetail?.bodyDescription && <p>
+                           {
+                              courseDetail?.bodyDescription
+                           }
+                        </p>
+                     }
+                     {/* {
                      <img className='mt-5' src={courseDetail?.file[0]?.url} alt="" />
-                  </p>
+                  } */}
+                     {
+                        courseDetail?.file?.map((e, i) => <img src={e.url} alt="" />
+                        )
+                     }
+                  </div>
+                  <hr />
+                  <div className="row py-5 mt-5">
+                     <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12">
+                        <p>{t("skillProgram")}</p>
+                        <TitleH1 title={t("whatYouLearn")} />
+
+                        <div className="mt-5">
+                           {
+                              skills.map((e, i) => <div className='mb-3 '>
+                                 <div className="d-flex w-100 ">
+                                    <div>
+                                       <CheckOutlined className='me-3' style={{ "color": "#34C759", "fontSize": "24px" }} />
+                                    </div>
+                                    <div className='flex-1'>
+                                       <h4>{e.name}</h4>
+                                       <p style={{ "color": "#3A3A3C" }} className='m-0'>{e.description}</p>
+                                       <hr />
+                                    </div>
+                                 </div>
+                              </div>)
+                           }
+                        </div>
+
+                        <div>
+                           <p className='mt-4'>{t("skillProgram")}</p>
+                           <TitleH1 title={t("practiceLearn")} />
+                           <p>
+                              {t("practiceLearnDesc")}
+                           </p>
+                        </div>
+                        <hr />
+                     </div>
+                  </div>
+                  <div className="row py-5 mt-5">
+                     <p>{t("specialistTeam")}</p>
+                     <TitleH1 title={t("specialistTeamTitle")} />
+                     <p>
+                        {t("specialistTeamDesc")}
+                     </p>
+                  </div>
+                  <div className="row mt-5 py-5">
+                     <p>{t("price")}</p>
+                     <TitleH1 title={t("priceTitle")} />
+                     <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
+                     <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 ">
+
+                        <CoursePriceCardWrapper className='flex-column d-flex align-items-start p-4 mt-5'>
+                           <div className='circlePrice mt-4 mx-auto text-center'>
+                              <ThunderboltOutlined />
+                           </div>
+                           <h1 className='fw-bold mt-3 text-center mx-auto' style={{ "fontSize": "48px", "lineHeight": "60px", "letterSpacing": "-0.0em" }}>{courseDetail?.price?.price}/uzs</h1>
+                           <p style={{ "color": "#8E8E93" }} className='mx-auto'>
+                              {t("pricePerMonth")}
+                           </p>
+                           <ul className='my-3 text-start'>
+
+                              {
+                                 courseDetail?.price?.offers.map((e, i) => <li className='mb-2 ' key={i}>
+                                    <CheckCircleFilled className='me-2' style={{ "fontSize": "22px", "color": "#111" }} />
+                                    {e}
+                                 </li>)
+                              }
+                           </ul>
+
+                           <button className="btn btn-primary btn-block w-100">Запишитесь сейчас</button>
+                        </CoursePriceCardWrapper>
+
+                     </div>
+                  </div>
+                  <div className="row mt-5 py-5">
+                     <p>
+                        {t("cetrificate")}
+                     </p>
+                     <TitleH1 title={t("certificateDarkor")} />
+                     <p>
+                        {t("certificateDesc")}
+                     </p>
+                  </div>
                </div>
             </div>
-            <div className="row mt-4">
 
-               <CoursePriceCardWrapper className='flex-column d-flex justify-content-center align-items-center'>
-                  <div className='circlePrice mt-4'>
-                     <ThunderboltOutlined />
-                  </div>
-                  <h1 className='fw-bold'>{courseDetail?.price?.price} UZS</h1>
-               </CoursePriceCardWrapper>
-            </div>
+            <hr />
          </div>
       </Spin>
+
    )
 }
 

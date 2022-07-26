@@ -31,3 +31,5 @@ body {
    background-color: #F2F2F7;
    color: #0568FD;
 }
+
+@import url("./pages/Services/services.css");
