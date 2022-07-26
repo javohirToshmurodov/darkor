@@ -24,7 +24,6 @@ const Courses = () => {
    useEffect(() => {
       getCourses()
       console.log("courses", courses);
-      console.log(id);
    }, [])
    return (
       <Spin spinning={loading}>

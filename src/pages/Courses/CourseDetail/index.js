@@ -10,27 +10,34 @@ import TitleH1 from '../../../components/TitleH1'
 const CourseDetails = () => {
    const { id } = useParams()
    const { t, i18n } = useTranslation()
-   const [courseDetail, setCourseDetail] = useState({})
+   const [courseDetail, setCourseDetails] = useState({})
    const [data, setData] = useState(false)
-   const [loading, setLoading] = useState(false)
-   const getCourseDetails = () => {
-      setLoading(true)
-      instance.get(`/api/v1/courseDetails/get/?id=${id}`).then((res) => {
-         console.log(res.data);
-         setCourseDetail({ ...res.data.body })
+   const [loading, setLoading] = useState(true)
+   const getCourseDetails = async () => {
+      try {
+         const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
+         console.log(res.data.body);
+         setCourseDetails({ ...res.data.body })
          setData(true)
-      }).catch((err) => {
+         setLoading(false)
+
+      } catch (err) {
          console.log(err);
-      })
-      setLoading(false)
+         setLoading(false)
+      }
    }
 
    useEffect(() => {
       getCourseDetails()
+      console.log(id);
       console.log("coursedetail", courseDetail);
    }, [])
+   useEffect(() => {
+      console.log("coursedetail here", courseDetail);
+   }, [courseDetail])
    return (
-      <Spin spinning={loading}>
+
+      <Spin spinning={loading} >
          <div className="container">
             <CarouselSlider />
 
@@ -39,17 +46,25 @@ const CourseDetails = () => {
 
                </div>
                <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
-                  <p className='m-0 d-flex justify-content-center align-items-center'>
-                     {t("overviewCourse")} {courseDetail?.course?.name}
-                  </p>
-                  <TitleH1 title={courseDetail?.titleDescription} />
-                  <p>
-                     {
-                        courseDetail?.bodyDescription
-                     }
+                  {
+                     courseDetail?.course?.name && <p className='m-0 d-flex align-items-center'>
+                        {t("overviewCourse")} {courseDetail?.course?.name}
+                     </p>
+                  }
+                  {
+                     courseDetail?.titleDescription && <TitleH1 title={courseDetail?.titleDescription} />
+                  }
+                  {
+                     courseDetail?.bodyDescription && <p>
+                        {
+                           courseDetail?.bodyDescription
+                        }
+                     </p>
+                  }
+                  {
+                     courseDetail.file[0]?.url && <img className='mt-5' src={courseDetail.file[0]?.url} alt="" />
+                  }
 
-                     <img className='mt-5' src={courseDetail?.file[0]?.url} alt="" />
-                  </p>
                </div>
             </div>
             <div className="row mt-4">
@@ -58,11 +73,14 @@ const CourseDetails = () => {
                   <div className='circlePrice mt-4'>
                      <ThunderboltOutlined />
                   </div>
-                  <h1 className='fw-bold'>{courseDetail?.price?.price} UZS</h1>
+                  {
+                     courseDetail?.price?.price && <h1 className='fw-bold'>{courseDetail?.price?.price} UZS</h1>
+                  }
                </CoursePriceCardWrapper>
             </div>
          </div>
       </Spin>
+
    )
 }
 
