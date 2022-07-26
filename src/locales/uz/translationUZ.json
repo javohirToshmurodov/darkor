@@ -26,5 +26,20 @@
   "statistic2": "bitiruvchilari ishga joylashtiriladi",
   "statistic3": "Bitiruvchilar Karyera Markazi faoliyati davomida ishga joylashtiriladi",
   "statistic4": "bitiruvchilari loyiha buyurtmalarini oldilar",
-  "statistic5": "ish beruvchilar “Darkor 22” bitiruvchilarini ish bilan ta'minlamoqda"
+  "statistic5": "ish beruvchilar “Darkor 22” bitiruvchilarini ish bilan ta'minlamoqda",
+  "price": "Narxi",
+  "priceTitle": "Oddiy, shaffof va moslashuvchan to'lov rejalari",
+  "priceDescription": "Narxlarini pasaytiradigan boshqa kurslardan farqli o'laroq, biz kursimiz narxlari haqida to'liq shaffofmiz va arzonligimizdan faxrlanamiz.",
+  "pricePerMonth": "Har oyiga",
+  "trainingProgram": "O'quv dasturi",
+  "whatYouLearn": "Offline kursimizda nimalarni o'rganasiz",
+  "practiceLearn": "Jonli darslarda ishlash orqali o'rganing",
+  "practiceLearnDesc": "Muxolifat vakillarining qilmishlarini esa oshkora qilish mumkinligiga shubha yo‘q. Boshqa tomondan, tashkiliy faoliyatning yangi modeli professional hamjamiyat taraqqiyotini amalga oshirish uchun juda mos keladi. Biz rivojlanishning asosiy vektori har bir ishtirokchini qulay istiqbollar bo'yicha o'z qarorlarini qabul qilish qobiliyatini o'ziga xos tarzda belgilaydiganligidan kelib chiqishga majburmiz. Xilma-xil va boy tajriba shundan dalolat beradi.",
+  "specialistTeam": "Mutaxassislar JAMOASI",
+  "specialistTeamTitle": "Sohadagi eng malakali Buxgalteriya instruktorlaridan o'rganing.",
+  "specialistTeamDesc": "Shuni ta'kidlash kerakki, bugungi kunning iqtisodiy kun tartibi o'ylangan fikrlashni joriy etish va modernizatsiya qilish jarayonini o'z ichiga oladi. Bu muammolarning ahamiyati shunchalik ravshanki, kadrlar tayyorlash chegarasi jamiyatning bosqichma-bosqich va izchil rivojlanishi uchun zarur shart-sharoit yaratadi.",
+  "teacher": "USTOZ",
+  "cetrificate": "Sertifikat",
+  "certificateDarkor": "Darkor 22 Sertifikati",
+  "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi.."
 }

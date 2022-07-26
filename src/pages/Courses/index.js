@@ -33,7 +33,7 @@ const Courses = () => {
                <CarouselSlider />
                <div className="row mt-5">
                   {
-                     courses.map((e, i) => <DefaultCard code={e.id} key={i} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
+                     courses.map((e, i) => <DefaultCard code={e.id} key={e.id} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
                   }
 
 
