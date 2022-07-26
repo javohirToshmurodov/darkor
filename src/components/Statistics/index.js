@@ -14,8 +14,27 @@ function Statistics(props) {
                     <h1 className='text-blueColor text-[44px] font-bold not-italic leading-[106px]'>{t('results')}</h1>
                 </div>
             </div>
-            <div>
-
+            <div className='flex gap-5 overflow-x-scroll scrollbar-hide'>
+                <div className='hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl px-4 py-6 h-[180px] w-[247px] snap-center'>
+                    <span className='bg-green-600 text-white p-1 rounded-lg'>100%</span>
+                    <p className='max-w-[212px] font-semibold text-sm mt-2 '>{t('statistic1')}</p>
+                </div>
+                <div className='hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl px-4 py-6 h-[180px] w-[247px] snap-center'>
+                    <span className='bg-green-600 text-white p-1 rounded-lg'>95%</span>
+                    <p className='max-w-[212px] font-semibold text-sm mt-2 '>{t('statistic2')}</p>
+                </div>
+                <div className='hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl px-4 py-6 h-[180px] w-[247px] snap-center'>
+                    <span className='bg-green-600 text-white p-1 rounded-lg'>1200+</span>
+                    <p className='max-w-[212px] font-semibold text-sm mt-2 '>{t('statistic3')}</p>
+                </div>
+                <div className='hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl px-4 py-6 h-[180px] w-[247px] snap-center'>
+                    <span className='bg-green-600 text-white p-1 rounded-lg'>100%</span>
+                    <p className='max-w-[212px] font-semibold text-sm mt-2 '>{t('statistic4')}</p>
+                </div>
+                <div className='hover:bg-hoverBgColor hover:duration-500 duration-500 rounded-3xl px-4 py-6 h-[180px] w-[247px] snap-center'>
+                    <span className='bg-green-600 text-white p-1 rounded-lg'>139+</span>
+                    <p className='max-w-[212px] font-semibold text-sm mt-2 '>{t('statistic5')}</p>
+                </div>
             </div>
         </div>
     );
