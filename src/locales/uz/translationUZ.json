@@ -41,5 +41,14 @@
   "teacher": "USTOZ",
   "cetrificate": "Sertifikat",
   "certificateDarkor": "Darkor 22 Sertifikati",
-  "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi.."
+  "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi..",
+  "contactLink":"Kontaktlar",
+  "contactTitle":"Sizga kerak bo'lgan hamma narsa bizda",
+  "contactDescription":"Munozarali nuqtai nazar mavjud bo'lib, u quyidagicha aytadi: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ tarzda taqsimlanadi.",
+  "contactHeaderButton":"Arizangizni yuboring",
+  "contactInfoDescription":"Kartellar texnologik taraqqiyotning bevosita ishtirokchilari imkon qadar batafsil tavsiflanishi mumkin bo'lgan vaziyatga yo'l qo'ymaydi."
+
+
+  
+  
 }

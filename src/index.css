@@ -31,6 +31,6 @@ body {
    background-color: #F2F2F7;
    color: #0568FD;
 }
-
+@import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');
