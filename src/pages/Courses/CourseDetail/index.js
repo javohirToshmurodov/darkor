@@ -1,4 +1,4 @@
-import { Spin } from 'antd'
+import { Skeleton, Spin } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
@@ -11,29 +11,28 @@ import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
 import Faq from '../../../components/FAQ'
-
+import { Collapse } from 'antd';
+import ReactPlayer from 'react-player'
 const CourseDetails = () => {
+   const { Panel } = Collapse;
    const { id } = useParams()
    const { t, i18n } = useTranslation()
    const [courseDetail, setCourseDetails] = useState({})
    const [data, setData] = useState(false)
    const [loading, setLoading] = useState(true)
    const [skills, setSkills] = useState([])
+   const [active, setActive] = useState(false)
+   const [faq, setFaq] = useState([])
 
-   const getEmployeeDetails = () => {
-      courseDetail?.course?.code && instance.get(`api/v1/employee/get_by_course/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
-         console.log(res.data);
-      }).catch((err) => {
-         console.log(err);
-      })
-   }
    const getCourseDetails = async () => {
       try {
+         setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
-         console.log(res.data.body);
+         console.log(res.data);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
+         setActive(false)
 
       } catch (err) {
          console.log(err);
@@ -47,22 +46,39 @@ const CourseDetails = () => {
          console.log(err);
       })
    }
+   const getFaq = () => {
+      setLoading(true)
+      instance.get(`/api/v1/faq/list_by_course_code/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
+         setFaq([...res.data.body])
+         setLoading(false)
+      }).catch((err) => console.log(err))
+   }
    useEffect(() => {
       getCourseDetails()
       getSkills()
-      getEmployeeDetails()
    }, [id])
+
+   const getEmployeeDetails = () => {
+
+      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
+         console.log(res.data);
+      }).catch((err) => {
+         console.log(err);
+      })
+   }
    useEffect(() => {
-   }, [courseDetail])
+      getEmployeeDetails()
+      getFaq()
+   }, [courseDetail?.course?.code])
+
    return (
 
-      <Spin spinning={loading} >
+      <Spin spinning={loading}>
          <div className="container">
             <CarouselSlider />
 
             <div className="row">
                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-
                </div>
                <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
                   <div className="row mt-4">
@@ -85,14 +101,14 @@ const CourseDetails = () => {
                      <img className='mt-5' src={courseDetail?.file[0]?.url} alt="" />
                   } */}
                      {
-                        courseDetail?.file?.map((e, i) => {
-                           e.extension === "jpg" || e.extension === "jpeg" || e.extension === "pngs" ? (
-                              <img src={e.url} alt="rasmyoq" />
-                           ) : (
-                              <video src={e.url} autoPlay controls></video>
-                           )
-                        }
+                        courseDetail?.file?.map((e, i) => <div>
+                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='img-fluid mb-2' />}
+                        </div>
                         )
+                     }
+                     {
+                        <iframe className='mt-3' width="320" height="497" src={`https://www.youtube.com/embed/${courseDetail.youtubeVideo}`} >
+                        </iframe>
                      }
                   </div>
                   <hr />
@@ -184,13 +200,23 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
+                  <div className="mt-5 py-5">
+                     <h1>
+                        Faq is here
+                     </h1>
+                     <Collapse className='mt-4' defaultActiveKey={['1']} >
+                        {
+                           faq?.map((e, i) => <Panel header={e.question}>
+                              <p>{e.answer}</p>
+                           </Panel>)
+                        }
+                     </Collapse>
+                  </div>
                </div>
             </div>
 
             <hr />
-            <div className="mt-5 py-5">
-               <Faq />
-            </div>
+
             <div className="mt-5 py-5">
 
                <ContactWithUs />

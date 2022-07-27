@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
 export const DefaultCardWrapper = styled.div`
+word-break: break-word;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-direction: column;
   .line {
     width: 40%;
     height: 1px;
@@ -8,8 +13,8 @@ export const DefaultCardWrapper = styled.div`
     margin: 20px 0;
   }
   img{
-    width: 320px;
-    height: 260px;
+    width: 320px !important;
+    height: 260px !important;
     min-height: 260px;
     border-radius: 16px;
   }
