@@ -21,6 +21,11 @@ const Admin = () => {
          icon: <FaQuestion />,
          name: "FAQ"
       },
+      {
+         pathname: 'create-employee',
+         icon: '',
+         name: 'Create Employee',
+      },
    ])
    return (
       <div className=''>

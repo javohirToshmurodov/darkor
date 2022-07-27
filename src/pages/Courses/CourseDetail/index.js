@@ -8,7 +8,10 @@ import { CoursePriceCardWrapper } from '../../../styles/index'
 import { ThunderboltOutlined } from '@ant-design/icons'
 import TitleH1 from '../../../components/TitleH1'
 import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
-import Title from 'antd/lib/skeleton/Title'
+import Footer from '../../../components/Footer'
+import ContactWithUs from '../../../components/ContactWithUs'
+import Faq from '../../../components/FAQ'
+
 const CourseDetails = () => {
    const { id } = useParams()
    const { t, i18n } = useTranslation()
@@ -18,7 +21,7 @@ const CourseDetails = () => {
    const [skills, setSkills] = useState([])
 
    const getEmployeeDetails = () => {
-      instance.get(`api/v1/employee/get_by_course/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
+      courseDetail?.course?.code && instance.get(`api/v1/employee/get_by_course/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
          console.log(res.data);
       }).catch((err) => {
          console.log(err);
@@ -40,7 +43,6 @@ const CourseDetails = () => {
    const getSkills = () => {
       instance.get("/api/v1/skill/list?size=10&page=0").then((res) => {
          setSkills([...res.data.body])
-         console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })
@@ -83,7 +85,13 @@ const CourseDetails = () => {
                      <img className='mt-5' src={courseDetail?.file[0]?.url} alt="" />
                   } */}
                      {
-                        courseDetail?.file?.map((e, i) => <img src={e.url} alt="" />
+                        courseDetail?.file?.map((e, i) => {
+                           e.extension === "jpg" || e.extension === "jpeg" || e.extension === "pngs" ? (
+                              <img src={e.url} alt="rasmyoq" />
+                           ) : (
+                              <video src={e.url} autoPlay controls></video>
+                           )
+                        }
                         )
                      }
                   </div>
@@ -156,7 +164,7 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
-                  <div className="row mt-5 py-5">
+                  <div className="mt-5 py-5">
                      <p>
                         {t("cetrificate")}
                      </p>
@@ -164,11 +172,32 @@ const CourseDetails = () => {
                      <p>
                         {t("certificateDesc")}
                      </p>
+                     <div className="row">
+                        {
+                           courseDetail?.file?.map((e, i) => <div className='' key={i}>
+                              {
+                                 e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
+                              }
+                           </div>)
+                        }
+
+
+                     </div>
                   </div>
                </div>
             </div>
 
             <hr />
+            <div className="mt-5 py-5">
+               <Faq />
+            </div>
+            <div className="mt-5 py-5">
+
+               <ContactWithUs />
+            </div>
+         </div>
+         <div className="mt-5">
+            <Footer />
          </div>
       </Spin>
 

@@ -33,3 +33,4 @@ body {
 }
 
 @import url("./pages/Services/services.css");
+@import url('./styles/static.css');

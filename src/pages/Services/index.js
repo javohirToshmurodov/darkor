@@ -4,6 +4,7 @@ import Header from '../../components/header'
 import { instance } from '../../redux/actions'
 import { useTranslation } from 'react-i18next'
 import Media from '../../components/media'
+import Static from '../../components/static'
 
 const Services = () => {
    const [state, setState] = useState([])
@@ -35,6 +36,7 @@ const Services = () => {
             secondButtonTitle={t('secondButtonTitle')}
          />
          <Media data={state} loading={loading} setLoading={setLoading} />
+         <Static />
       </Spin>
    )
 }

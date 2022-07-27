@@ -1,0 +1,24 @@
+.custom-card {
+  max-width: 320px !important;
+  display: inline-block;
+  background: #f3f3fb !important;
+  margin-top: 5px !important;
+}
+.custom-card div h5 {
+  font-size: 20px;
+  color: #2c2c2e;
+}
+.custom-card div p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.title {
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 56px;
+}
