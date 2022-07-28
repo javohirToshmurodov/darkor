@@ -7,7 +7,7 @@ const ServiseStatistics = () => {
     const [state, setState] = useState([]);
   const getStatistic = async () => {
     try {
-      const res = await instance.get("api/v1/statistics/list?size=4&page=0");
+      const res = await instance.get("api/v1/statistics/list/SERVICE?size=4&page=0");
       setState(res.data.body);
     } catch (err) {
       console.log(err);
