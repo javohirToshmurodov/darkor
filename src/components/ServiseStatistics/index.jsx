@@ -5,15 +5,12 @@ import { instance } from '../../redux/actions'
 
 const ServiseStatistics = () => {
     const [state, setState] = useState([]);
-  const [loading, setLoading] = useState(false);
   const getStatistic = async () => {
-    setLoading(true);
     try {
       const res = await instance.get("api/v1/statistics/list?size=4&page=0");
       setState(res.data.body);
-      setLoading(false);
     } catch (err) {
-      setLoading(false);
+      console.log(err);
     }
   };
 

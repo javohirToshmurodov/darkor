@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactInfoCard = ({ icon, title, text, phone }) => {
   return (
-    <div class="card" style={{ backgroundColor: "#F3F3FB", height: "100%" }}>
+    <div class="card justify-content-center align-items-center" style={{ backgroundColor: "#F3F3FB", height: "100%" }}>
       <div class="  card-body">
         <div class="mt-2 icon-wrapper card-title">
           <img src={icon} alt="icons" />

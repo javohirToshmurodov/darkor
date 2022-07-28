@@ -7,7 +7,10 @@ import Media from "../../components/media";
 import { instance } from "../../redux/actions";
 import ServiseStatistics from "../../components/ServiseStatistics";
 import Partnership from "../../components/Partnership";
-
+import HomeServise from "../../components/HomeServise";
+import ContactWithUs from "../../components/ContactWithUs";
+import Footer from "../../components/Footer";
+import FAQ from "../../components/FAQ";
 const AboutCompany = () => {
   const [state, setState] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -39,9 +42,17 @@ const AboutCompany = () => {
       />
       <Media data={state} loading={loading} setLoading={setLoading} />
       <ServiseStatistics />
+      <HomeServise />
       <div className="mt-5">
         <Partnership />
       </div>
+      <ContactWithUs />
+      <div className="container px-5 mb-5 my-5">
+        <FAQ />
+      </div>
+      <section className="my-5">
+        <Footer />
+      </section>
     </Spin>
   );
 };

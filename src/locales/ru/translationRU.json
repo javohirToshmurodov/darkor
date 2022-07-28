@@ -48,9 +48,6 @@
   "contactHeaderButton": "Оставить заявку",
   "contactInfoTitle": "Мы будем рады услышать от вас ",
   "contactInfoDescription": "Картельные сговоры не допускают ситуации, при которой непосредственные участники технического прогресса могут быть описаны максимально подробно.",
-<<<<<<< HEAD
-  "companyTitle":"О компании"
-=======
   "allaboutCourse": "Обзор-курса",
   "teachingProgram": "Учебная программа",
   "ourSchedule": "Наше расписание",
@@ -59,5 +56,4 @@
   "priceOfCourse": "Цены",
   "questions": "Вопросы",
   "signUp": "Запишитесь сейчас"
->>>>>>> 0bceeec7ca1f2ebca40ae7c6416e1b7a0ad260cb
 }

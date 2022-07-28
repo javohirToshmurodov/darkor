@@ -35,7 +35,6 @@ const Courses = () => {
                   {
                      courses.map((e, i) => <DefaultCard code={e.id} key={e.id} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
                   }
-
                </div>
             </div>
          </div>
