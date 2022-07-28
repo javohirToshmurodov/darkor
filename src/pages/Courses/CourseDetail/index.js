@@ -1,6 +1,6 @@
 import { Skeleton, Spin } from 'antd'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
@@ -10,9 +10,8 @@ import TitleH1 from '../../../components/TitleH1'
 import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
-import Faq from '../../../components/FAQ'
 import { Collapse } from 'antd';
-import ReactPlayer from 'react-player'
+import Partnership from '../../../components/Partnership'
 const CourseDetails = () => {
    const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
    const { Panel } = Collapse;
@@ -24,7 +23,7 @@ const CourseDetails = () => {
    const [skills, setSkills] = useState([])
    const [active, setActive] = useState(false)
    const [faq, setFaq] = useState([])
-
+   const navigate = useNavigate()
    const getCourseDetails = async () => {
       try {
          setActive(true)
@@ -92,12 +91,12 @@ const CourseDetails = () => {
                         </a>
                         <a href='#teachingProgram'>{t("teachingProgram")}</a>
                         <a href='#teachers'>{t("ourTeachers")}</a>
-                        <a href='#'>{t("graduates")}</a>
+                        <a href='#graduates'>{t("graduates")}</a>
                         <a href='#price'>{t("priceOfCourse")}</a>
                         <a href='#faq'>{t("questions")}</a>
                      </div>
                      <div className='m-3'>
-                        <button className='btn btn-primary btn-block w-100'>{t("signUp")}</button>
+                        <button onClick={() => navigate("/contact")} className='btn btn-primary btn-block w-100'>{t("signUp")}</button>
                      </div>
 
                   </StickCardCourseDetailWrapper>
@@ -173,6 +172,13 @@ const CourseDetails = () => {
                         {t("specialistTeamDesc")}
                      </p>
                   </div>
+                  <div className="row mt-5 py-5" id="graduates">
+                     <p>
+                        {t("graduated")}
+                     </p>
+                     <TitleH1 title={t("meetourAlumni")} />
+
+                  </div>
                   <div className="row mt-5 py-5" id='price'>
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
@@ -234,15 +240,19 @@ const CourseDetails = () => {
                         }
                      </Collapse>
                   </div>
+
                </div>
             </div>
 
             <hr />
 
-            <div className="mt-5 py-5">
 
-               <ContactWithUs />
-            </div>
+         </div>
+         <div className="mt-5 py-5">
+            <Partnership />
+         </div>
+         <div className="mt-5 py-5">
+            <ContactWithUs />
          </div>
          <div className="mt-5">
             <Footer />
