@@ -200,9 +200,9 @@ const CoursesCrud = () => {
          ],
          price: {
             price: `${price}`,
-            offersUz: [...offersUz],
-            offersRu: [...offersRu],
-            offersEn: [...offersEn]
+            offersUz: [`${offersUz}`],
+            offersRu: [`${offersRu}`],
+            offersEn: [`${offersEn}`],
          },
          course: {
             nameUz: `${coursenameUz}`,
@@ -222,7 +222,10 @@ const CoursesCrud = () => {
             ],
          }
       }).then((res) => {
-         console.log(res.data);
+         console.log("qoyilee");
+         alert(
+            "qoyil bratan addushi - kurs saqlandi - yorvordiz"
+         )
       }).catch((err) => console.log(err))
    }
    return (

@@ -3,7 +3,6 @@ import React from "react";
 const Media = ({ data, loading }) => {
   let count = 0;
   console.log(data, "datataaa");
-  x;
   return (
     <div className="container w-100">
       {data.body?.map((item) => (
