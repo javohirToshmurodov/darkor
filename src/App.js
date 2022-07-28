@@ -13,6 +13,7 @@ import About from "./pages/AboutCompany"
 import Courses from './pages/Courses'
 import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
+import AdminService from "./components/AdminService"
 function App() {
   return (
     <>
@@ -27,6 +28,7 @@ function App() {
         <Route path='services' element={<Services />} />
         <Route path='experts' element={<Experts />} />
         <Route path='admin' element={<Admin />} >
+          <Route path='service' element={<AdminService />} />
           <Route path='create-employee' element={<CreateEmployee />} />
           <Route path='courses' element={<CoursesCrud />} />
           <Route path='courses_info' element={<CourseInfo />} />
