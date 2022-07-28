@@ -238,28 +238,28 @@ const CoursesCrud = () => {
                      <h3>Coursedetail adding here</h3>
                      <Form.Group className="mb-3" controlId="formBasictitleDescriptionUz">
                         <Form.Label >titleDescription Uz</Form.Label>
-                        <Form.Control onChange={(e) => setTitleDescriptionUz(e.target.value)} type="text" placeholder="Enter titleDescription" />
+                        <Form.Control onChange={(e) => setTitleDescriptionUz(e.target.value)} type="text" required placeholder="Enter titleDescription" />
                      </Form.Group>
                      <Form.Group className='mb-3' controlId='formBasictitleDescriptionRu'>
                         <Form.Label >titleDescription RU</Form.Label>
-                        <Form.Control onChange={(e) => setTitleDescriptionRu(e.target.value)} type="text" placeholder="Enter titleDesription" />
+                        <Form.Control onChange={(e) => setTitleDescriptionRu(e.target.value)} type="text" required placeholder="Enter titleDesription" />
                      </Form.Group>
                      <Form.Group className='mb-3' controlId='formBasicnameEn'>
                         <Form.Label >titleDescription Eng</Form.Label>
-                        <Form.Control onChange={(e) => setTitleDescriptionEn(e.target.value)} type="text" placeholder="Enter titledescriptionen" />
+                        <Form.Control onChange={(e) => setTitleDescriptionEn(e.target.value)} type="text" required placeholder="Enter titledescriptionen" />
                      </Form.Group>
 
                      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                         <Form.Label>Description Uz</Form.Label>
-                        <Form.Control onChange={(e) => setDescriptionUz(e.target.value)} as="textarea" rows={3} />
+                        <Form.Control onChange={(e) => setDescriptionUz(e.target.value)} as="textarea" required rows={3} />
                      </Form.Group>
                      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea2">
                         <Form.Label>Description Ru</Form.Label>
-                        <Form.Control onChange={(e) => setDescriptionRu(e.target.value)} as="textarea" rows={3} />
+                        <Form.Control required onChange={(e) => setDescriptionRu(e.target.value)} as="textarea" rows={3} />
                      </Form.Group>
                      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea3">
                         <Form.Label>Description Eng</Form.Label>
-                        <Form.Control onChange={(e) => setDescriptionEn(e.target.value)} as="textarea" rows={3} />
+                        <Form.Control required onChange={(e) => setDescriptionEn(e.target.value)} as="textarea" rows={3} />
                      </Form.Group>
                      <hr />
                      <h3 className='my-3'>Add media for course detail</h3>
@@ -267,19 +267,19 @@ const CoursesCrud = () => {
                         <div>
                            <Form.Group className='mb-3' controlId='formFileUz'>
                               <Form.Label>Media Uz</Form.Label>
-                              <Form.Control onChange={(e) => handleFileMediaUz(e.target.files[0])} name="fileUz" type='file' placeholder='file Uz' />
+                              <Form.Control required onChange={(e) => handleFileMediaUz(e.target.files[0])} name="fileUz" type='file' placeholder='file Uz' />
                            </Form.Group>
                         </div>
                         <div>
                            <Form.Group className='mb-3' controlId='formFileRu'>
                               <Form.Label>Media Ru</Form.Label>
-                              <Form.Control onChange={(e) => handleFileMediaRu(e.target.files[0])} name="fileRu" type='file' placeholder='file Ru' />
+                              <Form.Control required onChange={(e) => handleFileMediaRu(e.target.files[0])} name="fileRu" type='file' placeholder='file Ru' />
                            </Form.Group>
                         </div>
                         <div>
                            <Form.Group className='mb-3' controlId='formFileEn'>
                               <Form.Label>Media Eng</Form.Label>
-                              <Form.Control onChange={(e) => handleFileMediaEn(e.target.files[0])} name="fileEn" type='file' placeholder='file Uz' />
+                              <Form.Control required onChange={(e) => handleFileMediaEn(e.target.files[0])} name="fileEn" type='file' placeholder='file Uz' />
                            </Form.Group>
                         </div>
                      </div>

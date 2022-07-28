@@ -61,6 +61,7 @@ const CourseDetails = () => {
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
          setEmployees([...res.data.body])
+         console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })

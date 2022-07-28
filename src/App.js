@@ -13,11 +13,8 @@ import About from "./pages/AboutCompany"
 import Courses from './pages/Courses'
 import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
-<<<<<<< HEAD
-import StatisticsCrud from './pages/Admin/StatisticsCrud'
-=======
 import AdminService from "./components/AdminService"
->>>>>>> b255358fa277d7c410a6884f16b63e18070b9db5
+import StatisticsCrud from './pages/Admin/StatisticsCrud'
 function App() {
   return (
     <>
