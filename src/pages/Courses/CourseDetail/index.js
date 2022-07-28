@@ -21,6 +21,7 @@ const CourseDetails = () => {
    const [data, setData] = useState(false)
    const [loading, setLoading] = useState(true)
    const [skills, setSkills] = useState([])
+   const [employees, setEmployees] = useState([])
    const [active, setActive] = useState(false)
    const [faq, setFaq] = useState([])
    const navigate = useNavigate()
@@ -28,7 +29,6 @@ const CourseDetails = () => {
       try {
          setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
-         console.log(res.data);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
@@ -59,14 +59,15 @@ const CourseDetails = () => {
    }, [id])
 
    const getEmployeeDetails = () => {
-      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/69a15795-351e-4ff3-82e5-42c8680bea99`).then((res) => {
-         console.log(res.data);
+      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
+         setEmployees([...res.data.body])
       }).catch((err) => {
          console.log(err);
       })
    }
    useEffect(() => {
       getEmployeeDetails()
+      console.log(employees);
       getFaq()
    }, [courseDetail?.course?.code])
 
@@ -165,12 +166,15 @@ const CourseDetails = () => {
                         <hr />
                      </div>
                   </div>
-                  <div className="row py-5 mt-5" id="teachers">
+                  <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
                      <p>
                         {t("specialistTeamDesc")}
                      </p>
+                     <div className="row">
+
+                     </div>
                   </div>
                   <div className="row mt-5 py-5" id="graduates">
                      <p>
