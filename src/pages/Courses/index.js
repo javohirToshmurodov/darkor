@@ -31,7 +31,7 @@ const Courses = () => {
          <div className=''>
             <div className="container ">
                <CarouselSlider />
-               <div className="row mt-5">
+               <div className="row mt-5 align-items-start justify-content-center">
                   {
                      courses.map((e, i) => <DefaultCard code={e.id} key={e.id} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
                   }

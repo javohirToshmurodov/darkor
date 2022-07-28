@@ -9,7 +9,7 @@ export default function DefaultCard(props) {
       <DefaultCardWrapper>
         <img className='img-fluid' src={props.img} alt="" />
         <div className="pe-5">
-          <h5 className='title mt-2'>{t("coursename")}: {props.title}</h5>
+          <h4 className='mt-2'>{t("coursename")}: {props.title}</h4>
           <p className='subtitle'>{props.subtitle}</p>
         </div>
         <div className="line"></div>

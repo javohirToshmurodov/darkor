@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
-import { CoursePriceCardWrapper } from '../../../styles/index'
+import { CoursePriceCardWrapper, StickCardCourseDetailWrapper } from '../../../styles/index'
 import { ThunderboltOutlined } from '@ant-design/icons'
 import TitleH1 from '../../../components/TitleH1'
 import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
@@ -13,6 +13,7 @@ import ContactWithUs from '../../../components/ContactWithUs'
 import Faq from '../../../components/FAQ'
 import { Collapse } from 'antd';
 const CourseDetails = () => {
+   const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
    const { Panel } = Collapse;
    const { id } = useParams()
    const { t, i18n } = useTranslation()
@@ -58,8 +59,7 @@ const CourseDetails = () => {
    }, [id])
 
    const getEmployeeDetails = () => {
-
-      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
+      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/69a15795-351e-4ff3-82e5-42c8680bea99`).then((res) => {
          console.log(res.data);
       }).catch((err) => {
          console.log(err);
@@ -77,10 +77,32 @@ const CourseDetails = () => {
             <CarouselSlider />
 
             <div className="row">
-               <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+               <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4">
+                  <StickCardCourseDetailWrapper className='mt-5 position-sticky '>
+                     <div className='m-3'>
+                        <h5>{t("coursename")}: {courseDetail?.course?.name}</h5>
+                        <hr />
+                     </div>
+
+                     <div className=''>
+                        <a
+                           href='#aboutcourse'>
+                           {t("allaboutCourse")}
+                        </a>
+                        <a href='#teachingProgram'>{t("teachingProgram")}</a>
+                        <a href='#teachers'>{t("ourTeachers")}</a>
+                        <a href='#'>{t("graduates")}</a>
+                        <a href='#price'>{t("priceOfCourse")}</a>
+                        <a href='#faq'>{t("questions")}</a>
+                     </div>
+                     <div className='m-3'>
+                        <button className='btn btn-primary btn-block w-100'>{t("signUp")}</button>
+                     </div>
+
+                  </StickCardCourseDetailWrapper>
                </div>
-               <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
-                  <div className="row mt-4">
+               <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 mt-4">
+                  <div className="row" id='aboutcourse'>
                      {
                         courseDetail?.course?.name && <p className='m-0 d-flex align-items-center mt-5'>
                            {t("overviewCourse")} {courseDetail?.course?.name}
@@ -111,7 +133,7 @@ const CourseDetails = () => {
                      }
                   </div>
                   <hr />
-                  <div className="row py-5 mt-5">
+                  <div className="row py-5 mt-5" id='teachingProgram'>
                      <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12">
                         <p>{t("skillProgram")}</p>
                         <TitleH1 title={t("whatYouLearn")} />
@@ -143,14 +165,14 @@ const CourseDetails = () => {
                         <hr />
                      </div>
                   </div>
-                  <div className="row py-5 mt-5">
+                  <div className="row py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
                      <p>
                         {t("specialistTeamDesc")}
                      </p>
                   </div>
-                  <div className="row mt-5 py-5">
+                  <div className="row mt-5 py-5" id='price'>
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
                      <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
@@ -174,7 +196,7 @@ const CourseDetails = () => {
                               }
                            </ul>
 
-                           <button className="btn btn-primary btn-block w-100">Запишитесь сейчас</button>
+                           <button className="btn btn-primary btn-block w-100">{t("signUp")}</button>
                         </CoursePriceCardWrapper>
 
                      </div>
@@ -199,7 +221,7 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
-                  <div className="mt-5 py-5">
+                  <div className="mt-5 py-5" id='faq'>
                      <h1>
                         Faq is here
                      </h1>
