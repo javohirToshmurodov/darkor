@@ -12,7 +12,6 @@ import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
 import Faq from '../../../components/FAQ'
 import { Collapse } from 'antd';
-import ReactPlayer from 'react-player'
 const CourseDetails = () => {
    const { Panel } = Collapse;
    const { id } = useParams()

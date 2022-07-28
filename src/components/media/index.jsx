@@ -2,7 +2,7 @@ import React from "react";
 
 const Media = ({ data, loading }) => {
   let count = 0;
-
+  console.log(data, "datataaa");
   return (
     <div className="container w-100">
       {data.body?.map((item) => (
@@ -22,9 +22,10 @@ const Media = ({ data, loading }) => {
                 className="rounded media w-lg-50 w-100"
               />
             ) : (
-              <video controls autoPlay className="media">
-                <source src={item.gallery.url} type="video/*" />
-              </video>
+              <iframe
+                className="media"
+                src={`https://www.youtube.com/embed/${item.youTubeVideo}`}
+              ></iframe>
             )}
           </div>
           <div className="content w-lg-50 w-md-50 mx-auto">

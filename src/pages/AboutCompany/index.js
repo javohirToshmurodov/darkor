@@ -1,9 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { Spin } from "antd";
+import Header from "../../components/header";
+import { useTranslation } from "react-i18next";
+import icon from "../../assets/icons/chevronForward.svg";
+import Media from "../../components/media";
+import { instance } from "../../redux/actions";
+import ServiseStatistics from "../../components/ServiseStatistics";
+import Partnership from "../../components/Partnership";
 
 const AboutCompany = () => {
-   return (
-      <div>AboutCompany</div>
-   )
-}
+  const [state, setState] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const getMedia = async () => {
+    setLoading(true);
+    try {
+      const res = await instance.get("api/v1/post/list?size=10&page=0");
+      setState(res.data);
+      console.log(res.data);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+    }
+  };
 
-export default AboutCompany
+  useEffect(() => {
+    getMedia();
+  }, []);
+
+  const { t, i18n } = useTranslation();
+  return (
+    <Spin spinning={loading}>
+      <Header
+        link={t("companyTitle")}
+        title={t("contactTitle")}
+        description={t("contactDescription")}
+        firstButtonTitle={t("contactHeaderButton")}
+        icon={icon}
+      />
+      <Media data={state} loading={loading} setLoading={setLoading} />
+      <ServiseStatistics />
+      <div className="mt-5">
+        <Partnership />
+      </div>
+    </Spin>
+  );
+};
+
+export default AboutCompany;
