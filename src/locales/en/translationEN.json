@@ -42,23 +42,12 @@
   "cetrificate": "CERTIFICATE",
   "certificateDarkor": "Certificate of Darkor 22",
   "certificateDesc": "It will confirm that you have completed the course and will become an additional argument when applying for a job.",
-<<<<<<< HEAD
-  "contactLink":"Contacts",
-  "contactTitle":"Everything you need, we have",
-  "contactDescription":"There is a controversial point of view, which says something like this: actively developing countries of the third world are associatively distributed over.",
-  "contactHeaderButton":"Submit your application",
-  "contactInfoDescription":"Cartels do not allow a situation in which the direct participants in technological progress can be described in as much detail as possible.",
-  "companyTitle":"About company"
-
-  
-
-
-=======
   "contactLink": "Contacts",
   "contactTitle": "Everything you need, we have",
   "contactDescription": "There is a controversial point of view, which says something like this: actively developing countries of the third world are associatively distributed over.",
   "contactHeaderButton": "Submit your application",
   "contactInfoDescription": "Cartels do not allow a situation in which the direct participants in technological progress can be described in as much detail as possible.",
+  "companyTitle": "About company",
   "allaboutCourse": "About course",
   "teachingProgram": "Teaching method",
   "ourSchedule": "Our schedule",
@@ -66,11 +55,6 @@
   "graduates": "Graduates",
   "priceOfCourse": "Price",
   "questions": "Questions",
-<<<<<<< HEAD
   "signUp": "Sign up now",
   "meetourAlumni": "Meet with our Alumni"
-=======
-  "signUp": "Sign up now"
->>>>>>> 0bceeec7ca1f2ebca40ae7c6416e1b7a0ad260cb
->>>>>>> beef902da36cbe92a30e1db7ac3edf7844918dde
 }

@@ -42,18 +42,6 @@
   "cetrificate": "Sertifikat",
   "certificateDarkor": "Darkor 22 Sertifikati",
   "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi..",
-<<<<<<< HEAD
-  "contactLink":"Kontaktlar",
-  "contactTitle":"Sizga kerak bo'lgan hamma narsa bizda",
-  "contactDescription":"Munozarali nuqtai nazar mavjud bo'lib, u quyidagicha aytadi: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ tarzda taqsimlanadi.",
-  "contactHeaderButton":"Arizangizni yuboring",
-  "contactInfoDescription":"Kartellar texnologik taraqqiyotning bevosita ishtirokchilari imkon qadar batafsil tavsiflanishi mumkin bo'lgan vaziyatga yo'l qo'ymaydi.",
-  "companyTitle":"Kompaniya haqida"
-
-
-  
-  
-=======
   "contactLink": "Kontaktlar",
   "contactTitle": "Sizga kerak bo'lgan hamma narsa bizda",
   "contactDescription": "Munozarali nuqtai nazar mavjud bo'lib, u quyidagicha aytadi: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ tarzda taqsimlanadi.",
@@ -66,11 +54,6 @@
   "graduates": "Bitiruvchilar",
   "priceOfCourse": "Narxi",
   "questions": "Savollar",
-<<<<<<< HEAD
   "signUp": "Hoziroq qo'shilish",
   "meetourAlumni": "Bitiruvchilarimiz bilan uchrashuv"
-=======
-  "signUp": "Hoziroq qo'shilish"
->>>>>>> 0bceeec7ca1f2ebca40ae7c6416e1b7a0ad260cb
->>>>>>> beef902da36cbe92a30e1db7ac3edf7844918dde
 }
