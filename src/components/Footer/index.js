@@ -7,10 +7,10 @@ import { InstagramOutlined, } from '@ant-design/icons'
 const Footer = () => {
    const { t, i18n } = useTranslation()
    return (
-      <footer className='footer text-white'>
-         <FooterWrapper>
+      <footer className='footer text-white '>
+         <FooterWrapper >
 
-            <div className="container p-5 mb-5">
+            <div className="container  p-5 mb-5">
                <div className="row p-5">
                   <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                      <h1 className='text-white'>{t("footerH1")}</h1>
