@@ -67,69 +67,71 @@ const Employees = () => {
   }, []);
   return (
     <Spin spinning={loading}>
-      <div className="row">
-        <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
-          <StickCardCourseDetailWrapper
-            className="mt-5 ml-5 position-sticky "
-            style={{ padding: "20px" }}
-          >
-            <h5 className="mt-3 mb-3">Кадры</h5>
+      <div className="container ">
+        <div className="row">
+          <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+            <StickCardCourseDetailWrapper
+              className="mt-5 ml-5 position-sticky "
+              style={{ padding: "20px" }}
+            >
+              <h5 className="mt-3 mb-3">Кадры</h5>
 
-            <div class="input-group">
-              <img
-                style={{
-                  padding: "8px",
-                  border: "1px solid lightgrey",
-                  borderRight: "none",
-                }}
-                src={iconka}
-                alt=""
-              />
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Text input with radio button"
-                placeholder="Запишитесь сейчас"
-                style={{ borderLeft: "none" }}
-              />
-            </div>
-            <ul>
-              {courses.map((e, i) => (
-                <li className="my-3">{e.courses[0].name}</li>
-              ))}
-            </ul>
-          </StickCardCourseDetailWrapper>
-        </div>
-        <div className="mt-4 col-xl-9 col-lg-9 col-m-9 col-sm-12 col-12">
-          <div className="">
-            <div className="container ">
-              {/* <CarouselSlider /> */}
-              <div className="row mt-5 align-items-start justify-content-center">
+              <div class="input-group">
+                <img
+                  style={{
+                    padding: "8px",
+                    border: "1px solid lightgrey",
+                    borderRight: "none",
+                  }}
+                  src={iconka}
+                  alt=""
+                />
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Text input with radio button"
+                  placeholder="Запишитесь сейчас"
+                  style={{ borderLeft: "none" }}
+                />
+              </div>
+              <ul>
                 {courses.map((e, i) => (
-                  <div className="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
-                    <DefaultCardWrapper>
-                      <img
-                        className="img-fluid"
-                        src={e.gallery.url}
-                        alt="rasm"
-                      />
-                      <div className="pe-5">
-                        <h4 className="mt-2">Имя: {e.fullName}</h4>
-                        <p className="subtitle">{e.courses[0].description}</p>
-                      </div>
-                      <div className="line"></div>
-                      <DefaultButton title={"Подробнее"} id={e.code} />
-                    </DefaultCardWrapper>
-                  </div>
-
-                  // <DefaultCard
-                  //   code={e.id}
-                  //   key={e.id}
-                  //   img={e.gallery.url}
-                  //   subtitle={e.description}
-                  //   title={e.name}
-                  // />
+                  <li className="my-3">{e.courses[0].name}</li>
                 ))}
+              </ul>
+            </StickCardCourseDetailWrapper>
+          </div>
+          <div className="mt-4 col-xl-9 col-lg-9 col-m-9 col-sm-12 col-12">
+            <div className="">
+              <div className="container ">
+                {/* <CarouselSlider /> */}
+                <div className="row mt-5 align-items-start justify-content-center">
+                  {courses.map((e, i) => (
+                    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
+                      <DefaultCardWrapper>
+                        <img
+                          className="img-fluid"
+                          src={e.gallery.url}
+                          alt="rasm"
+                        />
+                        <div className="pe-5">
+                          <h4 className="mt-2">Имя: {e.fullName}</h4>
+                          <p className="subtitle">{e.courses[0].description}</p>
+                        </div>
+                        <div className="line"></div>
+                        <DefaultButton title={"Подробнее"} id={e.code} />
+                      </DefaultCardWrapper>
+                    </div>
+
+                    // <DefaultCard
+                    //   code={e.id}
+                    //   key={e.id}
+                    //   img={e.gallery.url}
+                    //   subtitle={e.description}
+                    //   title={e.name}
+                    // />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

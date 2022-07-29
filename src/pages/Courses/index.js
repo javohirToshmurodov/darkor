@@ -8,31 +8,20 @@ import Footer from "../../components/Footer";
 import { instance } from "../../redux/actions";
 
 const Courses = () => {
-<<<<<<< HEAD
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(false);
   const getCourses = () => {
     setLoading(true);
     instance
-      .get("api/v1/course/list/?size=10&page=0")
+      .get("api/v1/course/list/?size=10&page=1")
       .then((res) => {
-        // console.log(res.data.body);
+        console.log(res.data.body);
         setCourses([...res.data.body]);
         setLoading(false);
-=======
-   const { id } = useParams()
-   const [courses, setCourses] = useState([])
-   const [loading, setLoading] = useState(false)
-   const getCourses = () => {
-      setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=1").then((res) => {
-         console.log(res.data.body);
-         setCourses([...res.data.body])
-         setLoading(false)
-      }).catch((err) => {
-         console.log(err);
->>>>>>> 08bde1edc28be52cdc9cc2c1b316ed3914e103b7
+      })
+      .catch((err) => {
+        console.log(err);
       })
       .catch((err) => {
         console.log(err);
