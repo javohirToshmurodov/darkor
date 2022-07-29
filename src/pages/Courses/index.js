@@ -31,14 +31,14 @@ const Courses = () => {
          <div className=''>
             <div className="container ">
                <CarouselSlider />
-               <div className="row mt-5 align-items-start justify-content-center">
+               <div className="mt-5 row align-items-start justify-content-center">
                   {
                      courses.map((e, i) => <DefaultCard code={e.id} key={e.id} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
                   }
                </div>
             </div>
          </div>
-         <div className='container my-5 px-5'>
+         <div className='container px-5 my-5'>
             <ContactWithUs />
          </div>
          <div className='pt-5'>

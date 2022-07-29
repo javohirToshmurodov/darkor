@@ -15,7 +15,11 @@ import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
 import AdminService from "./components/AdminService"
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
+<<<<<<< HEAD
 import Form from './pages/Admin/Form'
+=======
+import ExpertDetail from './pages/Experts/ExpertDetail'
+>>>>>>> d81a87dc511226d0521c9c44095c571ec2d279b3
 function App() {
   return (
     <>
@@ -29,6 +33,7 @@ function App() {
         <Route path='courses/:id' element={<CourseDetails />} />
         <Route path='services' element={<Services />} />
         <Route path='experts' element={<Experts />} />
+        <Route path='experts/:id' element={<ExpertDetail />} />
         <Route path='admin' element={<Admin />} >
           <Route path='service' element={<AdminService />} />
           <Route path='create-employee' element={<CreateEmployee />} />

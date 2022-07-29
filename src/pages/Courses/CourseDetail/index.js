@@ -61,6 +61,7 @@ const CourseDetails = () => {
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
          setEmployees([...res.data.body])
+         console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })
@@ -78,7 +79,7 @@ const CourseDetails = () => {
             <CarouselSlider />
 
             <div className="row">
-               <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 mt-4">
+               <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                   <StickCardCourseDetailWrapper className='mt-5 position-sticky '>
                      <div className='m-3'>
                         <h5>{t("coursename")}: {courseDetail?.course?.name}</h5>
@@ -102,10 +103,10 @@ const CourseDetails = () => {
 
                   </StickCardCourseDetailWrapper>
                </div>
-               <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12 mt-4">
+               <div className="mt-4 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
                   <div className="row" id='aboutcourse'>
                      {
-                        courseDetail?.course?.name && <p className='m-0 d-flex align-items-center mt-5'>
+                        courseDetail?.course?.name && <p className='m-0 mt-5 d-flex align-items-center'>
                            {t("overviewCourse")} {courseDetail?.course?.name}
                         </p>
                      }
@@ -124,7 +125,7 @@ const CourseDetails = () => {
                   } */}
                      {
                         courseDetail?.file?.map((e, i) => <div>
-                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='img-fluid mb-2' />}
+                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='mb-2 img-fluid' />}
                         </div>
                         )
                      }
@@ -134,7 +135,7 @@ const CourseDetails = () => {
                      }
                   </div>
                   <hr />
-                  <div className="row py-5 mt-5" id='teachingProgram'>
+                  <div className="py-5 mt-5 row" id='teachingProgram'>
                      <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12">
                         <p>{t("skillProgram")}</p>
                         <TitleH1 title={t("whatYouLearn")} />
@@ -176,24 +177,24 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
-                  <div className="row mt-5 py-5" id="graduates">
+                  <div className="py-5 mt-5 row" id="graduates">
                      <p>
                         {t("graduated")}
                      </p>
                      <TitleH1 title={t("meetourAlumni")} />
 
                   </div>
-                  <div className="row mt-5 py-5" id='price'>
+                  <div className="py-5 mt-5 row" id='price'>
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
                      <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
                      <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 ">
 
-                        <CoursePriceCardWrapper className='flex-column d-flex align-items-start p-4 mt-5'>
-                           <div className='circlePrice mt-4 mx-auto text-center'>
+                        <CoursePriceCardWrapper className='p-4 mt-5 flex-column d-flex align-items-start'>
+                           <div className='mx-auto mt-4 text-center circlePrice'>
                               <ThunderboltOutlined />
                            </div>
-                           <h1 className='fw-bold mt-3 text-center mx-auto' style={{ "fontSize": "48px", "lineHeight": "60px", "letterSpacing": "-0.0em" }}>{courseDetail?.price?.price}/uzs</h1>
+                           <h1 className='mx-auto mt-3 text-center fw-bold' style={{ "fontSize": "48px", "lineHeight": "60px", "letterSpacing": "-0.0em" }}>{courseDetail?.price?.price}/uzs</h1>
                            <p style={{ "color": "#8E8E93" }} className='mx-auto'>
                               {t("pricePerMonth")}
                            </p>
@@ -212,7 +213,7 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
-                  <div className="mt-5 py-5">
+                  <div className="py-5 mt-5">
                      <p>
                         {t("cetrificate")}
                      </p>
@@ -232,7 +233,7 @@ const CourseDetails = () => {
 
                      </div>
                   </div>
-                  <div className="mt-5 py-5" id='faq'>
+                  <div className="py-5 mt-5" id='faq'>
                      <h1>
                         Faq is here
                      </h1>
@@ -252,10 +253,10 @@ const CourseDetails = () => {
 
 
          </div>
-         <div className="mt-5 py-5">
+         <div className="py-5 mt-5">
             <Partnership />
          </div>
-         <div className="mt-5 py-5">
+         <div className="py-5 mt-5">
             <ContactWithUs />
          </div>
          <div className="mt-5">
