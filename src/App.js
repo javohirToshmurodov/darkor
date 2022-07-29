@@ -16,6 +16,7 @@ import CreateEmployee from './components/createEmployeAdmin'
 import AdminService from "./components/AdminService"
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import ExpertDetail from './pages/Experts/ExpertDetail'
+import CoursesTable from './pages/Admin/CoursesTable'
 function App() {
   return (
     <>
@@ -36,7 +37,7 @@ function App() {
           <Route path='courses' element={<CoursesCrud />} />
           <Route path='courses_info' element={<CourseInfo />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
-
+          <Route path='coursetable' element={<CoursesTable />} />
         </Route>
 
       </Routes>
