@@ -16,6 +16,9 @@ import CreateEmployee from "./components/createEmployeAdmin";
 import Employees from "./components/Employees";
 import CourseTable from "./pages/Admin/CoursesTable"
 import EmployeeDetail from "./components/Employees/EmployeeDetail";
+import StatisticsCrud from './pages/Admin/StatisticsCrud'
+import Form from './pages/Admin/Form'
+import AdminService from "./components/AdminService"
 import ExpertDetail from "./pages/Experts/ExpertDetail";
 function App() {
   return (
@@ -38,6 +41,9 @@ function App() {
           <Route path="courses" element={<CoursesCrud />} />
           <Route path="courses_info" element={<CourseInfo />} />
           <Route path="coursetable" element={<CourseTable />} />
+          <Route path='service' element={<AdminService />} />
+          <Route path='statiscs' element={<StatisticsCrud />} />
+          <Route path='form' element={<Form />} />
         </Route>
       </Routes>
     </>
