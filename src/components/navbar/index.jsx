@@ -43,7 +43,9 @@ function OffcanvasExample() {
   ];
 
   const navigate = useNavigate();
-
+  const changeLanguage = (ln) => {
+    console.log(ln);
+  };
   return (
     <Container>
       <Navbar className="my-4" collapseOnSelect expand="lg" variant="light">
@@ -79,13 +81,21 @@ function OffcanvasExample() {
             </Nav>
             <Nav className="d-flex justify-content-center align-items-center">
               <Dropdown>
-                <Dropdown.Toggle id="dropdown-basic" className="custom-btn">
+                <Dropdown.Toggle
+                  onChange={() => changeLanguage("ru")}
+                  id="dropdown-basic"
+                  className="custom-btn"
+                >
                   RU
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">UZ</Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">EN</Dropdown.Item>
+                  <Dropdown.Item onClick={() => console.log("uz")}>
+                    UZ
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={() => console.log("en")}>
+                    EN
+                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
               <div className="line ms-2 d-sm-none d-lg-block"></div>

@@ -1,36 +1,38 @@
-import { Spin } from 'antd'
+import { Skeleton, Spin } from 'antd'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
-import { CoursePriceCardWrapper } from '../../../styles/index'
+import { CoursePriceCardWrapper, StickCardCourseDetailWrapper } from '../../../styles/index'
 import { ThunderboltOutlined } from '@ant-design/icons'
 import TitleH1 from '../../../components/TitleH1'
 import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
-import Title from 'antd/lib/skeleton/Title'
+import Footer from '../../../components/Footer'
+import ContactWithUs from '../../../components/ContactWithUs'
+import { Collapse } from 'antd';
+import Partnership from '../../../components/Partnership'
 const CourseDetails = () => {
+   const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
+   const { Panel } = Collapse;
    const { id } = useParams()
    const { t, i18n } = useTranslation()
    const [courseDetail, setCourseDetails] = useState({})
    const [data, setData] = useState(false)
    const [loading, setLoading] = useState(true)
    const [skills, setSkills] = useState([])
-
-   const getEmployeeDetails = () => {
-      instance.get(`api/v1/employee/get_by_course/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
-         console.log("employee", res.data);
-      }).catch((err) => {
-         console.log(err);
-      })
-   }
+   const [employees, setEmployees] = useState([])
+   const [active, setActive] = useState(false)
+   const [faq, setFaq] = useState([])
+   const navigate = useNavigate()
    const getCourseDetails = async () => {
       try {
+         setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
-         console.log(res.data.body);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
+         setActive(false)
 
       } catch (err) {
          console.log(err);
@@ -40,30 +42,69 @@ const CourseDetails = () => {
    const getSkills = () => {
       instance.get("/api/v1/skill/list?size=10&page=0").then((res) => {
          setSkills([...res.data.body])
+      }).catch((err) => {
+         console.log(err);
+      })
+   }
+   const getFaq = () => {
+      setLoading(true)
+      instance.get(`/api/v1/faq/list_by_course_code/${courseDetail?.course?.code}?size=10&page=0&lang=uz`).then((res) => {
+         setFaq([...res.data.body])
+         setLoading(false)
+      }).catch((err) => console.log(err))
+   }
+   useEffect(() => {
+      getCourseDetails()
+      getSkills()
+   }, [id])
+
+   const getEmployeeDetails = () => {
+      courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
+         setEmployees([...res.data.body])
          console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })
    }
    useEffect(() => {
-      getCourseDetails()
-      getSkills()
       getEmployeeDetails()
-   }, [id])
-   useEffect(() => {
-   }, [courseDetail])
+      console.log(employees);
+      getFaq()
+   }, [courseDetail?.course?.code])
+
    return (
 
-      <Spin spinning={loading} >
+      <Spin spinning={loading}>
          <div className="container">
             <CarouselSlider />
 
             <div className="row">
-               <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+               <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                  <StickCardCourseDetailWrapper className='mt-5 position-sticky '>
+                     <div className='m-3'>
+                        <h5>{t("coursename")}: {courseDetail?.course?.name}</h5>
+                        <hr />
+                     </div>
 
+                     <div className=''>
+                        <a
+                           href='#aboutcourse'>
+                           {t("allaboutCourse")}
+                        </a>
+                        <a href='#teachingProgram'>{t("teachingProgram")}</a>
+                        <a href='#teachers'>{t("ourTeachers")}</a>
+                        <a href='#graduates'>{t("graduates")}</a>
+                        <a href='#price'>{t("priceOfCourse")}</a>
+                        <a href='#faq'>{t("questions")}</a>
+                     </div>
+                     <div className='m-3'>
+                        <button onClick={() => navigate("/contact")} className='btn btn-primary btn-block w-100'>{t("signUp")}</button>
+                     </div>
+
+                  </StickCardCourseDetailWrapper>
                </div>
-               <div className="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
-                  <div className="mt-4 row">
+               <div className="mt-4 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                  <div className="row" id='aboutcourse'>
                      {
                         courseDetail?.course?.name && <p className='m-0 mt-5 d-flex align-items-center'>
                            {t("overviewCourse")} {courseDetail?.course?.name}
@@ -83,12 +124,18 @@ const CourseDetails = () => {
                      <img className='mt-5' src={courseDetail?.file[0]?.url} alt="" />
                   } */}
                      {
-                        courseDetail?.file?.map((e, i) => <img src={e.url} alt="" />
+                        courseDetail?.file?.map((e, i) => <div>
+                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='mb-2 img-fluid' />}
+                        </div>
                         )
+                     }
+                     {
+                        <iframe className='mt-3' width="320" height="497" src={`https://www.youtube.com/embed/${courseDetail.youtubeVideo}`} >
+                        </iframe>
                      }
                   </div>
                   <hr />
-                  <div className="py-5 mt-5 row">
+                  <div className="py-5 mt-5 row" id='teachingProgram'>
                      <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12">
                         <p>{t("skillProgram")}</p>
                         <TitleH1 title={t("whatYouLearn")} />
@@ -120,14 +167,24 @@ const CourseDetails = () => {
                         <hr />
                      </div>
                   </div>
-                  <div className="py-5 mt-5 row">
+                  <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
                      <p>
                         {t("specialistTeamDesc")}
                      </p>
+                     <div className="row">
+
+                     </div>
                   </div>
-                  <div className="py-5 mt-5 row">
+                  <div className="py-5 mt-5 row" id="graduates">
+                     <p>
+                        {t("graduated")}
+                     </p>
+                     <TitleH1 title={t("meetourAlumni")} />
+
+                  </div>
+                  <div className="py-5 mt-5 row" id='price'>
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
                      <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
@@ -151,12 +208,12 @@ const CourseDetails = () => {
                               }
                            </ul>
 
-                           <button className="btn btn-primary btn-block w-100">Запишитесь сейчас</button>
+                           <button className="btn btn-primary btn-block w-100">{t("signUp")}</button>
                         </CoursePriceCardWrapper>
 
                      </div>
                   </div>
-                  <div className="py-5 mt-5 row">
+                  <div className="py-5 mt-5">
                      <p>
                         {t("cetrificate")}
                      </p>
@@ -164,11 +221,46 @@ const CourseDetails = () => {
                      <p>
                         {t("certificateDesc")}
                      </p>
+                     <div className="row">
+                        {
+                           courseDetail?.file?.map((e, i) => <div className='' key={i}>
+                              {
+                                 e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
+                              }
+                           </div>)
+                        }
+
+
+                     </div>
                   </div>
+                  <div className="py-5 mt-5" id='faq'>
+                     <h1>
+                        Faq is here
+                     </h1>
+                     <Collapse className='mt-4' defaultActiveKey={['1']} >
+                        {
+                           faq?.map((e, i) => <Panel header={e.question}>
+                              <p>{e.answer}</p>
+                           </Panel>)
+                        }
+                     </Collapse>
+                  </div>
+
                </div>
             </div>
 
             <hr />
+
+
+         </div>
+         <div className="py-5 mt-5">
+            <Partnership />
+         </div>
+         <div className="py-5 mt-5">
+            <ContactWithUs />
+         </div>
+         <div className="mt-5">
+            <Footer />
          </div>
       </Spin>
 

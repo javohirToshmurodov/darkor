@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
 export const DefaultCardWrapper = styled.div`
+word-break: break-word;
+display: flex;
+align-items: flex-start;
+justify-content: center;
+flex-direction: column;
   .line {
     width: 40%;
     height: 1px;
@@ -8,8 +13,8 @@ export const DefaultCardWrapper = styled.div`
     margin: 20px 0;
   }
   img{
-    width: 320px;
-    height: 260px;
+    width: 320px !important;
+    height: 260px !important;
     min-height: 260px;
     border-radius: 16px;
   }
@@ -145,4 +150,28 @@ export const CoursePriceCardWrapper = styled.div`
 border: 1px solid #E5E5EA;
 box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.1), 0px 4px 6px -2px rgba(16, 24, 40, 0.05);
 border-radius: 16px;
+`
+
+export const StickCardCourseDetailWrapper = styled.div`
+border: 1px solid;
+/* position: sticky; */
+top: 30px;
+border: 1.5px solid #E5E5EA;
+border-radius: 16px;
+a{
+  display: block;
+  text-decoration: none;
+  font-weight: 400;
+font-size: 16px;
+line-height: 20px;
+color: #1C1C1E !important;
+padding: 10px 20px;
+
+  &.active-link{
+    color: red;
+  }
+  &:hover{
+    background-color: #EBEBF599;
+  }
+}
 `

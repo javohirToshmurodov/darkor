@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { FaCommentDots, FaQuestion, FaList } from "react-icons/fa"
+import { BiBarChartAlt } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
 import { useNavigate } from 'react-router-dom';
 const Admin = () => {
@@ -20,6 +21,16 @@ const Admin = () => {
          pathname: "faq",
          icon: <FaQuestion />,
          name: "FAQ"
+      },
+      {
+         pathname: "statiscs",
+         icon: <BiBarChartAlt />,
+         name: "Statiscs"
+      },
+      {
+         pathname: 'create-employee',
+         icon: '',
+         name: 'Create Employee',
       },
    ])
    return (

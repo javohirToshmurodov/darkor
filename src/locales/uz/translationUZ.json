@@ -48,5 +48,18 @@
   "attention": "E'tibor bering.",
   "expertSection1Description": "Bunga o'xshash munozarali nuqtai nazar mavjud: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ ravishda taqsimlanadi.",
   "expertSection1BtnText": "Biz bilan bog'lanish",
-  "expertProfession": "Kasbi bo'yicha mutaxassis "
+  "expertProfession": "Kasbi bo'yicha mutaxassis ",
+  "contactLink": "Kontaktlar",
+  "contactTitle": "Sizga kerak bo'lgan hamma narsa bizda",
+  "contactDescription": "Munozarali nuqtai nazar mavjud bo'lib, u quyidagicha aytadi: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ tarzda taqsimlanadi.",
+  "contactHeaderButton": "Arizangizni yuboring",
+  "contactInfoDescription": "Kartellar texnologik taraqqiyotning bevosita ishtirokchilari imkon qadar batafsil tavsiflanishi mumkin bo'lgan vaziyatga yo'l qo'ymaydi.",
+  "allaboutCourse": "Kurs haqida umumiy",
+  "teachingProgram": "O'qitish usuli",
+  "ourSchedule": "Bizning jadval",
+  "ourTeachers": "Bizning o'qituvchilar",
+  "graduates": "Bitiruvchilar",
+  "priceOfCourse": "Narxi",
+  "questions": "Savollar",
+  "signUp": "Hoziroq qo'shilish"
 }

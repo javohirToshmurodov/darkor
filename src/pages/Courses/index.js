@@ -14,7 +14,7 @@ const Courses = () => {
    const getCourses = () => {
       setLoading(true)
       instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
-         console.log(res.data.body);
+         // console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
       }).catch((err) => {
@@ -31,12 +31,10 @@ const Courses = () => {
          <div className=''>
             <div className="container ">
                <CarouselSlider />
-               <div className="mt-5 row">
+               <div className="mt-5 row align-items-start justify-content-center">
                   {
                      courses.map((e, i) => <DefaultCard code={e.id} key={e.id} img={e.galleries[0].url} subtitle={e.description} title={e.name} />)
                   }
-
-
                </div>
             </div>
          </div>
