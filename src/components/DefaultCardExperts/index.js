@@ -15,7 +15,6 @@ export default function DefaultExpertCard(props) {
                 <div className="line"></div>
                 <DefaultButton title={t("expertbtntext")} id={props.code} />
             </DefaultCardWrapper>
-
         </div>
     )
 }

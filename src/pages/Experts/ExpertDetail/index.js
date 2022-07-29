@@ -28,7 +28,7 @@ function ExpertDetail(props) {
     return (
         <Spin spinning={loading}>
             <div className='container divide-y-2 divide-gray-300 '>
-                {/* <CarouselSlider /> */}
+                <CarouselSlider />
                 <div className='container'>
                     <p className='text-base font-semibold uppercase'>{t("descriptionExpert")}</p>
                     {
