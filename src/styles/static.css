@@ -9,12 +9,15 @@
   color: #2c2c2e;
 }
 .custom-card div p {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
+/* .container_emplo {
+  padding: 0 140 !important;
+} */
 .title {
   font-style: normal;
   font-weight: 700;

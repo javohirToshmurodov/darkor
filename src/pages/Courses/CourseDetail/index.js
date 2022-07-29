@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
-import { CoursePriceCardWrapper, StickCardCourseDetailWrapper } from '../../../styles/index'
+import { CoursePriceCardWrapper, EmployeeImgWrapper, StickCardCourseDetailWrapper } from '../../../styles/index'
 import { ThunderboltOutlined } from '@ant-design/icons'
 import TitleH1 from '../../../components/TitleH1'
 import { CheckCircleFilled, CheckOutlined } from "@ant-design/icons"
@@ -61,6 +61,7 @@ const CourseDetails = () => {
 
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
+         console.log(res.data.body);
          setEmployees([...res.data.body])
       }).catch((err) => {
          console.log(err);
@@ -69,6 +70,7 @@ const CourseDetails = () => {
    useEffect(() => {
       getEmployeeDetails()
       getFaq()
+      console.log(employees);
    }, [courseDetail?.course?.code])
 
    return (
@@ -169,11 +171,23 @@ const CourseDetails = () => {
                   <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
-                     {
-                        employees?.titleDescription && <p>
-                           {employees?.titleDescription}
-                        </p>
-                     }
+                     {employees?.map((e, i) => <div className='row  my-4'>
+                        <div className="col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
+                           <div>
+                              <EmployeeImgWrapper src={e.galleries[0].url} alt="" />
+                           </div>
+                        </div>
+                        <div className="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                           <div>
+                              <p className='mt-4'>{t("teacher")}</p>
+                              <h2 className='fw-bold'>{e.employee.fullName}</h2>
+                              <p className='fw-bold'>
+                                 {e.bodyDescription}
+                              </p>
+                           </div>
+                        </div>
+                     </div>)}
+
                      <div className="row">
 
                      </div>
