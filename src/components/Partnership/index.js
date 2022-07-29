@@ -29,7 +29,7 @@ const Partnership = () => {
                <p className='subtitle'>{t("partnershipSubtitle")}</p>
             </div>
             <div className="container px-5 py-5">
-               <div className="row px-5">
+               <div className="px-5 row">
                   {
                      partners.map((e, i) => <PartnersCard key={e.id} linkTo={e?.link} img={e?.logo?.url} />)
                   }
