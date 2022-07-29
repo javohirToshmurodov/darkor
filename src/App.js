@@ -45,7 +45,7 @@ function App() {
           <Route path="coursetable" element={<CourseTable />} />
           <Route path="coursetable/:id" element={<EditCouresModal />} />
           <Route path="form" element={<Form />} />
-          <Route path='service' element={<AdminService />} />
+          <Route path='service' element={<ServiceCRUD />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
           <Route path='form' element={<Forms />} />
         </Route>
