@@ -1,16 +1,3 @@
-// import React from "react";
-
-// const Employees = () => {
-//   return (
-//     <div>
-//       Eployees Eployees Eployees Eployees Eployees Eployees Eployees Eployees
-//       Eployees Eployees
-//     </div>
-//   );
-// };
-
-// export default Employees;
-
 import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -28,12 +15,15 @@ const Employees = () => {
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [search, setSearch] = useState("");
   const { Panel } = Collapse;
   const [loading, setLoading] = useState(false);
   const getCourses = () => {
     setLoading(true);
     instance
-      .get("http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1")
+      .get(
+        "http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1"
+      )
       .then((res) => {
         console.log(res.data.body);
         setCourses([...res.data.body]);
@@ -43,10 +33,6 @@ const Employees = () => {
         console.log(err);
       });
   };
-  // useEffect(() => {
-  //   getCourses();
-  //   console.log("courses", courses);
-  // }, []);
 
   const getFaq = () => {
     setLoading(true);
@@ -62,7 +48,7 @@ const Employees = () => {
 
   useEffect(() => {
     getCourses();
-    // console.log("courses", courses);
+    console.log("courses", courses);
     getFaq();
   }, []);
   return (
@@ -92,11 +78,12 @@ const Employees = () => {
                   aria-label="Text input with radio button"
                   placeholder="Запишитесь сейчас"
                   style={{ borderLeft: "none" }}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
               <ul>
                 {courses.map((e, i) => (
-                  <li className="my-3">{e.courses[0].name}</li>
+                  <li className="my-3 hover">{e.courses[0].name}</li>
                 ))}
               </ul>
             </StickCardCourseDetailWrapper>
@@ -107,29 +94,33 @@ const Employees = () => {
                 {/* <CarouselSlider /> */}
                 <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
-                    <div className="mb-5 col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
-                      <DefaultCardWrapper>
-                        <img
-                          className="img-fluid"
-                          src={e.gallery.url}
-                          alt="rasm"
-                        />
-                        <div className="pe-5">
-                          <h4 className="mt-2">Имя: {e.fullName}</h4>
-                          <p className="subtitle">{e.courses[0].description}</p>
-                        </div>
-                        <div className="line"></div>
-                        <DefaultButton title={"Подробнее"} id={e.code} />
-                      </DefaultCardWrapper>
-                    </div>
+                    <div className="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
+                      <div className="mb-5 col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
+                        <DefaultCardWrapper>
+                          <img
+                            className="img-fluid"
+                            src={e.gallery.url}
+                            alt="rasm"
+                          />
+                          <div className="pe-5">
+                            <h4 className="mt-2">Имя: {e.fullName}</h4>
+                            <p className="subtitle">
+                              {e.courses[0].description}
+                            </p>
+                          </div>
+                          <div className="line"></div>
+                          <DefaultButton title={"Подробнее"} id={e.code} />
+                        </DefaultCardWrapper>
+                      </div>
 
-                    // <DefaultCard
-                    //   code={e.id}
-                    //   key={e.id}
-                    //   img={e.gallery.url}
-                    //   subtitle={e.description}
-                    //   title={e.name}
-                    // />
+                      <DefaultCard
+                        code={e.id}
+                        key={e.id}
+                        img={e.gallery.url}
+                        subtitle={e.description}
+                        title={e.name}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>

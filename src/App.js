@@ -20,6 +20,8 @@ import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import Form from './pages/Admin/Form'
 import ServiceCRUD from "./pages/Admin/ServiceCRUD"
 import ExpertDetail from "./pages/Experts/ExpertDetail";
+import Forms from "./pages/Admin/Form"
+import EditCouresModal from "./components/EditCourseModal";
 function App() {
   return (
     <>
@@ -41,9 +43,11 @@ function App() {
           <Route path="courses" element={<CoursesCrud />} />
           <Route path="courses_info" element={<CourseInfo />} />
           <Route path="coursetable" element={<CourseTable />} />
-          <Route path='service' element={<ServiceCRUD />} />
+          <Route path="coursetable/:id" element={<EditCouresModal />} />
+          <Route path="form" element={<Form />} />
+          <Route path='service' element={<AdminService />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
-          <Route path='form' element={<Form />} />
+          <Route path='form' element={<Forms />} />
         </Route>
       </Routes>
     </>

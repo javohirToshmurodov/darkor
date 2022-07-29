@@ -240,7 +240,7 @@ const CourseDetails = () => {
                         {
                            courseDetail?.file?.map((e, i) => <div className='' key={i}>
                               {
-                                 e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
+                                 e.fileType && e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
                               }
                            </div>)
                         }

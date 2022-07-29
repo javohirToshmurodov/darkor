@@ -6,6 +6,7 @@ import { CourseImgWrapper } from '../../../styles';
 import { FaPenAlt, FaTrashAlt } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import EditCouresModal from '../../../components/EditCourseModal';
+import { useNavigate } from 'react-router-dom';
 const CoursesTable = () => {
    const [courses, setCourses] = useState([])
    const [loading, setLoading] = useState(false)
@@ -13,10 +14,10 @@ const CoursesTable = () => {
    const [courseId, setCourseId] = useState("")
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
-
+   const navigate = useNavigate()
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=1").then((res) => {
+      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
          console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
@@ -40,7 +41,7 @@ const CoursesTable = () => {
 
    const openEdit = (event, id) => {
       setCourseId(id)
-      return setShow(true)
+      navigate(`${id}`)
    }
 
    return (
@@ -84,9 +85,9 @@ const CoursesTable = () => {
                      </td>
                   </tr>)
                }
-               {
+               {/* {
                   show ? <EditCouresModal id={courseId} show={show} handleClose={handleClose} handleShow={handleClose} /> : ""
-               }
+               } */}
             </tbody>
          </Table>
       </Spin>
