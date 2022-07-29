@@ -2,7 +2,6 @@ import { Route, Routes, useParams } from 'react-router-dom'
 import Admin from './pages/Admin'
 import Home from './pages/Home'
 import { Navigate } from 'react-router-dom'
-import CrudComponents from './pages/Admin/CrudComponents'
 import CoursesCrud from './pages/Admin/CoursesCrud'
 import CourseInfo from './pages/Admin/Course_Info'
 import OffcanvasExample from './components/navbar'
@@ -29,7 +28,7 @@ function App() {
         <Route path='courses/:id' element={<CourseDetails />} />
         <Route path='services' element={<Services />} />
         <Route path='experts' element={<Experts />} />
-        <Route path='experts/:id' element={<ExpertDetail />} />
+        <Route path='experts/:code' element={<ExpertDetail />} />
         <Route path='admin' element={<Admin />} >
           <Route path='service' element={<AdminService />} />
           <Route path='create-employee' element={<CreateEmployee />} />

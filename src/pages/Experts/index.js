@@ -10,7 +10,7 @@ import DefaultButton from '../../components/DefaultButton'
 
 const Experts = () => {
    const { t, i18n } = useTranslation()
-   const { id } = useParams()
+   const { } = useParams()
    const [experts, setExperts] = useState([])
    const [loading, setLoading] = useState(false)
    const getExperts = () => {
@@ -40,7 +40,7 @@ const Experts = () => {
                </div>
                <div className="mt-5 row">
                   {
-                     experts.map((e, i) => <DefaultExpertCard code={e.id} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />)
+                     experts.map((e, i) => <DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />)
                   }
 
 
