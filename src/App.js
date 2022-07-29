@@ -15,6 +15,7 @@ import CourseDetails from "./pages/Courses/CourseDetail";
 import CreateEmployee from "./components/createEmployeAdmin";
 import Employees from "./components/Employees";
 import EmployeeDetail from "./components/Employees/EmployeeDetail";
+import ExpertDetail from "./pages/Experts/ExpertDetail";
 function App() {
   return (
     <>
@@ -30,6 +31,7 @@ function App() {
         <Route path="employee/:id" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
         <Route path="experts" element={<Experts />} />
+        <Route path="experts/:code" element={<ExpertDetail />} />
         <Route path="admin" element={<Admin />}>
           <Route path="create-employee" element={<CreateEmployee />} />
           <Route path="courses" element={<CoursesCrud />} />

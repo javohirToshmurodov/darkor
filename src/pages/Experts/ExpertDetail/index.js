@@ -6,9 +6,11 @@ import { useTranslation } from 'react-i18next'
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
 import { useEffect, useState } from 'react'
+import DefaultExpertCard from '../../../components/DefaultCardExperts'
 
 function ExpertDetail(props) {
     const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
+    const { t, i18n } = useTranslation()
     const { code } = useParams()
     const [employee, setEmployee] = useState({})
     const [loading, setLoading] = useState(false)
@@ -16,7 +18,7 @@ function ExpertDetail(props) {
         setLoading(true)
         instance.get(`/api/v1/employee_detail/get_by_employee/${code}`).then((res) => {
             console.log("2", res.data.body);
-            setEmployee([...res.data.body])
+            setEmployee({ ...res.data.body })
             setLoading(false)
         }).catch((err) => {
             console.log(err);
@@ -28,7 +30,13 @@ function ExpertDetail(props) {
     return (
         <Spin spinning={loading}>
             <div className='container'>
-                <CarouselSlider />
+                {/* <CarouselSlider /> */}
+                <div className='container'>
+                    <p className='text-base font-semibold uppercase'>{t("descriptionExpert")}</p>
+                    {
+                        <h1>{employee?.titleDescription}</h1>
+                    }
+                </div>
             </div>
         </Spin>
     );
