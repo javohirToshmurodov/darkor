@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next'
 import iconka from "../../assets/icons/searchIcon.svg";
 import DefaultButton from '../../components/DefaultButton'
 import { StickCardCourseDetailWrapper } from '../../styles'
-
 const Experts = () => {
    const { t, i18n } = useTranslation()
    const [experts, setExperts] = useState([])

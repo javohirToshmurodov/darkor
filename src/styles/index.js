@@ -188,3 +188,9 @@ export const CourseImgWrapper = styled.img`
   border-radius: 50%;
   object-fit: cover;
 `
+export const EmployeeImgWrapper = styled.img`
+min-height: 395px;
+border-radius: 24px;
+object-fit: cover;
+
+`

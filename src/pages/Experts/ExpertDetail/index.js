@@ -5,9 +5,7 @@ import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
-import { useEffect, useState } from 'react'
-import DefaultExpertCard from '../../../components/DefaultCardExperts'
-
+import { useState, useEffect } from 'react'
 function ExpertDetail(props) {
     const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
     const { t, i18n } = useTranslation()

@@ -69,7 +69,7 @@ const Employees = () => {
     <Spin spinning={loading}>
       <div className="container ">
         <div className="row">
-          <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+          <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <StickCardCourseDetailWrapper
               className="mt-5 ml-5 position-sticky "
               style={{ padding: "20px" }}
@@ -107,7 +107,11 @@ const Employees = () => {
                 {/* <CarouselSlider /> */}
                 <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
+<<<<<<< HEAD
                     <div className="mb-5 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
+=======
+                    <div className="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
+>>>>>>> 0cff9ebee04d35d196d4dfb85347b5225b2c2c1f
                       <DefaultCardWrapper>
                         <img
                           className="img-fluid"
