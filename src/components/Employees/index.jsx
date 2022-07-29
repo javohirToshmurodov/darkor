@@ -33,7 +33,9 @@ const Employees = () => {
   const getCourses = () => {
     setLoading(true);
     instance
-      .get("http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1")
+      .get(
+        "http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1"
+      )
       .then((res) => {
         console.log(res.data.body);
         setCourses([...res.data.body]);
@@ -107,11 +109,7 @@ const Employees = () => {
                 {/* <CarouselSlider /> */}
                 <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
-<<<<<<< HEAD
-                    <div className="mb-5 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
-=======
                     <div className="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
->>>>>>> 0cff9ebee04d35d196d4dfb85347b5225b2c2c1f
                       <DefaultCardWrapper>
                         <img
                           className="img-fluid"
