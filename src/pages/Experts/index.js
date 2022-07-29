@@ -10,7 +10,6 @@ import DefaultButton from '../../components/DefaultButton'
 
 const Experts = () => {
    const { t, i18n } = useTranslation()
-   const { } = useParams()
    const [experts, setExperts] = useState([])
    const [loading, setLoading] = useState(false)
    const getExperts = () => {
