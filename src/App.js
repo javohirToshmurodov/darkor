@@ -15,6 +15,7 @@ import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
 import AdminService from "./components/AdminService"
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
+import Form from './pages/Admin/Form'
 import ExpertDetail from './pages/Experts/ExpertDetail'
 import CoursesTable from './pages/Admin/CoursesTable'
 function App() {
@@ -37,10 +38,10 @@ function App() {
           <Route path='courses' element={<CoursesCrud />} />
           <Route path='courses_info' element={<CourseInfo />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
-          <Route path='coursetable' element={<CoursesTable />} />
-        </Route>
+          <Route path='form' element={<Form />} />
+        </Route >
 
-      </Routes>
+      </Routes >
     </>
   )
 }

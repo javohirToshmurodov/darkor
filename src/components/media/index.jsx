@@ -3,6 +3,10 @@ import React from "react";
 const Media = ({ data, loading }) => {
   let count = 0;
   console.log(data, "datataaa");
+<<<<<<< HEAD
+  
+=======
+>>>>>>> d81a87dc511226d0521c9c44095c571ec2d279b3
   return (
     <div className="container w-100">
       {data.body?.map((item) => (

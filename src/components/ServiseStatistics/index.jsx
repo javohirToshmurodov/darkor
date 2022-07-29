@@ -32,7 +32,7 @@ const ServiseStatistics = () => {
       <div className="row mt-4">
         {
             state.map(({description,id,number,title})=>
-        <div key={id}  class=" col-xl-3 mt-3 col-lg-4 col-md-6 col-sm-6 col-12 ">
+        <div key={id}  className=" col-xl-3 mt-3 col-lg-4 col-md-6 col-sm-6 col-12 ">
           <CardStatistiks title={number} subTitle={title}  text2={description}/>
         </div>
                 
