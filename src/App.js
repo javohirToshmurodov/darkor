@@ -15,11 +15,9 @@ import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
 import AdminService from "./components/AdminService"
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
-<<<<<<< HEAD
-import Form from './pages/Admin/Form'
-=======
 import ExpertDetail from './pages/Experts/ExpertDetail'
->>>>>>> d81a87dc511226d0521c9c44095c571ec2d279b3
+import Form from './pages/Admin/Form'
+
 function App() {
   return (
     <>
