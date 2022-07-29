@@ -1,7 +1,7 @@
 import { Form } from 'antd'
 import { Button } from 'bootstrap'
 import React, { useEffect, useState } from 'react'
-import { instance } from '../../redux/actions'
+import { instance } from '../../../redux/actions'
 
 const CreateService = () => {
   const [data, setData] = useState({

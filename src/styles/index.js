@@ -194,3 +194,8 @@ border-radius: 24px;
 object-fit: cover;
 
 `
+export const UploadedImg = styled.img`
+width: 100px;
+border-radius: 10px;
+height: 100px;
+`

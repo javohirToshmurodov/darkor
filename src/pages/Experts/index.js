@@ -72,7 +72,7 @@ const Experts = () => {
                         </ul>
                      </StickCardCourseDetailWrapper>
                   </div>
-                  <div className='mt-4 col-xl-9 col-lg-9 col-m-9 col-sm-12 col-12'>
+                  <div className='mt-4 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12'>
                      <div className="items-center justify-between mt-5 row">
                         {
                            experts.map((e, i) => <DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />)

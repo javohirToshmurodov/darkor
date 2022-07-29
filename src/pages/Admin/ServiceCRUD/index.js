@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CreateService from './createService'
 import GetAllServices from './allServices'
 
-const AdminService = () => {
+const ServiceCRUD = () => {
   const data = [
     {
       component: <CreateService />,
@@ -31,4 +31,4 @@ const AdminService = () => {
   )
 }
 
-export default AdminService
+export default ServiceCRUD
