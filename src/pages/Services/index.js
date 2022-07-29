@@ -1,66 +1,81 @@
-import React, { useEffect, useState } from 'react'
-import { Spin } from 'antd'
-import Header from '../../components/header'
-import { instance } from '../../redux/actions'
-import { useTranslation } from 'react-i18next'
-import Media from '../../components/media'
-import Static from '../../components/static'
-import { Collapse } from 'antd'
-import Partnership from '../../components/Partnership'
-import Footer from '../../components/Footer'
+import React, { useEffect, useState } from "react";
+import { Spin } from "antd";
+import Header from "../../components/header";
+import { instance } from "../../redux/actions";
+import { useTranslation } from "react-i18next";
+import Media from "../../components/media";
+import Static from "../../components/static";
+import { Collapse } from "antd";
+import Partnership from "../../components/Partnership";
+import Footer from "../../components/Footer";
+import HomeService from "../../components/HomeServise";
+import ServiceStatic from "../../components/ServiseStatistics";
 
 const Services = () => {
-   const { Panel } = Collapse
-   const [state, setState] = useState([])
-   const [loading, setLoading] = useState(false)
-   const [faq, setFaq] = useState([])
+   const { Panel } = Collapse;
+   const [state, setState] = useState([]);
+   const [loading, setLoading] = useState(false);
+   const [faq, setFaq] = useState([]);
    const getMedia = async () => {
-      setLoading(true)
+      setLoading(true);
       try {
-         const res = await instance.get('api/v1/post/list?size=10&page=0')
-         setState(res.data)
-         console.log(res.data)
-         setLoading(false)
+         const res = await instance.get("api/v1/post/list?size=10&page=0");
+         setState(res.data);
+         console.log(res.data);
+         setLoading(false);
       } catch (err) {
-         setLoading(false)
+         setLoading(false);
       }
-   }
+   };
 
    const getFaq = () => {
-      setLoading(true)
+      setLoading(true);
       instance
          .get(`api/v1/faq/list?size=10&page=0&lang=uz`)
          .then((res) => {
-            console.log('Bu result', res)
-            setFaq([...res.data.body])
-            setLoading(false)
+            console.log("Bu result", res);
+            setFaq([...res.data.body]);
+            setLoading(false);
          })
-         .catch((err) => console.log(err))
-   }
+         .catch((err) => console.log(err));
+   };
 
    useEffect(() => {
-      getMedia()
-      getFaq()
-   }, [])
+      getMedia();
+      getFaq();
+   }, []);
 
-   const { t, i18n } = useTranslation()
+   const { t, i18n } = useTranslation();
    return (
       <Spin spinning={loading}>
          <Header
-            link={t('servicesLink')}
-            title={t('servicesTitle')}
-            description={t('servicesDescription')}
-            firstButtonTitle={t('firstButtonTitle')}
-            secondButtonTitle={t('secondButtonTitle')}
+            link={t("servicesLink")}
+            title={t("servicesTitle")}
+            description={t("servicesDescription")}
+            firstButtonTitle={t("firstButtonTitle")}
+            secondButtonTitle={t("secondButtonTitle")}
          />
+
          <Media data={state} loading={loading} setLoading={setLoading} />
+         <ServiceStatic />
+         <HomeService />
          <Static />
-         <div className='mt-4'>
+         <div className="mt-4">
             <Partnership />
          </div>
-         <div className='container mt-4'>
+
+         <div className="container mx-auto mt-4 mb-4 col-12 d-lg-flex justify-content-between align-center">
+            <h1>
+               <span className="text-primary">Запишитесь на курс</span> или получите
+               <br />
+               консультацию
+            </h1>
+            <button className="h-50 btn btn-primary">Связаться с нами</button>
+         </div>
+
+         <div className="container mt-5">
             <h1>Faq is here</h1>
-            <Collapse className='mt-4' defaultActiveKey={['1']}>
+            <Collapse className="mt-4" defaultActiveKey={["1"]}>
                {faq?.map((e, i) => (
                   <Panel header={e.question}>
                      <p>{e.answer}</p>
@@ -68,11 +83,12 @@ const Services = () => {
                ))}
             </Collapse>
          </div>
-         <div className='mt-4'>
+
+         <div className="mt-4">
             <Footer />
          </div>
       </Spin>
-   )
-}
+   );
+};
 
-export default Services
+export default Services;

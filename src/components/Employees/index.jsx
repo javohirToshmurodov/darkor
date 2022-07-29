@@ -33,7 +33,7 @@ const Employees = () => {
   const getCourses = () => {
     setLoading(true);
     instance
-      .get("api/v1/employee/list/?size=10&page=0")
+      .get("http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1")
       .then((res) => {
         console.log(res.data.body);
         setCourses([...res.data.body]);
@@ -69,7 +69,7 @@ const Employees = () => {
     <Spin spinning={loading}>
       <div className="container ">
         <div className="row">
-          <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+          <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <StickCardCourseDetailWrapper
               className="mt-5 ml-5 position-sticky "
               style={{ padding: "20px" }}
@@ -105,9 +105,9 @@ const Employees = () => {
             <div className="">
               <div className="container ">
                 {/* <CarouselSlider /> */}
-                <div className="row mt-5 align-items-start justify-content-center">
+                <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
-                    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
+                    <div className="mb-5 col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
                       <DefaultCardWrapper>
                         <img
                           className="img-fluid"
@@ -137,7 +137,7 @@ const Employees = () => {
           </div>
         </div>
       </div>
-      <div className="container my-5 px-5">
+      <div className="container px-5 my-5">
         <ContactWithUs />
       </div>
       <div className="container mt-4">
