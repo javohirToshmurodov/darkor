@@ -20,7 +20,7 @@ const Header = ({
             } mx-auto btn-container gap-2 text-center`}
         >
           {firstButtonTitle && (
-            <button className='mb-3 btn align-items-center btn-outline-primary d-inline-block custom-btn m-lg-0'>
+            <button className='mb-3 btn align-items-center btn-outline-primary d-flex custom-btn m-lg-0'>
               {firstButtonTitle}
               {icon && (
                 <span className='ml-2'>
@@ -31,7 +31,7 @@ const Header = ({
           )}
           <p></p>
           {secondButtonTitle && (
-            <button className='btn btn-outline-primary d-inline-block custom-btn'>
+            <button className='btn  btn-outline-primary d-inline-block custom-btn'>
               {secondButtonTitle}
             </button>
           )}
