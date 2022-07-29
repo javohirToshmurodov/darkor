@@ -1,12 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { instance } from "../../redux/actions";
 
-const messageForm = () => {
+const MessageForm = () => {
+
+  const [data, setData] = useState({});
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const getData = () => {
+    const res =  instance.post('/api/v1/forum/create', data).then((res) => {
+        alert("Statistikalar muvaffaqiyatli yuklandi");
+        console.log(res.data);
+      })
+      .catch((err) => {
+      alert('xatolik')
+        console.log(err);
+      });
+  };
+
+
+  const handleSubmit = (e) => {
+    console.log(data, "sadasdsadasd");
+    // e.preventDefault()
+    getData();
+  };
   return (
-    <form className="d-grid gap-3">
+    <form onSubmit={handleSubmit} className="d-grid gap-3">
       {/* Name input */}
       <div className="form-group">
-        <label for="formGroupExampleInput">Имя</label>
+        <label htmlFor="formGroupExampleInput">Имя</label>
         <input
+          onChange={handleChange}
+          name="fullName"
           type="text"
           className="form-control"
           id="formGroupExampleInput"
@@ -16,8 +47,10 @@ const messageForm = () => {
       {/* Email input */}
 
       <div className="form-group">
-        <label for="exampleInputEmail1">Email</label>
+        <label htmlFor="exampleInputEmail1">Email (по желанию )</label>
         <input
+          onChange={handleChange}
+          name="email"
           type="email"
           className="form-control"
           id="exampleInputEmail1"
@@ -57,6 +90,8 @@ const messageForm = () => {
         </div>
         <input
           type="text"
+          name="phone"
+          onChange={handleChange}
           placeholder="+998 (99) 897-45-04 "
           className="form-control"
           aria-label="Text input with dropdown button"
@@ -65,22 +100,15 @@ const messageForm = () => {
 
       {/* text area input */}
       <div className="form-group col-xs-4 ">
-        <label className="form-group col-xs-4 col-md-4">Сообщение</label>
-        <textarea className="form-control" id="email"></textarea>
+        <label className="form-group col-xs-4 col-md-4">Сообщение (по желанию )</label>
+        <textarea
+          name="message"
+          onChange={handleChange}
+          className="form-control"
+          id="email"
+        ></textarea>
       </div>
 
-      {/* checkbox input */}
-
-      <div className="form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        />
-        <label className="form-check-label" for="exampleCheck1">
-          Вы соглашаетесь с нашей дружественной политикой конфиденциальности.
-        </label>
-      </div>
       <button type="submit" className="btn btn-primary">
         Отправить сообщение
       </button>
@@ -88,4 +116,4 @@ const messageForm = () => {
   );
 };
 
-export default messageForm;
+export default MessageForm;

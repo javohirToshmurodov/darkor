@@ -42,6 +42,13 @@
   "cetrificate": "Sertifikat",
   "certificateDarkor": "Darkor 22 Sertifikati",
   "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi..",
+  "name": "Ismi: ",
+  "expertbtntext": "Tafsilotlar",
+  "expert": "Mutaxassislar",
+  "attention": "E'tibor bering.",
+  "expertSection1Description": "Bunga o'xshash munozarali nuqtai nazar mavjud: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ ravishda taqsimlanadi.",
+  "expertSection1BtnText": "Biz bilan bog'lanish",
+  "expertProfession": "Kasbi bo'yicha mutaxassis ",
   "contactLink": "Kontaktlar",
   "contactTitle": "Sizga kerak bo'lgan hamma narsa bizda",
   "contactDescription": "Munozarali nuqtai nazar mavjud bo'lib, u quyidagicha aytadi: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ tarzda taqsimlanadi.",
@@ -54,6 +61,5 @@
   "graduates": "Bitiruvchilar",
   "priceOfCourse": "Narxi",
   "questions": "Savollar",
-  "signUp": "Hoziroq qo'shilish",
-  "meetourAlumni": "Bitiruvchilarimiz bilan uchrashuv"
+  "signUp": "Hoziroq qo'shilish"
 }

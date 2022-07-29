@@ -14,8 +14,6 @@ export default function DefaultCard(props) {
           </h4>
           <p className="subtitle">{props.subtitle}</p>
         </div>
-        <div className="line"></div>
-        <DefaultButton title={t("btnText")} id={props.code} />
       </DefaultCardWrapper>
     </div>
   );

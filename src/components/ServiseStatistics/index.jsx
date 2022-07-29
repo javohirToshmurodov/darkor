@@ -5,15 +5,12 @@ import { instance } from '../../redux/actions'
 
 const ServiseStatistics = () => {
     const [state, setState] = useState([]);
-  const [loading, setLoading] = useState(false);
   const getStatistic = async () => {
-    setLoading(true);
     try {
-      const res = await instance.get("api/v1/statistics/list?size=4&page=0");
+      const res = await instance.get("api/v1/statistics/list/SERVICE?size=4&page=0");
       setState(res.data.body);
-      setLoading(false);
     } catch (err) {
-      setLoading(false);
+      console.log(err);
     }
   };
 
@@ -35,7 +32,7 @@ const ServiseStatistics = () => {
       <div className="row mt-4">
         {
             state.map(({description,id,number,title})=>
-        <div key={id}  class=" col-xl-3 mt-3 col-lg-4 col-md-6 col-sm-6 col-12 ">
+        <div key={id}  className=" col-xl-3 mt-3 col-lg-4 col-md-6 col-sm-6 col-12 ">
           <CardStatistiks title={number} subTitle={title}  text2={description}/>
         </div>
                 
