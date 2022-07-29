@@ -5,9 +5,16 @@ import { instance } from '../../../redux/actions';
 import { CourseImgWrapper } from '../../../styles';
 import { FaPenAlt, FaTrashAlt } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
+import EditCouresModal from '../../../components/EditCourseModal';
+import { useNavigate } from 'react-router-dom';
 const CoursesTable = () => {
    const [courses, setCourses] = useState([])
    const [loading, setLoading] = useState(false)
+   const [show, setShow] = useState(false);
+   const [courseId, setCourseId] = useState("")
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
+   const navigate = useNavigate()
    const getCourses = () => {
       setLoading(true)
       instance.get("api/v1/course/list/?size=10&page=1").then((res) => {
@@ -31,6 +38,12 @@ const CoursesTable = () => {
    useEffect(() => {
       getCourses()
    }, [])
+
+   const openEdit = (event, id) => {
+      setCourseId(id)
+      navigate(`${id}`)
+   }
+
    return (
       <Spin spinning={loading}>
          <Table striped bordered hover variant='dark'>
@@ -61,7 +74,7 @@ const CoursesTable = () => {
                      <td className=''>
                         <div className="d-flex gap-2 justify-content-center">
 
-                           <Button variant="warning">
+                           <Button variant="warning" onClick={(event) => openEdit(event, e.id)}>
                               <FaPenAlt />
                            </Button>
                            <Button variant="danger" onClick={(event) => deleteCourse(event, e.id)}>
@@ -72,6 +85,9 @@ const CoursesTable = () => {
                      </td>
                   </tr>)
                }
+               {/* {
+                  show ? <EditCouresModal id={courseId} show={show} handleClose={handleClose} handleShow={handleClose} /> : ""
+               } */}
             </tbody>
          </Table>
       </Spin>
