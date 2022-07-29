@@ -41,5 +41,12 @@
   "teacher": "USTOZ",
   "cetrificate": "Sertifikat",
   "certificateDarkor": "Darkor 22 Sertifikati",
-  "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi.."
+  "certificateDesc": "Bu sizning kursni tugatganingizni tasdiqlaydi va ishga kirishda qo'shimcha dalilga aylanadi..",
+  "name": "Ismi: ",
+  "expertbtntext": "Tafsilotlar",
+  "expert": "Mutaxassislar",
+  "attention": "E'tibor bering.",
+  "expertSection1Description": "Bunga o'xshash munozarali nuqtai nazar mavjud: uchinchi dunyoning faol rivojlanayotgan mamlakatlari assotsiativ ravishda taqsimlanadi.",
+  "expertSection1BtnText": "Biz bilan bog'lanish",
+  "expertProfession": "Kasbi bo'yicha mutaxassis "
 }
