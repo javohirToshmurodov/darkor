@@ -17,7 +17,7 @@ const CoursesTable = () => {
    const navigate = useNavigate()
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=1").then((res) => {
+      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
          console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)

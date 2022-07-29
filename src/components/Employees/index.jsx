@@ -110,29 +110,32 @@ const Employees = () => {
                 <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
                     <div className="col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
-                    <div className="mb-5 col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
-                      <DefaultCardWrapper>
-                        <img
-                          className="img-fluid"
-                          src={e.gallery.url}
-                          alt="rasm"
-                        />
-                        <div className="pe-5">
-                          <h4 className="mt-2">Имя: {e.fullName}</h4>
-                          <p className="subtitle">{e.courses[0].description}</p>
-                        </div>
-                        <div className="line"></div>
-                        <DefaultButton title={"Подробнее"} id={e.code} />
-                      </DefaultCardWrapper>
-                    </div>
+                      <div className="mb-5 col-xl-4 col-lg-6 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
+                        <DefaultCardWrapper>
+                          <img
+                            className="img-fluid"
+                            src={e.gallery.url}
+                            alt="rasm"
+                          />
+                          <div className="pe-5">
+                            <h4 className="mt-2">Имя: {e.fullName}</h4>
+                            <p className="subtitle">
+                              {e.courses[0].description}
+                            </p>
+                          </div>
+                          <div className="line"></div>
+                          <DefaultButton title={"Подробнее"} id={e.code} />
+                        </DefaultCardWrapper>
+                      </div>
 
-                    // <DefaultCard
-                    //   code={e.id}
-                    //   key={e.id}
-                    //   img={e.gallery.url}
-                    //   subtitle={e.description}
-                    //   title={e.name}
-                    // />
+                      <DefaultCard
+                        code={e.id}
+                        key={e.id}
+                        img={e.gallery.url}
+                        subtitle={e.description}
+                        title={e.name}
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
