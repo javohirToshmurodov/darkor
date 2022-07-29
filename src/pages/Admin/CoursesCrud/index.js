@@ -375,7 +375,7 @@ const CoursesCrud = () => {
                         <div>
                            <button onClick={addOffer} className='btn btn-success mb-2'>add offerUz +</button>
                            {
-                              offersUz.map((e, i) => <Form.Group key={i} controlId={`formBasic${i}`}>
+                              offersUz.map((e, i) => <Form.Group key={i} controlId={`formBasssic${i}`}>
                                  <InputGroup className="mb-3">
                                     <Form.Control
                                        onChange={(e) => inputTitleUz(i, e)}
@@ -391,7 +391,7 @@ const CoursesCrud = () => {
                         </div>
                         <button onClick={addOfferRu} className='btn btn-success mb-2'>add offerRu +</button>
                         {
-                           offersRu.map((e, i) => <Form.Group key={`fds${i}`} controlId={`formBasicss${i}`}>
+                           offersRu.map((e, i) => <Form.Group key={`fds${i}`} controlId={`foarmBasicss${i}`}>
                               <InputGroup className="mb-3">
                                  <Form.Control
                                     onChange={(e) => inputTitleRu(i, e)}
@@ -407,7 +407,7 @@ const CoursesCrud = () => {
                         <div>
                            <button onClick={addOfferEn} className='btn btn-success mb-2'>add offerEn +</button>
                            {
-                              offersEn.map((e, i) => <Form.Group key={`fds${i}`} controlId={`formBasicss${i}`}>
+                              offersEn.map((e, i) => <Form.Group key={`fds${i}`} controlId={`foasdrmBasicss${i}`}>
                                  <InputGroup className="mb-3">
                                     <Form.Control
                                        onChange={(e) => inputTitleEn(i, e)}
