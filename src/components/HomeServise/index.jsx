@@ -35,7 +35,7 @@ const HomeServise = () => {
         </div>
         <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12  ">
             <div  className="card">
-            <iframe style={{width:'100%',height:'200%'}} src={`https://www.youtube.com/embed/${state?.youTubeVideo}`}  ></iframe>
+            <iframe style={{ width: "400px", height: "400px"}} src={`https://www.youtube.com/embed/${state?.youTubeVideo}`}  ></iframe>
             </div>
         </div>
       </div>

@@ -18,6 +18,12 @@ flex-direction: column;
     min-height: 260px;
     border-radius: 16px;
   }
+  h4{
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #1C1C1E;
+}
 `
 export const DefaultButtonWrapper = styled.button`
   align-items: center;
@@ -174,4 +180,11 @@ padding: 10px 20px;
     background-color: #EBEBF599;
   }
 }
+`
+
+export const CourseImgWrapper = styled.img`
+  width: 40px;
+  height: 40px ;
+  border-radius: 50%;
+  object-fit: cover;
 `

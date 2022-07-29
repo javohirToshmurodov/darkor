@@ -29,6 +29,7 @@ const CourseDetails = () => {
       try {
          setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
+         console.log(res.data.body);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
@@ -61,14 +62,12 @@ const CourseDetails = () => {
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
          setEmployees([...res.data.body])
-         console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })
    }
    useEffect(() => {
       getEmployeeDetails()
-      console.log(employees);
       getFaq()
    }, [courseDetail?.course?.code])
 
@@ -170,9 +169,11 @@ const CourseDetails = () => {
                   <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
-                     <p>
-                        {t("specialistTeamDesc")}
-                     </p>
+                     {
+                        employees?.titleDescription && <p>
+                           {employees?.titleDescription}
+                        </p>
+                     }
                      <div className="row">
 
                      </div>
@@ -188,7 +189,7 @@ const CourseDetails = () => {
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
                      <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
-                     <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 ">
+                     <div className="col-xl-6 col-lg-6 col-md-6 offset-3 col-sm-12 col-12 ">
 
                         <CoursePriceCardWrapper className='p-4 mt-5 flex-column d-flex align-items-start'>
                            <div className='mx-auto mt-4 text-center circlePrice'>
