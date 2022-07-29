@@ -38,7 +38,7 @@ const Experts = () => {
                   <p className='md:w-[768px] font-normal text-xl leading-[27px] '>{t("expertSection1Description")}</p>
                   <DefaultButton className="text-base font-semibold leading-7 " title={t("expertSection1BtnText")} />
                </div>
-               <div className="mt-5 row">
+               <div className="mt-5 row align-items-start">
                   {
                      experts.map((e, i) => <DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />)
                   }

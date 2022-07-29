@@ -1,5 +1,4 @@
 import { Spin } from 'antd'
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'

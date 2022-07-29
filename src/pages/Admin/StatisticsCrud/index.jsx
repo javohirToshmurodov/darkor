@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { accesstoken, instance } from "../../../redux/actions";
-import axios from "axios";
+import {  instance } from "../../../redux/actions";
 
 const StatisticsCrud = () => {
   const [data, setData] = useState({});
@@ -16,11 +15,6 @@ const StatisticsCrud = () => {
   };
 
   const getData = () => {
-   
-   
-    console.log(data);
-
-    
     const res =  instance.post('/api/v1/statistics/add', data).then((res) => {
         alert("Statistikalar muvaffaqiyatli yuklandi");
       })
@@ -32,7 +26,6 @@ const StatisticsCrud = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     getData();
-    // console.log(data);
   };
   return (
     <div className="row">

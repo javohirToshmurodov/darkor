@@ -15,8 +15,8 @@ const ContactInfo = ({ link, title, description }) => {
         <p>{description}</p>
       </div>
       
-        <div class="row">
-          <div class="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div className="row">
+          <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <ContactCardInfo
               phone="+999 (99) 897-45-04"
               text={t("Пн-Пт с 8 утра до 5 вечера.")}
@@ -24,7 +24,7 @@ const ContactInfo = ({ link, title, description }) => {
               title={t("Номер телефона")}
             />
           </div>
-          <div class="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
+          <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <ContactCardInfo
               phone="darkor22@gmail.com"
               text="Наша дружная команда здесь, чтобы помочь."
@@ -32,7 +32,7 @@ const ContactInfo = ({ link, title, description }) => {
               title="Email"
             />
           </div>
-          <div class="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
+          <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
             <ContactCardInfo
               phone="100 Смит Стрит Коллингвуд Виктория 3066 AU"
               text="Приходите поздороваться в наш офисный штаб."

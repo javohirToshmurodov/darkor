@@ -29,6 +29,7 @@ const CourseDetails = () => {
       try {
          setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
+         console.log(res.data.body);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
@@ -61,14 +62,12 @@ const CourseDetails = () => {
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
          setEmployees([...res.data.body])
-         console.log(res.data.body);
       }).catch((err) => {
          console.log(err);
       })
    }
    useEffect(() => {
       getEmployeeDetails()
-      console.log(employees);
       getFaq()
    }, [courseDetail?.course?.code])
 
@@ -170,9 +169,11 @@ const CourseDetails = () => {
                   <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
-                     <p>
-                        {t("specialistTeamDesc")}
-                     </p>
+                     {
+                        employees?.titleDescription && <p>
+                           {employees?.titleDescription}
+                        </p>
+                     }
                      <div className="row">
 
                      </div>
