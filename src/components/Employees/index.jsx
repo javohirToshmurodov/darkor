@@ -28,6 +28,7 @@ const Employees = () => {
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [search, setSearch] = useState("");
   const { Panel } = Collapse;
   const [loading, setLoading] = useState(false);
   const getCourses = () => {
@@ -92,11 +93,12 @@ const Employees = () => {
                   aria-label="Text input with radio button"
                   placeholder="Запишитесь сейчас"
                   style={{ borderLeft: "none" }}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
               <ul>
                 {courses.map((e, i) => (
-                  <li className="my-3">{e.courses[0].name}</li>
+                  <li className="my-3 hover">{e.courses[0].name}</li>
                 ))}
               </ul>
             </StickCardCourseDetailWrapper>
@@ -108,19 +110,21 @@ const Employees = () => {
                 <div className="row mt-5 align-items-start justify-content-center">
                   {courses.map((e, i) => (
                     <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
-                      <DefaultCardWrapper>
-                        <img
-                          className="img-fluid"
-                          src={e.gallery.url}
-                          alt="rasm"
-                        />
-                        <div className="pe-5">
-                          <h4 className="mt-2">Имя: {e.fullName}</h4>
-                          <p className="subtitle">{e.courses[0].description}</p>
-                        </div>
-                        <div className="line"></div>
-                        <DefaultButton title={"Подробнее"} id={e.code} />
-                      </DefaultCardWrapper>
+                      {e.courses[0].description.includes(search) ? (
+                        <DefaultCardWrapper>
+                          <img className="img-fluid" src={e.gallery.url} />
+                          <div className="pe-5">
+                            <h4 className="mt-2">Имя: {e.fullName}</h4>
+                            <p className="subtitle">
+                              {e.courses[0].description}
+                            </p>
+                          </div>
+                          <div className="line"></div>
+                          <DefaultButton title={"Подробнее"} id={e.code} />
+                        </DefaultCardWrapper>
+                      ) : (
+                        ""
+                      )}
                     </div>
 
                     // <DefaultCard
