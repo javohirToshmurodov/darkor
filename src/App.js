@@ -38,6 +38,7 @@ function App() {
           <Route path='courses' element={<CoursesCrud />} />
           <Route path='courses_info' element={<CourseInfo />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
+          <Route path='coursetable' element={<CoursesTable />} />
           <Route path='form' element={<Form />} />
         </Route >
 

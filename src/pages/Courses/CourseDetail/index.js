@@ -189,7 +189,7 @@ const CourseDetails = () => {
                      <p>{t("price")}</p>
                      <TitleH1 title={t("priceTitle")} />
                      <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
-                     <div className="col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 ">
+                     <div className="col-xl-6 col-lg-6 col-md-6 offset-3 col-sm-12 col-12 ">
 
                         <CoursePriceCardWrapper className='p-4 mt-5 flex-column d-flex align-items-start'>
                            <div className='mx-auto mt-4 text-center circlePrice'>
