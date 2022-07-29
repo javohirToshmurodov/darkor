@@ -1,16 +1,3 @@
-// import React from "react";
-
-// const Employees = () => {
-//   return (
-//     <div>
-//       Eployees Eployees Eployees Eployees Eployees Eployees Eployees Eployees
-//       Eployees Eployees
-//     </div>
-//   );
-// };
-
-// export default Employees;
-
 import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -28,6 +15,7 @@ const Employees = () => {
   const { id } = useParams();
   const [courses, setCourses] = useState([]);
   const [faq, setFaq] = useState([]);
+  const [search, setSearch] = useState("");
   const { Panel } = Collapse;
   const [loading, setLoading] = useState(false);
   const getCourses = () => {
@@ -45,10 +33,6 @@ const Employees = () => {
         console.log(err);
       });
   };
-  // useEffect(() => {
-  //   getCourses();
-  //   console.log("courses", courses);
-  // }, []);
 
   const getFaq = () => {
     setLoading(true);
@@ -64,7 +48,7 @@ const Employees = () => {
 
   useEffect(() => {
     getCourses();
-    // console.log("courses", courses);
+    console.log("courses", courses);
     getFaq();
   }, []);
   return (
@@ -94,11 +78,12 @@ const Employees = () => {
                   aria-label="Text input with radio button"
                   placeholder="Запишитесь сейчас"
                   style={{ borderLeft: "none" }}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
               </div>
               <ul>
                 {courses.map((e, i) => (
-                  <li className="my-3">{e.courses[0].name}</li>
+                  <li className="my-3 hover">{e.courses[0].name}</li>
                 ))}
               </ul>
             </StickCardCourseDetailWrapper>

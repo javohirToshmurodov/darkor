@@ -24,3 +24,8 @@
   font-size: 44px;
   line-height: 56px;
 }
+
+.hover:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
