@@ -5,7 +5,7 @@ import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
-
+import { useState, useEffect } from 'react'
 function ExpertDetail(props) {
     const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
     const [employeeDetail, setEmployeeDetails] = useState({})

@@ -7,7 +7,6 @@ import { instance } from '../../redux/actions'
 import DefaultExpertCard from '../../components/DefaultCardExperts'
 import { useTranslation } from 'react-i18next'
 import DefaultButton from '../../components/DefaultButton'
-
 const Experts = () => {
    const { t, i18n } = useTranslation()
    const { } = useParams()
