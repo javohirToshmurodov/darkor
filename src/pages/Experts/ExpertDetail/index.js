@@ -1,3 +1,4 @@
+import { useEffect , useState } from 'react'
 import { Spin } from 'antd'
 import { useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
@@ -5,7 +6,10 @@ import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
 import Footer from '../../../components/Footer'
 import ContactWithUs from '../../../components/ContactWithUs'
+<<<<<<< HEAD
+=======
 import { useState, useEffect } from 'react'
+>>>>>>> b322ffc5332497fe9aa6fd91c579bac9c8c128a1
 function ExpertDetail(props) {
     const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
     const { t, i18n } = useTranslation()
