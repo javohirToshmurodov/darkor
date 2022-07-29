@@ -1,16 +1,3 @@
-// import React from "react";
-
-// const Employees = () => {
-//   return (
-//     <div>
-//       Eployees Eployees Eployees Eployees Eployees Eployees Eployees Eployees
-//       Eployees Eployees
-//     </div>
-//   );
-// };
-
-// export default Employees;
-
 import { Spin } from "antd";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -44,10 +31,6 @@ const Employees = () => {
         console.log(err);
       });
   };
-  // useEffect(() => {
-  //   getCourses();
-  //   console.log("courses", courses);
-  // }, []);
 
   const getFaq = () => {
     setLoading(true);
@@ -63,7 +46,7 @@ const Employees = () => {
 
   useEffect(() => {
     getCourses();
-    // console.log("courses", courses);
+    console.log("courses", courses);
     getFaq();
   }, []);
   return (
