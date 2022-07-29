@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { FaCommentDots, FaQuestion, FaList } from "react-icons/fa"
+import { FaCommentDots, FaQuestion, FaList, FaTable } from "react-icons/fa"
 import { IoPersonOutline } from "react-icons/io5";
 import { BiBarChartAlt } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
+
 import { useNavigate } from 'react-router-dom';
 const Admin = () => {
    const navigate = useNavigate()
