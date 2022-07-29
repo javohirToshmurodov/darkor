@@ -63,5 +63,6 @@
   "priceOfCourse": "Цены",
   "questions": "Вопросы",
   "signUp": "Запишитесь сейчас",
-  "descriptionExpert": "Описание Эксперт"
+  "descriptionExpert": "Описание Эксперт",
+  "expertSkilName":"Навыки Эксперты"
 }
