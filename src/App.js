@@ -20,7 +20,7 @@ import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import Form from './pages/Admin/Form'
 import AdminService from "./components/AdminService"
 import ExpertDetail from "./pages/Experts/ExpertDetail";
-import Form from "./pages/Admin/Form"
+import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 function App() {
   return (
@@ -47,7 +47,7 @@ function App() {
           <Route path="form" element={<Form />} />
           <Route path='service' element={<AdminService />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
-          <Route path='form' element={<Form />} />
+          <Route path='form' element={<Forms />} />
         </Route>
       </Routes>
     </>
