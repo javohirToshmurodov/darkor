@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import CarouselSlider from '../../../components/Carousel'
 import { instance } from '../../../redux/actions'
 import { useTranslation } from 'react-i18next'
-function index(props) {
+function ExpertDetail(props) {
     return (
         <div>
 
@@ -13,4 +13,4 @@ function index(props) {
     );
 }
 
-export default index;
+export default ExpertDetail;

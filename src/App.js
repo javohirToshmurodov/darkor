@@ -15,6 +15,7 @@ import CourseDetails from './pages/Courses/CourseDetail'
 import CreateEmployee from './components/createEmployeAdmin'
 import AdminService from "./components/AdminService"
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
+import ExpertDetail from './pages/Experts/ExpertDetail'
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
         <Route path='courses/:id' element={<CourseDetails />} />
         <Route path='services' element={<Services />} />
         <Route path='experts' element={<Experts />} />
+        <Route path='experts/:id' element={<ExpertDetail />} />
         <Route path='admin' element={<Admin />} >
           <Route path='service' element={<AdminService />} />
           <Route path='create-employee' element={<CreateEmployee />} />
