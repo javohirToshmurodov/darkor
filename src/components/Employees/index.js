@@ -61,7 +61,7 @@ const Employees = () => {
 
   useEffect(() => {
     getCourses();
-    console.log("courses", courses);
+    // console.log("courses", courses);
     getFaq();
   }, []);
   return (
