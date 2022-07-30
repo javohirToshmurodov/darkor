@@ -31,7 +31,7 @@ const EditCouresModal = (props) => {
    const [secondDescriptionUz, setSecondDescriptionUz] = useState("")
    const [secondDescriptionRu, setSecondDescriptionRu] = useState("")
    const [secondDescriptionEn, setSecondDescriptionEn] = useState("")
-   const [price, setPrice] = useState("")
+   const [price, setPrice] = useState(0)
    const [offersUz, setOffersUz] = useState([])
    const [offersRu, setOffersRu] = useState([])
    const [offersEn, setOffersEn] = useState([])
@@ -193,36 +193,42 @@ const EditCouresModal = (props) => {
 
    const submitCourses = (e) => {
       e.preventDefault()
-      instance.post("/api/v1/courseDetails/update/", {
-         titleDescriptionUz: `${titleDescriptionUz}`,
-         titleDescriptionRu: `${titleDescriptionRu}`,
-         titleDescriptionEn: `${titleDescriptionEn}`,
-         bodyDescriptionUz: `${descriptionUz}`,
-         bodyDescriptionRu: `${descriptionRu}`,
-         bodyDescriptionEn: `${descriptionEn}`,
-         secondTitleDescriptionUz: `${secondTitleUz}`,
-         secondTitleDescriptionRu: `${secondTitleRu}`,
-         secondTitleDescriptionEn: `${secondTitleEn}`,
-         secondBodyDescriptionUz: `${secondDescriptionUz}`,
-         secondBodyDescriptionRu: `${secondDescriptionRu}`,
-         secondBodyDescriptionEn: `${secondDescriptionEn}`,
-         youtubeVideo: `${youtubeLink}`,
-         fileUz: [
+      instance.post(`/api/v1/courseDetails/update/`, {
+         "code": "null",
+         "id": courseEdit?.id,
+         "titleDescriptionUz": `${titleDescriptionUz}`,
+         "titleDescriptionRu": `${titleDescriptionRu}`,
+         "titleDescriptionEn": `${titleDescriptionEn}`,
+         "bodyDescriptionUz": `${descriptionUz}`,
+         "bodyDescriptionRu": `${descriptionRu}`,
+         "bodyDescriptionEn": `${descriptionEn}`,
+         "secondTitleDescriptionUz": `${secondTitleUz}`,
+         "secondTitleDescriptionRu": `${secondTitleRu}`,
+         "secondTitleDescriptionEn": `${secondTitleEn}`,
+         "secondBodyDescriptionUz": `${secondDescriptionUz}`,
+         "secondBodyDescriptionRu": `${secondDescriptionRu}`,
+         "secondBodyDescriptionEn": `${secondDescriptionEn}`,
+         "youtubeVideo": `${youtubeLink}`,
+         "fileUz": [
             { ...fileUz }
          ],
-         fileRu: [
+         "fileRu": [
             { ...fileRu }
          ],
-         fileEn: [
+         "fileEn": [
             { ...fileEn }
          ],
-         price: {
-            price: `${price}`,
-            offersUz: [`${offersUz}`],
-            offersRu: [`${offersRu}`],
-            offersEn: [`${offersEn}`],
+         "price": {
+            "code": courseEdit?.price?.code,
+            "id": courseEdit?.price?.id,
+            price: 4,
+            offersUz: [`string`],
+            offersRu: [`string`],
+            offersEn: [`string`],
          },
-         course: {
+         "course": {
+            code: courseEdit?.course.code,
+            "id": courseEdit?.course?.id,
             nameUz: `${coursenameUz}`,
             nameRu: `${coursenameRu}`,
             nameEn: `${coursenameEn}`,
@@ -484,11 +490,12 @@ const EditCouresModal = (props) => {
                         </div>
                      </Form.Group>
                   </div>
-                  <Button type='submit'>
-                     save
-                  </Button>
+
                </div>
             </div>
+            <Button type='submit'>
+               save
+            </Button>
          </Form>
       </Spin>
    )

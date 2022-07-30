@@ -24,7 +24,7 @@ const CoursesCrud = () => {
    const [secondDescriptionUz, setSecondDescriptionUz] = useState("")
    const [secondDescriptionRu, setSecondDescriptionRu] = useState("")
    const [secondDescriptionEn, setSecondDescriptionEn] = useState("")
-   const [price, setPrice] = useState("")
+   const [price, setPrice] = useState(0)
    const [offersUz, setOffersUz] = useState([])
    const [offersRu, setOffersRu] = useState([])
    const [offersEn, setOffersEn] = useState([])
@@ -198,7 +198,7 @@ const CoursesCrud = () => {
             { ...fileEn }
          ],
          price: {
-            price: `${price}`,
+            price: price,
             offersUz: [`${offersUz}`],
             offersRu: [`${offersRu}`],
             offersEn: [`${offersEn}`],
