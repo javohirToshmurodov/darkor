@@ -56,14 +56,13 @@ const Employees = () => {
       <div className="container ">
         <div className="row">
           <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-            <StickCardCourseDetailWrapper
-              className="mt-5 ml-5 position-sticky "
-              style={{ padding: "20px" }}
-            >
-              <h5 className="mt-3 mb-3">Кадры</h5>
-
-              <div class="input-group">
-                <img
+            <StickCardCourseDetailWrapper className="mt-5 ml-5 position-sticky ">
+              <div className="py-2 px-4">
+                {" "}
+                <h5 className="mt-3 mb-3">Кадры</h5>
+                <hr />
+                <div class="input-group">
+                  {/* <img
                   style={{
                     padding: "8px",
                     border: "1px solid lightgrey",
@@ -71,19 +70,19 @@ const Employees = () => {
                   }}
                   src={iconka}
                   alt=""
-                />
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Text input with radio button"
-                  placeholder="Запишитесь сейчас"
-                  style={{ borderLeft: "none" }}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
+                /> */}
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Text input with radio button"
+                    placeholder="Запишитесь сейчас"
+                    onChange={(e) => setSearch(e.target.value)}
+                  />
+                </div>
               </div>
               <ul>
                 {courses.map((e, i) => (
-                  <li className="my-3 hover">{e.courses[0].name}</li>
+                  <li className="py-2 px-4 hover">{e.courses[0].name}</li>
                 ))}
               </ul>
             </StickCardCourseDetailWrapper>
@@ -111,14 +110,6 @@ const Employees = () => {
                         ""
                       )}
                     </div>
-
-                    // <DefaultCard
-                    //   code={e.id}
-                    //   key={e.id}
-                    //   img={e.gallery.url}
-                    //   subtitle={e.description}
-                    //   title={e.name}
-                    // />
                   ))}
                 </div>
               </div>
