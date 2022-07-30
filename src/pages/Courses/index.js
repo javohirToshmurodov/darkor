@@ -13,7 +13,7 @@ const Courses = () => {
    const [loading, setLoading] = useState(false)
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
+      instance.get("api/v1/course/list/?size=20&page=0").then((res) => {
          console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)

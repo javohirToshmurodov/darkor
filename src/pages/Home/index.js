@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DefaultButton from "../../components/DefaultButton";
 import cardpic from "../../assets/images/cardpic.svg";
 import DefaultCard from "../../components/DefaultCardCourses";
@@ -15,52 +15,36 @@ import Footer from "../../components/Footer";
 import DefaultAllCourseButton from "../../components/DefaultAllCourseButton";
 import Statistics from "../../components/Statistics";
 import HomeServise from "../../components/HomeServise";
+import { instance } from "../../redux/actions";
+import FAQ from '../../components/FAQ'
+import { Spin } from "antd";
 export default function Home() {
    const { t, i18n } = useTranslation();
-   const [courses, setCourses] = useState([
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-      {
-         img: cardpic,
-         title: "Имя курса: Бухгалтер",
-         subtitle: "Продолжительность курса: 10 недель",
-      },
-   ]);
+   const [courses, setCourses] = useState([])
+   const [loading, setLoading] = useState(false)
+   const getCourses = () => {
+      setLoading(true)
+      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
+         console.log(res.data.body);
+         setCourses([...res.data.body])
+         setLoading(false)
+      }).catch((err) => {
+         console.log(err);
+      })
+         .catch((err) => {
+            console.log(err);
+         })
+         .catch((err) => {
+            console.log(err);
+         });
+   };
+
+
+   useEffect(() => {
+      getCourses()
+   }, [])
    return (
-      <div>
+      <Spin spinning={loading}>
          <section>
             <Carousel />
          </section>
@@ -70,11 +54,14 @@ export default function Home() {
          <section>
             <Statistics />
          </section>
-         <section>
+         <section className="container px-5">
             <HomeServise />
          </section>
-         <section className="">
-            <div className="container px-5 py-5 bgCourse">
+         <section className="mt-5">
+            <div className="container px-5 py-5 bgCourse" style={{
+               background: "#F3F3FB",
+               borderRadius: "40px"
+            }}>
                <div className="px-3 row align-items-center">
                   <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
                      <TitleH1 title={t("courseTitleH1")} />
@@ -90,10 +77,10 @@ export default function Home() {
                   {courses.map((e, i) => (
                      <>
                         <DefaultCard
-                           key={i}
-                           title={e.title}
-                           subtitle={e.subtitle}
-                           img={e.img}
+                           key={e.id}
+                           title={e.name}
+                           subtitle={e.decription}
+                           img={e.galleries[0].url}
                         />
                      </>
                   ))}
@@ -106,9 +93,19 @@ export default function Home() {
          <section id="contactus" className="p-5">
             <ContactWithUs />
          </section>
+         <section className="p-5">
+            <div className="container px-4">
+               <div className="row justify-content-center">
+                  <div className="col-9 ">
+                     <TitleH1 title={t("faq")} />
+                     <FAQ />
+                  </div>
+               </div>
+            </div>
+         </section>
          <section className="mt-5">
             <Footer />
          </section>
-      </div>
+      </Spin>
    );
 }
