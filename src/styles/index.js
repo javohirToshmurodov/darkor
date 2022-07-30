@@ -24,6 +24,11 @@ flex-direction: column;
     line-height: 32px;
     color: #1C1C1E;
 }
+p{
+font-size: 20px;
+line-height: 27px;
+color: #3A3A3C;
+}
 `
 export const DefaultButtonWrapper = styled.button`
   align-items: center;

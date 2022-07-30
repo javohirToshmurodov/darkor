@@ -56,7 +56,7 @@ export default function Home() {
          <section>
             <Statistics />
          </section>
-         <section className="container px-5">
+         <section className="container px-5 pb-5">
             <HomeServise />
          </section>
          <section className="mt-5">

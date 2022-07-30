@@ -108,7 +108,10 @@ function OffcanvasExample() {
               )}
             </Nav>
             <Nav className="d-flex justify-content-center align-items-center">
-              <Form.Select onChange={(e) => changeLanguage(e.target.value)}>
+              <Form.Select
+                style={{ width: "70px" }}
+                onChange={(e) => changeLanguage(e.target.value)}
+              >
                 {
                   // languages.map(({ code, name, country_code }) => {
                   //   <Dropdown.Item href="#" key={country_code}>

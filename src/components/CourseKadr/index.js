@@ -28,7 +28,7 @@ function CourseKadr(props) {
           {t("Ourpersonnel")}
         </h3>
         <p className="text-xl not-italic font-semibold leading-7 text-fontColor max-w-[348px] mt-4 mb-28">
-          {t("Ourcoursestools")}
+          {t("ourEmployeestools")}
         </p>
         <DefaultButton title={t("personnelnumber")} />
       </div>
