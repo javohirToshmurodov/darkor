@@ -17,7 +17,7 @@ const HomeServise = () => {
       }, []);
       console.log(state, "sservise");
   return (
-    <div style={{ backgroundColor: "#F2F2F7",marginTop:'5rem' }} className=" container-fluid">
+    <div style={{ backgroundColor: "#F2F2F7",marginTop:'5rem' }} className=" container">
       <div className="row">
         <div className="col-12  col-xl-6 col-lg-6 col-md-6 col-sm-12  p-5 d-flex justify-content-center align-items-center">
           <div className="card  border-0 " style={{width: "70%",backgroundColor: "#F2F2F7"}}>
@@ -35,7 +35,7 @@ const HomeServise = () => {
         </div>
         <div className="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12  ">
             <div  className="card">
-            <iframe style={{ width: "400px", height: "400px"}} src={`https://www.youtube.com/embed/${state?.youTubeVideo}`}  ></iframe>
+            <iframe style={{ width: "100%", height: "400px"}} src={`https://www.youtube.com/embed/${state?.youTubeVideo}`}  ></iframe>
             </div>
         </div>
       </div>
