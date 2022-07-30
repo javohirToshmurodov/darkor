@@ -20,7 +20,7 @@ const Admin = () => {
       {
          pathname: "courses_info",
          icon: <FaCommentDots />,
-         name: "Courses_info"
+         name: "Info-Cour"
       },
       {
          pathname: "faq",
