@@ -16,21 +16,24 @@ import DefaultAllCourseButton from "../../components/DefaultAllCourseButton";
 import Statistics from "../../components/Statistics";
 import HomeServise from "../../components/HomeServise";
 import { instance } from "../../redux/actions";
-import FAQ from '../../components/FAQ'
+import FAQ from "../../components/FAQ";
 import { Spin } from "antd";
 export default function Home() {
    const { t, i18n } = useTranslation();
-   const [courses, setCourses] = useState([])
-   const [loading, setLoading] = useState(false)
+   const [courses, setCourses] = useState([]);
+   const [loading, setLoading] = useState(false);
    const getCourses = () => {
-      setLoading(true)
-      instance.get("api/v1/course/list/?size=12&page=0").then((res) => {
-         console.log(res.data.body);
-         setCourses([...res.data.body])
-         setLoading(false)
-      }).catch((err) => {
-         console.log(err);
-      })
+      setLoading(true);
+      instance
+         .get("api/v1/course/list/?size=10&page=0")
+         .then((res) => {
+            console.log(res.data.body);
+            setCourses([...res.data.body]);
+            setLoading(false);
+         })
+         .catch((err) => {
+            console.log(err);
+         })
          .catch((err) => {
             console.log(err);
          })
@@ -39,10 +42,9 @@ export default function Home() {
          });
    };
 
-
    useEffect(() => {
-      getCourses()
-   }, [])
+      getCourses();
+   }, []);
    return (
       <Spin spinning={loading}>
          <section>
@@ -58,10 +60,13 @@ export default function Home() {
             <HomeServise />
          </section>
          <section className="mt-5">
-            <div className="container px-5 py-5 bgCourse" style={{
-               background: "#F3F3FB",
-               borderRadius: "40px"
-            }}>
+            <div
+               className="container px-5 py-5 bgCourse"
+               style={{
+                  background: "#F3F3FB",
+                  borderRadius: "40px",
+               }}
+            >
                <div className="px-3 row align-items-center">
                   <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
                      <TitleH1 title={t("courseTitleH1")} />
@@ -73,14 +78,13 @@ export default function Home() {
                      <img className="img-fluid" src={undraw} alt="" />
                   </div>
                </div>
-               <div className="px-3 mt-5 row align-items-start justify-content-center">
+               <div className="px-3 mt-5 row">
                   {courses.map((e, i) => (
                      <>
                         <DefaultCard
-                           code={e.id}
                            key={e.id}
                            title={e.name}
-                           subtitle={e.description}
+                           subtitle={e.decription}
                            img={e.galleries[0].url}
                         />
                      </>
