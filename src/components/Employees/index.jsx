@@ -13,7 +13,7 @@ import iconka from "../../assets/icons/searchIcon.svg";
 import DefaultExpertCard from "../DefaultCardExperts";
 
 const Employees = () => {
-  const { id } = useParams();
+  const { code } = useParams();
   const [courses, setCourses] = useState([]);
   const [faq, setFaq] = useState([]);
   const [search, setSearch] = useState("");
@@ -58,7 +58,7 @@ const Employees = () => {
         <div className="row">
           <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <StickCardCourseDetailWrapper className="mt-5 ml-5 position-sticky ">
-              <div className="py-2 px-4">
+              <div className="px-4 py-2">
                 {" "}
                 <h5 className="mt-3 mb-3">Кадры</h5>
                 <hr />
@@ -83,7 +83,7 @@ const Employees = () => {
               </div>
               <ul>
                 {courses.map((e, i) => (
-                  <li className="py-2 px-4 hover">{e.courses[0].name}</li>
+                  <li className="px-4 py-2 hover">{e.courses[0].name}</li>
                 ))}
               </ul>
             </StickCardCourseDetailWrapper>
@@ -94,7 +94,7 @@ const Employees = () => {
                 {/* <CarouselSlider /> */}
                 <div className="mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
-                    <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex mb-5  ">
+                    <div className="mb-5 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
                       {e.courses[0].description.includes(search) ? (
                         <DefaultCardWrapper>
                           <img className="img-fluid" src={e.gallery.url} />

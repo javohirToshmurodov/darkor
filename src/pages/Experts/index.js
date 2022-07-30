@@ -11,6 +11,7 @@ import { StickCardCourseDetailWrapper } from '../../styles'
 const Experts = () => {
    const { t, i18n } = useTranslation()
    const [experts, setExperts] = useState([])
+   const [search, setSearch] = useState("");
    const [loading, setLoading] = useState(false)
    const getExperts = () => {
       setLoading(true)
@@ -63,6 +64,7 @@ const Experts = () => {
                               aria-label="Text input with radio button"
                               placeholder="Запишитесь сейчас"
                               style={{ borderLeft: "none" }}
+                              onChange={(e) => setSearch(e.target.value)}
                            />
                         </div>
                         <ul>
@@ -75,7 +77,11 @@ const Experts = () => {
                   <div className='mt-4 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12'>
                      <div className="items-center justify-between mt-5 row">
                         {
-                           experts.map((e, i) => <DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />)
+                           experts.map((e, i) => (
+                              e.courses[0].description.includes(search) ? (
+                                 < DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />
+                              ) : ("")
+                           ))
                         }
                      </div>
                   </div>
