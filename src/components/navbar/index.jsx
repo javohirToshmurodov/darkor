@@ -7,8 +7,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import CallIcon from "../../assets/icons/Call.png";
 import "../../styles/navbar.css";
-
+import { Form } from "react-bootstrap";
+import i18n from "../../i18n";
+import { useTranslation } from "react-i18next";
 function OffcanvasExample() {
+  const { t, i18next } = useTranslation();
   const menu = [
     {
       name: "Курсы",
@@ -42,9 +45,33 @@ function OffcanvasExample() {
     },
   ];
 
+  const languages = [
+    {
+      code: "uz",
+      name: "UZ",
+      country_code: "uz",
+    },
+    {
+      code: "ru",
+      name: "RU",
+      country_code: "ru",
+    },
+    {
+      code: "en",
+      name: "EN",
+      country_code: "en ",
+    },
+  ];
   const navigate = useNavigate();
-  const changeLanguage = (ln) => {
-    console.log(ln);
+  const changeLanguage = (e) => {
+    // console.log(e.target.value);
+    // i18next.changeLanguage(e.target.value);
+    i18n.changeLanguage(e);
+    console.log(`language ${e} ga o'zgardi`);
+    localStorage.setItem("language", e);
+    return () => {
+      console.log(`language ${e} ga o'zgardi`);
+    };
   };
   return (
     <Container>
@@ -80,24 +107,21 @@ function OffcanvasExample() {
               )}
             </Nav>
             <Nav className="d-flex justify-content-center align-items-center">
-              <Dropdown>
-                <Dropdown.Toggle
-                  onChange={() => changeLanguage("ru")}
-                  id="dropdown-basic"
-                  className="custom-btn"
-                >
-                  RU
-                </Dropdown.Toggle>
+              <Form.Select onChange={(e) => changeLanguage(e.target.value)}>
+                {
+                  // languages.map(({ code, name, country_code }) => {
+                  //   <Dropdown.Item href="#" key={country_code}>
+                  //     <p>javohri</p>
+                  //     {console.log(name, code)}
+                  //   </Dropdown.Item>;
+                  // })
 
-                <Dropdown.Menu>
-                  <Dropdown.Item onClick={() => console.log("uz")}>
-                    UZ
-                  </Dropdown.Item>
-                  <Dropdown.Item onClick={() => console.log("en")}>
-                    EN
-                  </Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
+                  languages.map((e, i) => (
+                    <option value={e.code}>{e.name}</option>
+                  ))
+                }
+              </Form.Select>
+
               <div className="line ms-2 d-sm-none d-lg-block"></div>
               <Nav.Link
                 className="d-flex justify-content-center align-items-center"
