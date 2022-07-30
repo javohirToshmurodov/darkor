@@ -68,7 +68,7 @@ export default function Home() {
                }}
             >
                <div className="px-3 row align-items-center">
-                  <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
+                  <div className="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12 ">
                      <TitleH1 title={t("courseTitleH1")} />
                      <div className="mt-3">
                         <DefaultAllCourseButton title={t("allcourse")} />
@@ -78,13 +78,14 @@ export default function Home() {
                      <img className="img-fluid" src={undraw} alt="" />
                   </div>
                </div>
-               <div className="px-3 mt-5 row">
+               <div className="px-3 mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
                      <>
                         <DefaultCard
                            key={e.id}
                            title={e.name}
-                           subtitle={e.decription}
+                           code={e.id}
+                           subtitle={e.description}
                            img={e.galleries[0].url}
                         />
                      </>

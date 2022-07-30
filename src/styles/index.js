@@ -104,6 +104,7 @@ overflow: hidden;
 export const ContactButtonWrapper = styled.div`
 padding: 3px 28px;
 gap: 16px;
+text-align: center;
 font-weight: 400;
 font-size: 14px !important;
 line-height: 48px;
