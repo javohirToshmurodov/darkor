@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { instance } from '../../redux/actions'
+import { instance } from '../../../redux/actions'
 import Button from 'react-bootstrap/Button'
 import Modal from 'react-bootstrap/Modal'
 import { Spin } from 'antd'

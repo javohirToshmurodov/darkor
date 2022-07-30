@@ -4,15 +4,15 @@ const Media = ({ data, loading }) => {
   let count = 0;
   console.log(data, "datataaa");
   return (
-    <div className="container w-100">
+    <div className="container ">
       {data.body?.map((item) => (
         <div
           key={item.id}
-          className={`d-lg-flex justify-content-between mt-5 media-container ${
+          className={`row  align-items-center justify-content-between my-5 media-container ${
             count % 2 == 0 ? "" : "flex-row-reverse"
           }`}
         >
-          <div className="w-lg-50 d-flex justify-content-center">
+          <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center">
             {item.gallery.extension == "jpg" ||
             item.gallery.extension == "png" ||
             item.gallery.extension == "jpeg" ? (
@@ -28,7 +28,7 @@ const Media = ({ data, loading }) => {
               ></iframe>
             )}
           </div>
-          <div className="content w-lg-50 w-md-50 mx-auto">
+          <div className="content col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
             <h2>{item.title}</h2>
             <p>{item.description}</p>
             <button className="btn btn-primary d-lg-none d-inline-block">

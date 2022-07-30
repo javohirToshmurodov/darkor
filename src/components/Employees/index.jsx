@@ -10,6 +10,7 @@ import { instance } from "../../redux/actions";
 import { DefaultCardWrapper, StickCardCourseDetailWrapper } from "../../styles";
 import DefaultButton from "../DefaultButton";
 import iconka from "../../assets/icons/searchIcon.svg";
+import DefaultExpertCard from "../DefaultCardExperts";
 
 const Employees = () => {
   const { id } = useParams();

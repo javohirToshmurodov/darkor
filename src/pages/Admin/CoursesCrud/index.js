@@ -24,7 +24,7 @@ const CoursesCrud = () => {
    const [secondDescriptionUz, setSecondDescriptionUz] = useState("")
    const [secondDescriptionRu, setSecondDescriptionRu] = useState("")
    const [secondDescriptionEn, setSecondDescriptionEn] = useState("")
-   const [price, setPrice] = useState("")
+   const [price, setPrice] = useState(0)
    const [offersUz, setOffersUz] = useState([])
    const [offersRu, setOffersRu] = useState([])
    const [offersEn, setOffersEn] = useState([])
@@ -198,7 +198,7 @@ const CoursesCrud = () => {
             { ...fileEn }
          ],
          price: {
-            price: `${price}`,
+            price: price,
             offersUz: [`${offersUz}`],
             offersRu: [`${offersRu}`],
             offersEn: [`${offersEn}`],
@@ -362,18 +362,33 @@ const CoursesCrud = () => {
                         <Form.Label>Course File Uz</Form.Label>
                         <Form.Control onChange={(e) => courseHandleFileUz(e.target.files[0])} name="fileUz" type='file' placeholder='file Uz' />
                      </Form.Group>
+                     <div>
+                        {
+                           courseFileUz?.url && <UploadedImg src={courseFileUz?.url} alt="" />
+                        }
+                     </div>
                   </div>
                   <div>
                      <Form.Group className='mb-3' controlId='forfsdmFileRu'>
                         <Form.Label>Course File Ru</Form.Label>
                         <Form.Control onChange={(e) => courseHandleFileRu(e.target.files[0])} name="fileRu" type='file' placeholder='file Ru' />
                      </Form.Group>
+                     <div>
+                        {
+                           courseFileRu?.url && <UploadedImg src={courseFileRu?.url} alt="" />
+                        }
+                     </div>
                   </div>
                   <div>
                      <Form.Group className='mb-3' controlId='forfsdmFileEn'>
                         <Form.Label>Course File Eng</Form.Label>
                         <Form.Control onChange={(e) => courseHandleFileEn(e.target.files[0])} name="fileEn" type='file' placeholder='file Uz' />
                      </Form.Group>
+                     <div>
+                        {
+                           courseFileEn?.url && <UploadedImg src={courseFileEn?.url} alt="" />
+                        }
+                     </div>
                   </div>
                </div>
                <hr />
