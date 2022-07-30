@@ -40,6 +40,11 @@ function OffcanvasExample() {
       link: "/contact",
       dropdown: [],
     },
+    {
+      name: t("navbar-6"),
+      link: "/employee",
+      dropdown: [],
+    },
   ];
   const languages = [
     {

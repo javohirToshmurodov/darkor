@@ -58,5 +58,6 @@
   "navbar-3": "Experts",
   "navbar-4": "Company",
   "navbar-5": "Contacts",
-  "admin": "Administrator"
+  "admin": "Administrator",
+  "navbar-6": "Employee"
 }
