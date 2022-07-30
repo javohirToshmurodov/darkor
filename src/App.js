@@ -12,13 +12,13 @@ import Experts from "./pages/Experts";
 import About from "./pages/AboutCompany";
 import Courses from "./pages/Courses";
 import CourseDetails from "./pages/Courses/CourseDetail";
-import CreateEmployee from "./components/createEmployeAdmin";
+import CreateEmployee from "./pages/Admin/createEmploye";
 import Employees from "./components/Employees";
 import CourseTable from "./pages/Admin/CoursesTable"
 import EmployeeDetail from "./components/Employees/EmployeeDetail";
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import Form from './pages/Admin/Form'
-import AdminService from "./components/AdminService"
+import ServiceCRUD from "./pages/Admin/ServiceCRUD"
 import ExpertDetail from "./pages/Experts/ExpertDetail";
 import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
@@ -45,7 +45,7 @@ function App() {
           <Route path="coursetable" element={<CourseTable />} />
           <Route path="coursetable/:id" element={<EditCouresModal />} />
           <Route path="form" element={<Form />} />
-          <Route path='service' element={<AdminService />} />
+          <Route path='service' element={<ServiceCRUD />} />
           <Route path='statiscs' element={<StatisticsCrud />} />
           <Route path='form' element={<Forms />} />
         </Route>

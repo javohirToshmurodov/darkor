@@ -4,6 +4,9 @@ import { FaCommentDots, FaQuestion, FaList, FaTable } from "react-icons/fa"
 import { IoPersonOutline } from "react-icons/io5";
 import { BiBarChartAlt } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
+import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { FiShoppingCart } from "react-icons/fi";
+
 
 import { useNavigate } from 'react-router-dom';
 const Admin = () => {
@@ -33,16 +36,22 @@ const Admin = () => {
          pathname: "form",
          icon: <IoPersonOutline />,
          name: "Users"
-      },
+      }, 
       {
          pathname: 'create-employee',
-         icon: '',
-         name: 'Create Employee',
+         icon: <AiOutlineUsergroupAdd/>,
+         name: 'Employee',
       },
+      {
+         pathname: 'service',
+         icon: <FiShoppingCart/>,
+         name: 'Service',
+      },
+      
       {
          pathname: 'coursetable',
          icon: <FaTable />,
-         name: 'Course_Table',
+         name: 'Table-Cour',
       },
    ])
    return (

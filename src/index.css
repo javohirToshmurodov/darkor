@@ -4,9 +4,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');
-html{
+
+html {
    scroll-behavior: smooth;
 }
+
 .footer {
    background: #0568FD;
 }
@@ -23,7 +25,7 @@ body {
    font-family: 'Roboto', sans-serif !important;
 }
 
-.circlePrice{
+.circlePrice {
    width: 40px;
    height: 40px;
    border-radius: 50%;
@@ -33,9 +35,22 @@ body {
    background-color: #F2F2F7;
    color: #0568FD;
 }
-.modal-dialog.modal-lg{
+
+.modal-dialog.modal-lg {
    width: 100%;
 }
+
+.cardHover img {
+   transition: 500ms;
+   filter: blur(8px);
+}
+
+.cardHover:hover img {
+   transform: rotate(10deg);
+   transition: 500ms;
+   filter: blur(0)
+}
+
 @import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');
