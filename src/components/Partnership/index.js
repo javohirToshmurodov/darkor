@@ -22,13 +22,13 @@ const Partnership = () => {
    }, [])
    return (
       <>
-         <PartnershipWrapper>
-            <div className='px-5 d-flex justify-content-center align-items-center flex-column'>
+         <PartnershipWrapper >
+            <div className='px-5  d-flex justify-content-center align-items-center flex-column'>
                <p className='littleP'>{t("partnershipP")}</p>
                <h2>{t("parnterwith")}</h2>
                <p className='subtitle'>{t("partnershipSubtitle")}</p>
             </div>
-            <div className="container px-5 py-5">
+            <div className="container px-5 py-4">
                <div className="px-5 row">
                   {
                      partners.map((e, i) => <PartnersCard key={e.id} linkTo={e?.link} img={e?.logo?.url} />)

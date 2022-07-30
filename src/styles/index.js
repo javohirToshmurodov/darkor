@@ -66,6 +66,7 @@ export const PartnershipWrapper = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
+  margin-top: 5rem;
   align-items: center;
 flex-direction: column;
   .littleP{
