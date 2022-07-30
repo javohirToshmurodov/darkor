@@ -54,8 +54,8 @@ const Services = () => {
             link={t("servicesLink")}
             title={t("servicesTitle")}
             description={t("servicesDescription")}
-            firstButtonTitle={t("firstButtonTitle")}
-            secondButtonTitle={t("secondButtonTitle")}
+            firstButtonTitle={t("ourservices")}
+            secondButtonTitle={t("ourkadr")}
          />
 
          <Media data={state} loading={loading} setLoading={setLoading} />
