@@ -34,7 +34,7 @@ const AboutCompany = () => {
   return (
     <Spin spinning={loading}>
       <Header
-        link={t("companyTitle")}
+        link={t("companyLink")}
         title={t("contactTitle")}
         description={t("contactDescription")}
         firstButtonTitle={t("contactHeaderButton")}
