@@ -30,7 +30,7 @@ const Experts = () => {
       <Spin spinning={loading}>
 
          <div className=''>
-            <div className="container">
+            <div className="container-fluid">
                <div className='bg-expertbg md:h-[540px] md:p-0 p-10 flex flex-col justify-center items-center text-center'>
                   <p className='text-base font-semibold text-systemblue leading-[22px]'>{t("expert")}</p>
                   <h1 className='font-bold text-[44px] leading-[56px] tracking-tight'>{t("attention")}</h1>
