@@ -43,7 +43,7 @@ const AboutCompany = () => {
       <Media data={state} loading={loading} setLoading={setLoading} />
       <ServiseStatistics />
       <HomeServise />
-      <div className="mt-5">
+      <div style={{marginTop: '20px'}} className="my-5">
         <Partnership />
       </div>
       <ContactWithUs />
