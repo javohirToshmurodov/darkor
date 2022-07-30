@@ -20,7 +20,7 @@ const Header = ({
             } mx-auto btn-container gap-2 text-center`}
         >
           {firstButtonTitle && (
-            <button className="mb-3 btn btn-outline-primary d-inline-block custom-btn">
+            <button className="mb-3 d-flex align-items-center py-2 btn btn-outline-primary d-inline-block custom-btn">
               {firstButtonTitle}
               {icon && (
                 <span className="ml-2">

@@ -5,7 +5,8 @@ import { useTranslation } from "react-i18next";
 import icon from "../../assets/icons/chevronForward.svg";
 import ContactInfo from "../../components/ContactInfo";
 import ContactForm from "../../components/ContactForm";
-
+import Form from "../../components/ContactForm/Form"
+import TitleH1 from "../../components/TitleH1";
 const Contact = () => {
   const { t, i18n } = useTranslation();
   const [loading, setLoading] = useState(false);
@@ -20,10 +21,24 @@ const Contact = () => {
         icon={icon}
       />
       <ContactInfo
-       link={t("contactLink")}
-       title={t("contactInfoTitle")}
-       description={t("contactInfoDescription")}/>
-       <ContactForm/>
+        link={t("contactLink")}
+        title={t("contactInfoTitle")}
+        description={t("contactInfoDescription")} />
+      <div className="container py-5">
+        <div className="row">
+          <div className="col-4 offset-4">
+            <div className="mb-2">
+              <TitleH1 title={t("contactus")} />
+              <p style={{ "color": "#667085" }}>
+                {t("friendlyTeam")}
+              </p>
+            </div>
+            <div className="mt-5">
+              <Form />
+            </div>
+          </div>
+        </div>
+      </div>
     </Spin>
   );
 };
