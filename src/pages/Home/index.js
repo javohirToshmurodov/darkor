@@ -73,7 +73,7 @@ export default function Home() {
                      <img className="img-fluid" src={undraw} alt="" />
                   </div>
                </div>
-               <div className="px-3 mt-5 row align-items-start">
+               <div className="px-3 mt-5 row align-items-start justify-content-center">
                   {courses.map((e, i) => (
                      <>
                         <DefaultCard
