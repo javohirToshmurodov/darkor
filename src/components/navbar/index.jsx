@@ -5,16 +5,18 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
+import Form from "react-bootstrap/Form";
+
 import CallIcon from "../../assets/icons/Call.png";
 import "../../styles/navbar.css";
-import { Form } from "react-bootstrap";
-import i18n from "../../i18n";
+
 import { useTranslation } from "react-i18next";
+
 function OffcanvasExample() {
-  const { t, i18next } = useTranslation();
+  const { t, i18n } = useTranslation();
   const menu = [
     {
-      name: "Курсы",
+      name: t("navbar-1"),
       link: "/courses",
       dropdown: [
         {
@@ -24,27 +26,26 @@ function OffcanvasExample() {
       ],
     },
     {
-      name: "Услуги",
+      name: t("navbar-2"),
       link: "/services",
       dropdown: [],
     },
     {
-      name: "Эксперты",
+      name: t("navbar-3"),
       link: "/experts",
       dropdown: [],
     },
     {
-      name: "Компания",
+      name: t("navbar-4"),
       link: "/about",
       dropdown: [],
     },
     {
-      name: "Контакты",
+      name: t("navbar-5"),
       link: "/contact",
       dropdown: [],
     },
   ];
-
   const languages = [
     {
       code: "uz",
@@ -100,7 +101,7 @@ function OffcanvasExample() {
                     ))}
                   </NavDropdown>
                 ) : (
-                  <Link key={index} to={item.link} className="nav-link mx-2">
+                  <Link key={index} to={item.link} className="mx-2 nav-link">
                     {item.name}
                   </Link>
                 )
@@ -121,7 +122,6 @@ function OffcanvasExample() {
                   ))
                 }
               </Form.Select>
-
               <div className="line ms-2 d-sm-none d-lg-block"></div>
               <Nav.Link
                 className="d-flex justify-content-center align-items-center"

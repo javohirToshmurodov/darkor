@@ -52,5 +52,10 @@
   "descriptionExpert": "Description Expert",
   "expertSkilName": "Skills Experts",
   "friendlyTeam": "Our friendly team would love to hear from you.",
-  "faq": "Frequently asked questions"
+  "faq": "Frequently asked questions",
+  "navbar-1": "Courses",
+  "navbar-2": "Services",
+  "navbar-3": "Experts",
+  "navbar-4": "Company",
+  "navbar-5": "Contacts"
 }
