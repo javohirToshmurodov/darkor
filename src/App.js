@@ -22,6 +22,7 @@ import ServiceCRUD from "./pages/Admin/ServiceCRUD"
 import ExpertDetail from "./pages/Experts/ExpertDetail";
 import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
+import ProtectedRoutes from "./ProtectedRoutes";
 function App() {
   return (
     <>
@@ -38,16 +39,19 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="experts" element={<Experts />} />
         <Route path="experts/:code" element={<ExpertDetail />} />
-        <Route path="admin" element={<Admin />}>
-          <Route path="create-employee" element={<CreateEmployee />} />
-          <Route path="courses" element={<CoursesCrud />} />
-          <Route path="courses_info" element={<CourseInfo />} />
-          <Route path="coursetable" element={<CourseTable />} />
-          <Route path="coursetable/:id" element={<EditCouresModal />} />
-          <Route path="form" element={<Form />} />
-          <Route path='service' element={<ServiceCRUD />} />
-          <Route path='statiscs' element={<StatisticsCrud />} />
-          <Route path='form' element={<Forms />} />
+        <Route element={<ProtectedRoutes />}>
+
+          <Route path="admin" element={<Admin />}>
+            <Route path="create-employee" element={<CreateEmployee />} />
+            <Route path="courses" element={<CoursesCrud />} />
+            <Route path="courses_info" element={<CourseInfo />} />
+            <Route path="coursetable" element={<CourseTable />} />
+            <Route path="coursetable/:id" element={<EditCouresModal />} />
+            <Route path="form" element={<Form />} />
+            <Route path='service' element={<ServiceCRUD />} />
+            <Route path='statiscs' element={<StatisticsCrud />} />
+            <Route path='form' element={<Forms />} />
+          </Route>
         </Route>
       </Routes>
     </>

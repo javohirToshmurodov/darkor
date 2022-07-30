@@ -18,12 +18,7 @@ function OffcanvasExample() {
     {
       name: t("navbar-1"),
       link: "/courses",
-      dropdown: [
-        {
-          name: "All courses",
-          link: "/courses",
-        },
-      ],
+      dropdown: [],
     },
     {
       name: t("navbar-2"),
@@ -131,7 +126,7 @@ function OffcanvasExample() {
                   <img src={CallIcon} alt="img" />
                 </span>
                 <div className="phone_container">
-                  Администратор <span>+998 99 897-45-44</span>
+                  {t("admin")} <span>+998 99 897-45-44</span>
                 </div>
               </Nav.Link>
             </Nav>
