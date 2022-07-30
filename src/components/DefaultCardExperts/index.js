@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 export default function DefaultExpertCard(props) {
     const { t, i18n } = useTranslation()
     return (
-        <div className='py-3 mb-5 duration-500 cardHover hover:duration-500 col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 hover:bg-hoverBgColor rounded-2xl'>
+        <div className='py-3 mb-5 duration-500  col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 '>
             <DefaultCardWrapper>
                 <img className='object-cover' src={props.img} alt="" />
                 <div>
