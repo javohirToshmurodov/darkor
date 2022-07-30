@@ -24,7 +24,7 @@ export default function Home() {
    const [loading, setLoading] = useState(false)
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
+      instance.get("api/v1/course/list/?size=12&page=0").then((res) => {
          console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
@@ -77,9 +77,10 @@ export default function Home() {
                   {courses.map((e, i) => (
                      <>
                         <DefaultCard
+                           code={e.id}
                            key={e.id}
                            title={e.name}
-                           subtitle={e.decription}
+                           subtitle={e.description}
                            img={e.galleries[0].url}
                         />
                      </>

@@ -30,6 +30,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<CourseDetails />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="courses" element={<Courses />} />
