@@ -80,7 +80,7 @@ const CourseDetails = () => {
             <CarouselSlider />
 
             <div className="row">
-               <div className="mt-4 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+               <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                   <StickCardCourseDetailWrapper className='mt-5 position-sticky '>
                      <div className='m-3'>
                         <h5>{t("coursename")}: {courseDetail?.course?.name}</h5>
@@ -104,7 +104,7 @@ const CourseDetails = () => {
 
                   </StickCardCourseDetailWrapper>
                </div>
-               <div className="mt-4 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+               <div className="mt-4 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                   <div className="row" id='aboutcourse'>
                      {
                         courseDetail?.course?.name && <p className='m-0 mt-5 d-flex align-items-center'>
@@ -171,6 +171,9 @@ const CourseDetails = () => {
                   <div className="py-5 mt-5" id="teachers">
                      <p>{t("specialistTeam")}</p>
                      <TitleH1 title={t("specialistTeamTitle")} />
+                     <p className='pe-5 w-75 mb-5'>
+                        {t("expertDescription")}
+                     </p>
                      {employees?.map((e, i) => <div className='row  my-4'>
                         <div className="col-xl-4 col-lg-4 col-md-8 col-sm-12 col-12">
                            <div>
@@ -201,11 +204,13 @@ const CourseDetails = () => {
                   </div>
                   <div className="py-5 mt-5 row" id='price'>
                      <p>{t("price")}</p>
-                     <TitleH1 title={t("priceTitle")} />
-                     <p style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
-                     <div className="col-xl-6 col-lg-6 col-md-6 offset-3 col-sm-12 col-12 ">
+                     <div className='pe-5'>
+                        <TitleH1 title={t("priceTitle")} />
+                     </div>
+                     <p className='w-75' style={{ "color": "#3A3A3C" }}>{t("priceDescription")}</p>
+                     <div className="col-xl-6 col-lg-6 col-md-6 offset-xl-3 offset-lg-3 offset-0 col-sm-12 col-12 ">
 
-                        <CoursePriceCardWrapper className='p-4 mt-5 flex-column d-flex align-items-start'>
+                        <CoursePriceCardWrapper className=' p-4 mt-5 flex-column d-flex align-items-start'>
                            <div className='mx-auto mt-4 text-center circlePrice'>
                               <ThunderboltOutlined />
                            </div>

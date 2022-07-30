@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import icon from "../../assets/icons/chevronForward.svg";
 
 const Header = ({
@@ -9,6 +10,7 @@ const Header = ({
   secondButtonTitle,
   icon,
 }) => {
+  const navigate = useNavigate()
   return (
     <div className="container services-container">
       <div className="col-6">
@@ -31,7 +33,7 @@ const Header = ({
           )}
           <p></p>
           {secondButtonTitle && (
-            <button className="mb-3 btn btn-outline-primary d-inline-block custom-btn">
+            <button onClick={() => navigate("/employee")} className="mb-3 btn btn-outline-primary d-inline-block custom-btn">
               {secondButtonTitle}
             </button>
           )}

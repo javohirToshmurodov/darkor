@@ -10,7 +10,6 @@ import { CheckOutlined } from "@ant-design/icons";
 import TitleH1 from "../../../components/TitleH1";
 
 function ExpertDetail(props) {
-    const setActiveLink = ({ isActive }) => (isActive ? "active-link" : "");
     const { t, i18n } = useTranslation();
     const { code } = useParams();
     const [employee, setEmployee] = useState({});

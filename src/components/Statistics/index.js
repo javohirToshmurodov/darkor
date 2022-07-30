@@ -9,9 +9,9 @@ function Statistics(props) {
         <div className='container mb-10 px-5 py-5'>
             <div>
                 <h1 className='text-[44px] font-bold not-italic leading-[106px] mt-2'>{t('employmentResults')}</h1>
-                <div className='flex'>
-                    <Logo className='mt-[20px]' />
-                    <h1 className='text-blueColor text-[44px] font-bold not-italic leading-[106px]'>{t('results')}</h1>
+                <div className='d-flex align-items-end'>
+                    <Logo style={{ "width": "168px", "height": "100px" }} className='mt-[20px] mr-[10px]' />
+                    <h1 className='align-self-end text-blueColor text-[44px] font-bold not-italic '>  {t('results')}</h1>
                 </div>
             </div>
             <div className='flex gap-5 overflow-x-scroll scrollbar-hide'>

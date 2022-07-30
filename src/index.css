@@ -50,7 +50,17 @@ body {
    transition: 500ms;
    filter: blur(0)
 }
-
+.carousel .control-dots .dot{
+   width: 15px;
+   height: 15px;
+   transition: .4s;
+}
+.carousel .control-dots .dot.selected{
+   background: #0568FD;
+   transform: scale(1.2);
+   opacity: 1;
+   border: none
+}
 @import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');

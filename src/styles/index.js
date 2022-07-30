@@ -24,6 +24,11 @@ flex-direction: column;
     line-height: 32px;
     color: #1C1C1E;
 }
+p{
+font-size: 20px;
+line-height: 27px;
+color: #3A3A3C;
+}
 `
 export const DefaultButtonWrapper = styled.button`
   align-items: center;
@@ -104,6 +109,7 @@ overflow: hidden;
 export const ContactButtonWrapper = styled.div`
 padding: 3px 28px;
 gap: 16px;
+text-align: center;
 font-weight: 400;
 font-size: 14px !important;
 line-height: 48px;

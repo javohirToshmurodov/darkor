@@ -10,6 +10,8 @@ import Partnership from "../../components/Partnership";
 import Footer from "../../components/Footer";
 import HomeService from "../../components/HomeServise";
 import ServiceStatic from "../../components/ServiseStatistics";
+import TitleH1 from "../../components/TitleH1";
+import ContactWithUs from "../../components/ContactWithUs";
 
 const Services = () => {
    const { Panel } = Collapse;
@@ -52,8 +54,8 @@ const Services = () => {
             link={t("servicesLink")}
             title={t("servicesTitle")}
             description={t("servicesDescription")}
-            firstButtonTitle={t("firstButtonTitle")}
-            secondButtonTitle={t("secondButtonTitle")}
+            firstButtonTitle={t("ourservices")}
+            secondButtonTitle={t("ourkadr")}
          />
 
          <Media data={state} loading={loading} setLoading={setLoading} />
@@ -64,24 +66,31 @@ const Services = () => {
             <Partnership />
          </div>
 
-         <div className="container mx-auto mt-4 mb-4 col-12 d-lg-flex justify-content-between align-center">
+         {/* <div className="container mx-auto mt-4 mb-4 col-12 d-lg-flex justify-content-between align-center">
             <h1>
                <span className="text-primary">Запишитесь на курс</span> или получите
                <br />
                консультацию
             </h1>
             <button className="h-50 btn btn-primary">Связаться с нами</button>
-         </div>
+         </div> */}
+         <section className="py-5">
+            <ContactWithUs />
+         </section>
 
          <div className="container mt-5">
-            <h1>Faq is here</h1>
-            <Collapse className="mt-4" defaultActiveKey={["1"]}>
-               {faq?.map((e, i) => (
-                  <Panel header={e.question}>
-                     <p>{e.answer}</p>
-                  </Panel>
-               ))}
-            </Collapse>
+            <div className="row justify-content-center px-4">
+               <div className="col-9">
+                  <TitleH1 title={t("faq")} />
+                  <Collapse className="mt-4" defaultActiveKey={["1"]}>
+                     {faq?.map((e, i) => (
+                        <Panel header={e.question}>
+                           <p>{e.answer}</p>
+                        </Panel>
+                     ))}
+                  </Collapse>
+               </div>
+            </div>
          </div>
 
          <div className="mt-4">
