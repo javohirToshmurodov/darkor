@@ -25,7 +25,6 @@ const Experts = () => {
    }
    useEffect(() => {
       getExperts()
-      console.log("experts", experts);
    }, [])
    return (
       <Spin spinning={loading}>
