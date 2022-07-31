@@ -29,7 +29,6 @@ const CourseDetails = () => {
       try {
          setActive(true)
          const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
-         console.log(res.data.body);
          setCourseDetails(res.data.body)
          setData(true)
          setLoading(false)
@@ -61,7 +60,6 @@ const CourseDetails = () => {
 
    const getEmployeeDetails = () => {
       courseDetail?.course?.code && instance.get(`/api/v1/employee_detail/get_by_course/${courseDetail?.course?.code}`).then((res) => {
-         console.log(res.data.body);
          setEmployees([...res.data.body])
       }).catch((err) => {
          console.log(err);
@@ -70,7 +68,6 @@ const CourseDetails = () => {
    useEffect(() => {
       getEmployeeDetails()
       getFaq()
-      console.log(employees);
    }, [courseDetail?.course?.code])
 
    return (

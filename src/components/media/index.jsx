@@ -2,7 +2,6 @@ import React from "react";
 
 const Media = ({ data, loading }) => {
   let count = 0;
-  console.log(data, "datataaa");
   return (
     <div className="container ">
       {data.body?.map((item) => (

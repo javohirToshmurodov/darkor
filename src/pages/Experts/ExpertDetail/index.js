@@ -25,7 +25,6 @@ function ExpertDetail(props) {
         instance
             .get(`/api/v1/employee_detail/get_by_employee/${code}`)
             .then((res) => {
-                console.log("2", res.data.body);
                 setEmployee({ ...res.data.body });
                 setIds(res.data.body.employee.courses[0].id);
                 setFullSkills(res.data.body.employee.courses[0].name);
@@ -38,7 +37,6 @@ function ExpertDetail(props) {
     const getExperts = () => {
         setLoading(true)
         instance.get("http://172.105.136.151:8080/api/v1/employee/list?type=EXPERT&size=10&page=1").then((res) => {
-            console.log("1", res.data.body);
             setExperts([...res.data.body])
             setLoading(false)
         }).catch((err) => {
@@ -47,12 +45,10 @@ function ExpertDetail(props) {
     }
     useEffect(() => {
         getExperts()
-        console.log("experts", experts);
     }, [])
     const getCourseDetails = async () => {
         try {
             const res = await instance.get(`/api/v1/courseDetails/get/?id=3`)
-            console.log(res.data.body);
             setCourseDetails(res.data.body)
         } catch (err) {
             console.log(err);
@@ -65,7 +61,6 @@ function ExpertDetail(props) {
         instance
             .get(`/api/v1/skill/get_by_course/${ids}`)
             .then((res) => {
-                console.log(res, "asdsad");
                 setSkills([...res.data.body]);
             })
             .catch((err) => {
@@ -73,7 +68,6 @@ function ExpertDetail(props) {
             });
     };
 
-    console.log(fullSkills, "skilllllllll");
 
     useEffect(() => {
         {
@@ -85,12 +79,11 @@ function ExpertDetail(props) {
         getEmployeeDetails();
     }, [code]);
 
-    console.log(employee, "dsfdsfsd");
     return (
         <Spin spinning={loading}>
             <div className="container">
-                {/* <CarouselSlider /> */}
-                <div className="container">
+                <CarouselSlider />
+                <div className="container mt-5">
                     <p className="text-base font-semibold uppercase">
                         {t("descriptionExpert")}
                     </p>
