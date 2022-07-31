@@ -10,7 +10,6 @@ const Partnership = () => {
    const [partners, setPartners] = useState([])
    const getPartners = () => {
       instance.get("/api/v1/partner/list").then((res) => {
-         console.log("partnerlar listi", res.data);
          setPartners([...res.data.body])
       }).catch((err) => {
          console.log(err);
@@ -18,7 +17,6 @@ const Partnership = () => {
    }
    useEffect(() => {
       getPartners()
-      console.log(partners);
    }, [])
    return (
       <>

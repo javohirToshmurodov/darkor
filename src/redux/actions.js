@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const BASE_URL = "http://172.105.136.151:8080"
+export const BASE_URL = "http://45.33.122.156:8080"
 
 
 

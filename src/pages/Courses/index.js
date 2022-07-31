@@ -14,7 +14,6 @@ const Courses = () => {
    const getCourses = () => {
       setLoading(true)
       instance.get("api/v1/course/list/?size=20&page=0").then((res) => {
-         console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
       }).catch((err) => {
@@ -23,13 +22,10 @@ const Courses = () => {
          .catch((err) => {
             console.log(err);
          })
-         .catch((err) => {
-            console.log(err);
-         });
+
    };
    useEffect(() => {
       getCourses();
-      console.log("courses", courses);
    }, []);
    return (
       <Spin spinning={loading}>

@@ -27,19 +27,13 @@ export default function Home() {
       instance
          .get("api/v1/course/list/?size=10&page=0")
          .then((res) => {
-            console.log(res.data.body);
             setCourses([...res.data.body]);
             setLoading(false);
          })
          .catch((err) => {
             console.log(err);
          })
-         .catch((err) => {
-            console.log(err);
-         })
-         .catch((err) => {
-            console.log(err);
-         });
+
    };
 
    useEffect(() => {

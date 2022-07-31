@@ -23,7 +23,6 @@ const Services = () => {
       try {
          const res = await instance.get("api/v1/post/list?size=10&page=0");
          setState(res.data);
-         console.log(res.data);
          setLoading(false);
       } catch (err) {
          setLoading(false);
@@ -35,7 +34,6 @@ const Services = () => {
       instance
          .get(`api/v1/faq/list?size=10&page=0&lang=uz`)
          .then((res) => {
-            console.log("Bu result", res);
             setFaq([...res.data.body]);
             setLoading(false);
          })
