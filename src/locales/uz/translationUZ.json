@@ -61,6 +61,7 @@
   "allaboutCourse": "Kurs haqida umumiy",
   "teachingProgram": "O'qitish usuli",
   "ourSchedule": "Bizning jadval",
+  "skillProgram": "O'qitish usuli",
   "ourTeachers": "Bizning o'qituvchilar",
   "graduates": "Bitiruvchilar",
   "priceOfCourse": "Narxi",
@@ -83,5 +84,7 @@
   "servicesLink": "Xizmatlar",
   "ourservices": "Bizning xizmatlar",
   "ourkadr": "Bizning mutaxassislar",
-  "servicesStatistics": "Biz qilayotgan ishimizni yaxshi ko'ramiz, shuning uchun biz doimo yuqori natijalarga erishamiz."
+  "servicesStatistics": "Biz qilayotgan ishimizni yaxshi ko'ramiz, shuning uchun biz doimo yuqori natijalarga erishamiz.",
+  "bigExpert": "Katta mutaxassis",
+  "youmayalsolike": "Sizga ham yoqishi mumkin"
 }

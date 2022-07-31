@@ -23,10 +23,12 @@ import ExpertDetail from "./pages/Experts/ExpertDetail";
 import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
+import SpecialistForm from "./components/SpecialistForm"
 function App() {
   return (
     <>
       <OffcanvasExample />
+      <SpecialistForm />
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
