@@ -11,6 +11,8 @@ import { DefaultCardWrapper, StickCardCourseDetailWrapper } from "../../styles";
 import DefaultButton from "../DefaultButton";
 import iconka from "../../assets/icons/searchIcon.svg";
 import DefaultExpertCard from "../DefaultCardExperts";
+import { useTranslation } from "react-i18next";
+import chevron from "../../assets/icons/upDown.svg";
 
 const Employees = () => {
   const { code } = useParams();
@@ -52,6 +54,8 @@ const Employees = () => {
     console.log("courses", courses);
     getFaq();
   }, []);
+  const { t, i18n } = useTranslation();
+
   return (
     <Spin spinning={loading}>
       <div className="container ">
@@ -82,6 +86,9 @@ const Employees = () => {
                 </div>
               </div>
               <ul>
+                <li className="px-4 py-2 hovertitle">
+                  Обзор-Специалист <img src={chevron} alt="up" />
+                </li>
                 {courses.map((e, i) => (
                   <li className="px-4 py-2 hover">{e.courses[0].name}</li>
                 ))}
