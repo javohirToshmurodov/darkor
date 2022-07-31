@@ -27,8 +27,27 @@
   line-height: 56px;
 }
 
-.hover:hover {
-  background-color: lightgray;
-  cursor: pointer;
-  border-radius: 7px;
+.hover {
+  /* width: 400px; */
+  left: 34px;
 }
+.hover:hover {
+  background-color: rgba(235, 235, 245, 0.6);
+  cursor: pointer;
+  border-radius: 8px;
+}
+.hovertitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(235, 235, 245, 0.6) !important;
+  cursor: pointer;
+  border: 3px solid lightgray !important;
+  border-radius: 8px;
+  border: none;
+}
+.hovertitle {
+  border: none !important;
+}
+
+/* //this is good styled site */

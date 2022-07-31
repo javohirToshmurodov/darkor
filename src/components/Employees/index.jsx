@@ -11,6 +11,8 @@ import { DefaultCardWrapper, StickCardCourseDetailWrapper } from "../../styles";
 import DefaultButton from "../DefaultButton";
 import iconka from "../../assets/icons/searchIcon.svg";
 import DefaultExpertCard from "../DefaultCardExperts";
+import { useTranslation } from "react-i18next";
+import chevron from "../../assets/icons/upDown.svg";
 
 const Employees = () => {
   const { code } = useParams();
@@ -23,7 +25,7 @@ const Employees = () => {
     setLoading(true);
     instance
       .get(
-        "http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1"
+        "/api/v1/employee/list?type=STUDENT&size=10&page=1"
       )
       .then((res) => {
         console.log(res.data.body);
@@ -38,7 +40,7 @@ const Employees = () => {
   const getFaq = () => {
     setLoading(true);
     instance
-      .get(`api/v1/faq/list?size=10&page=0&lang=uz`)
+      .get(`/api/v1/faq/list?size=10&page=0&lang=uz`)
       .then((res) => {
         console.log("Bu result", res);
         setFaq([...res.data.body]);
@@ -52,6 +54,8 @@ const Employees = () => {
     console.log("courses", courses);
     getFaq();
   }, []);
+  const { t, i18n } = useTranslation();
+
   return (
     <Spin spinning={loading}>
       <div className="container ">
@@ -82,6 +86,9 @@ const Employees = () => {
                 </div>
               </div>
               <ul>
+                <li className="px-4 py-2 hovertitle">
+                  Обзор-Специалист <img src={chevron} alt="up" />
+                </li>
                 {courses.map((e, i) => (
                   <li className="px-4 py-2 hover">{e.courses[0].name}</li>
                 ))}
