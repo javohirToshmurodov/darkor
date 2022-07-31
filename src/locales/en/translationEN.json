@@ -55,7 +55,7 @@
   "certificateDarkor": "Certificate of Darkor 22",
   "certificateDesc": "It will confirm that you have completed the course and will become an additional argument when applying for a job.",
   "name": "Name: ",
-  "companyLink":"About company",
+  "companyLink": "About company",
   "expertbtntext": "Details",
   "expert": "Experts",
   "contactLink": "Contacts",
@@ -80,5 +80,7 @@
   "servicesLink": "Services",
   "ourservices": "Our services",
   "ourkadr": "Our specialists",
-  "servicesStatistics": "We love our job, so we always achieve high results."
+  "servicesStatistics": "We love our job, so we always achieve high results.",
+  "bigExpert": "Big Expert",
+  "youmayalsolike": "You may also like"
 }

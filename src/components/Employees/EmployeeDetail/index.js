@@ -8,12 +8,16 @@ import Footer from "../../../components/Footer";
 import ContactWithUs from "../../../components/ContactWithUs";
 import { CheckOutlined } from "@ant-design/icons";
 import TitleH1 from "../../../components/TitleH1";
+import DefaultExpertCard from "../../../components/DefaultCardExperts";
+import Partnership from "../../Partnership";
 
 function ExpertDetail(props) {
   const { t, i18n } = useTranslation();
-  const { code } = useParams();
+  const { code, id } = useParams();
   const [employee, setEmployee] = useState({});
   const [loading, setLoading] = useState(false);
+  const [courseDetail, setCourseDetails] = useState({})
+  const [experts, setExperts] = useState([])
   const [ids, setIds] = useState("");
   const [skills, setSkills] = useState([]);
   const [fullSkills, setFullSkills] = useState("");
@@ -32,7 +36,32 @@ function ExpertDetail(props) {
         console.log(err);
       });
   };
-
+  const getExperts = () => {
+    setLoading(true)
+    instance.get("http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1").then((res) => {
+      console.log("1", res.data.body);
+      setExperts([...res.data.body])
+      setLoading(false)
+    }).catch((err) => {
+      console.log(err);
+    })
+  }
+  useEffect(() => {
+    getExperts()
+    console.log("experts", experts);
+  }, [])
+  const getCourseDetails = async () => {
+    try {
+      const res = await instance.get(`/api/v1/courseDetails/get/?id=3`)
+      console.log(res.data.body);
+      setCourseDetails(res.data.body)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  useEffect(() => {
+    getCourseDetails()
+  }, [id])
   const getSkills = () => {
     instance
       .get(`/api/v1/skill/get_by_course/${ids}`)
@@ -60,7 +89,7 @@ function ExpertDetail(props) {
   console.log(employee, "dsfdsfsd");
   return (
     <Spin spinning={loading}>
-      <div className="container divide-y-2 divide-gray-300 ">
+      <div className="container">
         {/* <CarouselSlider /> */}
         <div className="container">
           <p className="text-base font-semibold uppercase">
@@ -101,6 +130,7 @@ function ExpertDetail(props) {
           </div>
         </div>
         {/* skillls */}
+        <hr />
         <div className="pt-5 mt-5">
           <div className="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12">
             <p>{t("expertSkilName")}</p>
@@ -124,15 +154,46 @@ function ExpertDetail(props) {
                       <p style={{ color: "#3A3A3C" }} className="m-0">
                         {e.description}
                       </p>
-                      <hr />
                     </div>
                   </div>
+                  <hr />
                 </div>
               ))}
             </div>
-            <hr />
           </div>
         </div>
+        <div className="py-5 mt-5">
+          <p>
+            {t("cetrificate")}
+          </p>
+          <TitleH1 title={t("certificateDarkor")} />
+          <p>
+            {t("certificateDesc")}
+          </p>
+          <div className="row">
+            {
+              courseDetail?.file?.map((e, i) => <div className='' key={i}>
+                {
+                  e.fileType && e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
+                }
+              </div>)
+            }
+
+
+          </div>
+        </div>
+        <div className="items-center justify-between mt-5 p-7 row bg-hoverBgColor rounded-2xl">
+          <p className="pt-5 text-base font-semibold uppercase">{t("bigExpert")}</p>
+          <p className="font-bold text-[44px] leading-[56px]">{t("youmayalsolike")}</p>
+          {
+            experts.map((e, i) => (
+              < DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />
+            ))
+          }
+        </div>
+      </div>
+      <div className="py-5 mt-5">
+        <Partnership />
       </div>
       <div className="py-5 mt-5">
         <ContactWithUs />
