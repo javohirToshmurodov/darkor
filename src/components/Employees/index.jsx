@@ -23,7 +23,7 @@ const Employees = () => {
     setLoading(true);
     instance
       .get(
-        "http://172.105.136.151:8080/api/v1/employee/list?type=STUDENT&size=10&page=1"
+        "api/v1/employee/list?type=STUDENT&size=10&page=1"
       )
       .then((res) => {
         console.log(res.data.body);
