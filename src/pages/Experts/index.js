@@ -15,7 +15,7 @@ const Experts = () => {
    const [loading, setLoading] = useState(false)
    const getExperts = () => {
       setLoading(true)
-      instance.get("api/v1/employee/list?type=EXPERT&size=10&page=1").then((res) => {
+      instance.get("/api/v1/employee/list?type=EXPERT&size=10&page=1").then((res) => {
          console.log("1", res.data.body);
          setExperts([...res.data.body])
          setLoading(false)

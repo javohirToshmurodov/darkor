@@ -25,7 +25,7 @@ const Employees = () => {
     setLoading(true);
     instance
       .get(
-        "api/v1/employee/list?type=STUDENT&size=10&page=1"
+        "/api/v1/employee/list?type=STUDENT&size=10&page=1"
       )
       .then((res) => {
         console.log(res.data.body);
@@ -40,7 +40,7 @@ const Employees = () => {
   const getFaq = () => {
     setLoading(true);
     instance
-      .get(`api/v1/faq/list?size=10&page=0&lang=uz`)
+      .get(`/api/v1/faq/list?size=10&page=0&lang=uz`)
       .then((res) => {
         console.log("Bu result", res);
         setFaq([...res.data.body]);
