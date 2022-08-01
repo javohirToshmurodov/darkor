@@ -67,6 +67,7 @@
   "priceOfCourse": "Narxi",
   "questions": "Savollar",
   "signUp": "Hoziroq qo'shilish",
+  "companyLink": "Kompaniya haqida",
   "descriptionExpert": "Mutaxassis Tavsifi",
   "expertSkilName": "Ko'nikmalar bo'yicha mutaxassislar",
   "friendlyTeam": "Bizning do'stona jamoamiz sizdan eshitishni xohlaydi.",
@@ -86,5 +87,16 @@
   "ourkadr": "Bizning mutaxassislar",
   "servicesStatistics": "Biz qilayotgan ishimizni yaxshi ko'ramiz, shuning uchun biz doimo yuqori natijalarga erishamiz.",
   "bigExpert": "Katta mutaxassis",
-  "youmayalsolike": "Sizga ham yoqishi mumkin"
+  "youmayalsolike": "Sizga ham yoqishi mumkin",
+  "title": "Xizmatlarimiz",
+  "carttitle1": "Brending ot A do Ya",
+  "carttitle": "Va shubhasiz, bu aniq alomatlar.",
+  "cartdesc": "Kartel kelishuvi to'g'ridan-to'g'ri vaziyatga yo'l qo'ymaydi texnologik taraqqiyot ishtirokchilari iloji boricha tavsiflanishi mumkin batafsil.",
+  "cartdesc1": "Janoblar, doimiy miqdoriy o'sish va faoliyatimiz ko'lami yuqori talabni belgilaydi.",
+  "carttile2": "Veb dizayn",
+  "cartdesc2": "Qarama-qarshi nuqtai nazar, eng yirik kompaniyalarning aktsiyadorlari faqat tashabbuskorlar ekanligini anglatadi.",
+  "carttitle3": "SMM reklamasi",
+  "cartesc3": "Qayta-qayta ta'kidlanganidek, fanda totalitarizm tarafdorlari bundan boshqa narsa emas.",
+  "carttitle4": "Albatta, kundalik ishning boshlanishi.",
+  "cartdesc4": "Turli va boy tajriba shuni ko'rsatadiki, biz tanlagan innovatsion yo'l juda mos keladi."
 }

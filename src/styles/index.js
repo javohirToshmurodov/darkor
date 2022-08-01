@@ -17,12 +17,15 @@ flex-direction: column;
     height: 260px !important;
     min-height: 260px;
     border-radius: 16px;
+    object-fit: cover;
   }
   h4{
     font-size: 21px;
     font-weight: 500;
+    word-wrap: break-word;
     line-height: 32px;
     color: #1C1C1E;
+    min-height: 60px;
 }
 p{
 font-size: 20px;

@@ -7,7 +7,7 @@ const ContactButton = () => {
    const { t, i18n } = useTranslation()
    return (
       <div>
-         <ContactButtonWrapper onClick={() => navigate("contact")}>
+         <ContactButtonWrapper onClick={() => navigate("/contact")}>
             {t("contactus")}
          </ContactButtonWrapper>
       </div>

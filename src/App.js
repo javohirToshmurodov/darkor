@@ -22,11 +22,16 @@ import ExpertDetail from "./pages/Experts/ExpertDetail";
 import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
+<<<<<<< HEAD
 import CoursesTable from "./pages/Admin/CoursesTable";
+=======
+import SpecialistForm from "./components/SpecialistForm"
+>>>>>>> db37fd48ecc0f9e7fc3eab451f046708c4ae00fa
 function App() {
   return (
     <>
       <OffcanvasExample />
+      {/* <SpecialistForm /> */}
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />

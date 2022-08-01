@@ -37,6 +37,9 @@ export default function Home() {
    };
 
    useEffect(() => {
+      const ln = localStorage.getItem("language")
+      localStorage.setItem("i18nextLng", ln)
+
       getCourses();
    }, []);
    return (

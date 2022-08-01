@@ -15,6 +15,7 @@ const Courses = () => {
       setLoading(true)
       instance.get("api/v1/course/list/?size=20&page=0").then((res) => {
          setCourses([...res.data.body])
+         console.log(res.data.body);
          setLoading(false)
       }).catch((err) => {
          console.log(err);

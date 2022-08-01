@@ -11,8 +11,10 @@ import CallIcon from "../../assets/icons/Call.png";
 import "../../styles/navbar.css";
 
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 function OffcanvasExample() {
+  // const ln = localStorage.getItem("language")
   const { t, i18n } = useTranslation();
   const menu = [
     {
@@ -65,15 +67,19 @@ function OffcanvasExample() {
   ];
   const navigate = useNavigate();
   const changeLanguage = (e) => {
-    // console.log(e.target.value);
-    // i18next.changeLanguage(e.target.value);
-    i18n.changeLanguage(e);
-    console.log(`language ${e} ga o'zgardi`);
     localStorage.setItem("language", e);
+    i18n.changeLanguage(e);
+    window.location.reload();
     return () => {
       console.log(`language ${e} ga o'zgardi`);
     };
   };
+  useEffect(() => {
+    localStorage.getItem("language")
+      ? i18n.changeLanguage(localStorage.getItem("language"))
+      : localStorage.setItem("language", "uz");
+  }, []);
+
   return (
     <Container>
       <Navbar className="my-4" collapseOnSelect expand="lg" variant="light">
@@ -111,19 +117,11 @@ function OffcanvasExample() {
               <Form.Select
                 style={{ width: "70px" }}
                 onChange={(e) => changeLanguage(e.target.value)}
+                value={localStorage.getItem("language")}
               >
-                {
-                  // languages.map(({ code, name, country_code }) => {
-                  //   <Dropdown.Item href="#" key={country_code}>
-                  //     <p>javohri</p>
-                  //     {console.log(name, code)}
-                  //   </Dropdown.Item>;
-                  // })
-
-                  languages.map((e, i) => (
-                    <option value={e.code}>{e.name}</option>
-                  ))
-                }
+                <option value="uz">UZ</option>
+                <option value="ru">RU</option>
+                <option value="en">EN</option>
               </Form.Select>
               <div className="line ms-2 d-sm-none d-lg-block"></div>
               <Nav.Link
