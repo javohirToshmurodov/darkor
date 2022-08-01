@@ -23,6 +23,7 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
+import CoursesTable from "./pages/Admin/CoursesTable"
 function App() {
   return (
     <>
@@ -47,12 +48,7 @@ function App() {
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />
-<<<<<<< HEAD
-  {/* <Route path="course_info" */ }
-            <Route path="coursetable" element={<CourseTable />} />
-=======
             <Route path="coursetable" element={<CoursesTable />} />
->>>>>>> 1c86420b3732d27538f6d004c3434e2e993fbeca
             <Route path="coursetable/:id" element={<EditCouresModal />} />
             <Route path="form" element={<Form />} />
             <Route path='service' element={<ServiceCRUD />} />
