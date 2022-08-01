@@ -55,6 +55,7 @@ const CreateEmployee = () => {
       const file = new FormData();
       file.append("file", e.target.files[0]);
       const res = await instance.post("/upload/PROFILE", file);
+      console.log(res);
       data.galleries.push(res.data.body)
       setData({ ...data });
     } catch (err) {
@@ -62,8 +63,11 @@ const CreateEmployee = () => {
     }
   };
   const submit = async (e) => {
+    console.log(data)
+
     e.preventDefault();
      instance.post("/api/v1/employee/create_with_detail", data).then((res) => {
+      console.log(res.data)
       alert(
          "Malumot yuklandi"
       )
