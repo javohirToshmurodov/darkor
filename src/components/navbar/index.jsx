@@ -11,6 +11,7 @@ import CallIcon from "../../assets/icons/Call.png";
 import "../../styles/navbar.css";
 
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 function OffcanvasExample() {
   // const ln = localStorage.getItem("language")
@@ -73,6 +74,9 @@ function OffcanvasExample() {
       console.log(`language ${e} ga o'zgardi`);
     };
   };
+  useEffect(() => {
+    i18n.changeLanguage(localStorage.getItem("language"));
+  }, []);
 
   return (
     <Container>
@@ -111,6 +115,7 @@ function OffcanvasExample() {
               <Form.Select
                 style={{ width: "70px" }}
                 onChange={(e) => changeLanguage(e.target.value)}
+                value={localStorage.getItem("language")}
               >
                 <option value="uz">UZ</option>
                 <option value="ru">RU</option>
