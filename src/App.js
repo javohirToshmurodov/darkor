@@ -14,7 +14,6 @@ import Courses from "./pages/Courses";
 import CourseDetails from "./pages/Courses/CourseDetail";
 import CreateEmployee from "./pages/Admin/createEmploye";
 import Employees from "./components/Employees";
-import CourseTable from "./pages/Admin/CoursesTable"
 import EmployeeDetail from "./components/Employees/EmployeeDetail";
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import Form from './pages/Admin/Form'
@@ -23,6 +22,7 @@ import ExpertDetail from "./pages/Experts/ExpertDetail";
 import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
+import CoursesTable from "./pages/Admin/CoursesTable";
 function App() {
   return (
     <>
@@ -46,7 +46,7 @@ function App() {
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />
-            <Route path="coursetable" element={<CourseTable />} />
+            <Route path="coursetable" element={<CoursesTable />} />
             <Route path="coursetable/:id" element={<EditCouresModal />} />
             <Route path="form" element={<Form />} />
             <Route path='service' element={<ServiceCRUD />} />

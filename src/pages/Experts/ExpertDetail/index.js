@@ -25,6 +25,7 @@ function ExpertDetail(props) {
         instance
             .get(`/api/v1/employee_detail/get_by_employee/${code}`)
             .then((res) => {
+                console.log("2", res.data.body);
                 setEmployee({ ...res.data.body });
                 setIds(res.data.body.employee.courses[0].id);
                 setFullSkills(res.data.body.employee.courses[0].name);
