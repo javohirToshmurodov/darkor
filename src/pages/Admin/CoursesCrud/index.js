@@ -172,6 +172,27 @@ const CoursesCrud = () => {
          console.log(err);
       })
    }
+   const mapArr = () => {
+      const arr = []
+      offersRu.map((e, i) => {
+         arr.push(e.offer)
+      })
+      return arr
+   }
+   const mapArrUz = () => {
+      const arr = []
+      offersUz.map((e, i) => {
+         arr.push(e.offer)
+      })
+      return arr
+   }
+   const mapArrEn = () => {
+      const arr = []
+      offersEn.map((e, i) => {
+         arr.push(e.offer)
+      })
+      return arr
+   }
    const handleCourseSubmit = (e) => {
       e.preventDefault()
       instance.post("/api/v1/courseDetails/create/", {
@@ -199,9 +220,9 @@ const CoursesCrud = () => {
          ],
          price: {
             price: price,
-            offersUz: [`${offersUz}`],
-            offersRu: [`${offersRu}`],
-            offersEn: [`${offersEn}`],
+            offersUz: mapArrUz(),
+            offersRu: mapArr(),
+            offersEn: mapArrEn(),
          },
          course: {
             nameUz: `${coursenameUz}`,
@@ -225,6 +246,9 @@ const CoursesCrud = () => {
             "kurs muvaffaqiyatli saqlandi"
          )
       }).catch((err) => console.log(err))
+
+
+
    }
    return (
       <div className='one'>
@@ -437,7 +461,7 @@ const CoursesCrud = () => {
                            <InputGroup className="mb-3">
                               <Form.Control
                                  onChange={(e) => inputTitleEn(i, e)}
-                                 placeholder="offer text Ru"
+                                 placeholder="offer text En"
                                  aria-label="Username"
                                  aria-describedby="basic-addon123"
                               />

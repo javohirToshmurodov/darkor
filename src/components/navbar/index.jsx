@@ -75,7 +75,9 @@ function OffcanvasExample() {
     };
   };
   useEffect(() => {
-    i18n.changeLanguage(localStorage.getItem("language"));
+    localStorage.getItem("language")
+      ? i18n.changeLanguage(localStorage.getItem("language"))
+      : localStorage.setItem("language", "uz");
   }, []);
 
   return (
