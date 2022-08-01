@@ -28,7 +28,6 @@ function App() {
   return (
     <>
       <OffcanvasExample />
-      {/* <SpecialistForm /> */}
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
@@ -37,6 +36,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:id" element={<CourseDetails />} />
+        <Route path="courses/:id/:name" element={<SpecialistForm />} />
         <Route path="employee" element={<Employees />} />
         <Route path="employee/:code" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
@@ -48,6 +48,7 @@ function App() {
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />
+            {/* <Route path="course_info" */}
             <Route path="coursetable" element={<CourseTable />} />
             <Route path="coursetable/:id" element={<EditCouresModal />} />
             <Route path="form" element={<Form />} />
