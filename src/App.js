@@ -28,7 +28,7 @@ function App() {
   return (
     <>
       <OffcanvasExample />
-      <SpecialistForm />
+      {/* <SpecialistForm /> */}
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />

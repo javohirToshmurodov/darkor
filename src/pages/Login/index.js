@@ -14,8 +14,8 @@ const Login = () => {
 
    const navigate = useNavigate()
 
-   const handleSubmit = () => {
-
+   const handleSubmit = (e) => {
+      e.preventDefault()
 
       try {
          instance.post("api/v1/auth/login", {
@@ -36,6 +36,7 @@ const Login = () => {
             setSuccess(true)
          } else if (user !== "admin" && password !== "admin") {
             setSuccess(false)
+            alert("username or password is incorrect")
          } else {
             alert("username or password is incorrect")
          }

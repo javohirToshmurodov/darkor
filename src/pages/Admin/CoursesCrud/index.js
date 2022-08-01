@@ -221,9 +221,8 @@ const CoursesCrud = () => {
             ],
          }
       }).then((res) => {
-         console.log("qoyilee");
          alert(
-            "qoyil bratan addushi - kurs saqlandi - yorvordiz"
+            "kurs muvaffaqiyatli saqlandi"
          )
       }).catch((err) => console.log(err))
    }
