@@ -13,11 +13,12 @@ const CoursesTable = () => {
    const [show, setShow] = useState(false);
    const [courseId, setCourseId] = useState("")
    const handleClose = () => setShow(false);
+   const [size, setSize] = useState(10)
    const handleShow = () => setShow(true);
    const navigate = useNavigate()
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=10&page=0").then((res) => {
+      instance.get(`api/v1/course/list/?size=${size}&page=0`).then((res) => {
          console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
@@ -30,14 +31,18 @@ const CoursesTable = () => {
       setLoading(true)
       instance.delete(`/api/v1/courseDetails/delete/${id}`).then((res) => {
          console.log(res.data);
+         alert("Kurs muvaffaqiyatli o'chirildi")
          getCourses()
       }).catch((err) => {
          console.log(err);
       })
    }
+   const moreCourse = () => {
+      setSize(size => size + 10)
+   }
    useEffect(() => {
       getCourses()
-   }, [])
+   }, [size])
 
    const openEdit = (event, id) => {
       setCourseId(id)
@@ -90,6 +95,9 @@ const CoursesTable = () => {
                } */}
             </tbody>
          </Table>
+         <div className="text-end">
+            <button onClick={moreCourse} className="btn btn-dark">More...</button>
+         </div>
       </Spin>
    )
 }

@@ -55,7 +55,7 @@
   "contactLink": "Kontaktlar",
   "contactTitle": "Ijtimoiy barqarorlik sari biz bilan",
   "companyTitle": "Kompaniya haqida",
-  "contactDescription": "Darkor22 HR agentligi nomzodlarni o'zlari qiziqtirgan sohada ishlash imkoniyatini o‘rgatish orqali butun O‘zbekiston bo‘ylab malakali mutaxassislarni ish bilan ta’minlaydigan tashkilotdir.",
+  "contactDescription": "Darkor22 nomzodlarning o'zlari qiziqqan sohada ishlash, o'qish va ishga joylashish imkoniyatini beruvchi HR agentlikdir..",
   "contactHeaderButton": "Arizangizni yuboring",
   "contactInfoDescription": "Kartellar texnologik taraqqiyotning bevosita ishtirokchilari imkon qadar batafsil tavsiflanishi mumkin bo'lgan vaziyatga yo'l qo'ymaydi.",
   "allaboutCourse": "Kurs haqida umumiy",
@@ -81,7 +81,7 @@
   "navbar-6": "Xodimlar",
   "expertDescription": "Shuni ta'kidlash kerakki, kuchli kadrlarni tayyorlash uchun bilimli o'qituvchilarni yollash kerak. O'qituvchilar xalqaro ta'lim standardlariga mos kelishi kerak.",
   "servicesTitle": "Xizmatlar haqida qo'shimcha.",
-  "servicesDescription": "Sohalar bo'yicha qisqa kurslarimiz kadrlarning tezroq doimiy ish o'rinlarini egallashlari uchun tashkil etilgan. Bu kurslarni o'qitish uchun O'zbekiston bo'ylab eng yaxshi o'qituvchilar jab qilingan.",
+  "servicesDescription": "Sohalar bo'yicha qisqa kurslarimiz kadrlarning tezroq doimiy ish o'rinlarini egallashlari uchun tashkil etilgan. Bu kurslarni o'qitish uchun O'zbekiston bo'ylab eng yaxshi o'qituvchilar jalb qilingan.",
   "servicesLink": "Xizmatlar",
   "ourservices": "Bizning xizmatlar",
   "ourkadr": "Bizning mutaxassislar",
@@ -98,5 +98,6 @@
   "carttitle3": "SMM reklamasi",
   "cartesc3": "Qayta-qayta ta'kidlanganidek, fanda totalitarizm tarafdorlari bundan boshqa narsa emas.",
   "carttitle4": "Albatta, kundalik ishning boshlanishi.",
-  "cartdesc4": "Turli va boy tajriba shuni ko'rsatadiki, biz tanlagan innovatsion yo'l juda mos keladi."
+  "cartdesc4": "Turli va boy tajriba shuni ko'rsatadiki, biz tanlagan innovatsion yo'l juda mos keladi.",
+  "more": "Ko'proq..."
 }

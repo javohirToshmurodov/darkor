@@ -6,14 +6,16 @@ import ContactWithUs from "../../components/ContactWithUs";
 import DefaultCard from "../../components/DefaultCardCourses";
 import Footer from "../../components/Footer";
 import { instance } from "../../redux/actions";
-
+import { useTranslation } from "react-i18next";
 const Courses = () => {
+   const { t } = useTranslation()
    const { id } = useParams()
+   const [page, setPage] = useState(10)
    const [courses, setCourses] = useState([])
    const [loading, setLoading] = useState(false)
    const getCourses = () => {
       setLoading(true)
-      instance.get("api/v1/course/list/?size=20&page=0").then((res) => {
+      instance.get(`api/v1/course/list/?size=${page}&page=0`).then((res) => {
          setCourses([...res.data.body])
          console.log(res.data.body);
          setLoading(false)
@@ -25,9 +27,14 @@ const Courses = () => {
          })
 
    };
+   const moreCourses = () => {
+      setPage(prev => prev + 10);
+      console.log(page);
+   };
    useEffect(() => {
-      getCourses();
-   }, []);
+      getCourses()
+   }, [page])
+
    return (
       <Spin spinning={loading}>
          <div className="">
@@ -43,10 +50,13 @@ const Courses = () => {
                         title={e.name}
                      />
                   ))}
+                  <div className="text-center">
+                     <div onClick={moreCourses} className="btn btn-primary">{t("more")}</div>
+                  </div>
                </div>
             </div>
          </div>
-         <div className="container my-5 px-5">
+         <div className="container my-5 p-5">
             <ContactWithUs />
          </div>
          <div className="pt-5">
