@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { instance } from "../../redux/actions";
 
 const MessageForm = () => {
-
   const [data, setData] = useState({});
 
   const handleChange = (e) => {
@@ -14,20 +13,22 @@ const MessageForm = () => {
   };
 
   const getData = () => {
-    const res =  instance.post('/api/v1/forum/create', data).then((res) => {
-        alert("Statistikalar muvaffaqiyatli yuklandi");
+    const res = instance
+      .post("/api/v1/forum/create", data)
+      .then((res) => {
+        alert("So'rov yuborildi");
         console.log(res.data);
+        setData({});
       })
       .catch((err) => {
-      alert('xatolik')
+        alert("xatolik");
         console.log(err);
       });
   };
 
-
   const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(data, "sadasdsadasd");
-    // e.preventDefault()
     getData();
   };
   return (
@@ -39,6 +40,7 @@ const MessageForm = () => {
           onChange={handleChange}
           name="fullName"
           type="text"
+          required
           className="form-control"
           id="formGroupExampleInput"
           placeholder="Имя"
@@ -52,6 +54,7 @@ const MessageForm = () => {
           onChange={handleChange}
           name="email"
           type="email"
+          required
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
@@ -92,6 +95,7 @@ const MessageForm = () => {
           type="text"
           name="phone"
           onChange={handleChange}
+          required
           placeholder="+998 (99) 897-45-04 "
           className="form-control"
           aria-label="Text input with dropdown button"
@@ -100,10 +104,13 @@ const MessageForm = () => {
 
       {/* text area input */}
       <div className="form-group col-xs-4 ">
-        <label className="form-group col-xs-4 col-md-4">Сообщение (по желанию )</label>
+        <label className="form-group col-xs-4 col-md-4">
+          Сообщение (по желанию )
+        </label>
         <textarea
           name="message"
           onChange={handleChange}
+          required
           className="form-control"
           id="email"
         ></textarea>

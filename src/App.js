@@ -14,7 +14,6 @@ import Courses from "./pages/Courses";
 import CourseDetails from "./pages/Courses/CourseDetail";
 import CreateEmployee from "./pages/Admin/createEmploye";
 import Employees from "./components/Employees";
-import CourseTable from "./pages/Admin/CoursesTable"
 import EmployeeDetail from "./components/Employees/EmployeeDetail";
 import StatisticsCrud from './pages/Admin/StatisticsCrud'
 import Form from './pages/Admin/Form'
@@ -24,11 +23,11 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
+import CoursesTable from "./pages/Admin/CoursesTable"
 function App() {
   return (
     <>
       <OffcanvasExample />
-      <SpecialistForm />
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
@@ -37,6 +36,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:id" element={<CourseDetails />} />
+        <Route path="courses/:id/:name" element={<SpecialistForm />} />
         <Route path="employee" element={<Employees />} />
         <Route path="employee/:code" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
@@ -48,15 +48,15 @@ function App() {
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />
-            <Route path="coursetable" element={<CourseTable />} />
+            <Route path="coursetable" element={<CoursesTable />} />
             <Route path="coursetable/:id" element={<EditCouresModal />} />
             <Route path="form" element={<Form />} />
             <Route path='service' element={<ServiceCRUD />} />
             <Route path='statiscs' element={<StatisticsCrud />} />
             <Route path='form' element={<Forms />} />
-          </Route>
-        </Route>
-      </Routes>
+          </Route >
+        </Route >
+      </Routes >
     </>
   );
 }

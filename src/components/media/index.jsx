@@ -12,20 +12,10 @@ const Media = ({ data, loading }) => {
           }`}
         >
           <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center">
-            {item.gallery.extension == "jpg" ||
-            item.gallery.extension == "png" ||
-            item.gallery.extension == "jpeg" ? (
-              <img
-                src={item.gallery.url}
-                alt="img"
-                className="rounded media w-lg-50 w-100"
-              />
-            ) : (
-              <iframe
-                className="media"
-                src={`https://www.youtube.com/embed/${item.youTubeVideo}`}
-              ></iframe>
-            )}
+            <iframe
+              className="media"
+              src={`https://www.youtube.com/embed/${item.youTubeVideo}`}
+            ></iframe>
           </div>
           <div className="content col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
             <h2>{item.title}</h2>

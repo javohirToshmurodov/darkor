@@ -21,7 +21,7 @@ const Services = () => {
    const getMedia = async () => {
       setLoading(true);
       try {
-         const res = await instance.get("api/v1/post/list?size=10&page=0");
+         const res = await instance.get("api/v1/homeService/list?size=10&page=0");
          setState(res.data);
          setLoading(false);
       } catch (err) {
@@ -77,7 +77,7 @@ const Services = () => {
          </section>
 
          <div className="container mt-5">
-            <div className="row justify-content-center px-4">
+            <div className="px-4 row justify-content-center">
                <div className="col-9">
                   <TitleH1 title={t("faq")} />
                   <Collapse className="mt-4" defaultActiveKey={["1"]}>

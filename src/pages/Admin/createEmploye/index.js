@@ -26,6 +26,7 @@ const CreateEmployee = () => {
   const getCourses = async () => {
     try {
       const res = await instance.get("/api/v1/course/list/?size=10&page=0");
+      console.log("data", res.data);
       setCourses(res.data);
     } catch (err) {
       console.log(err);
@@ -66,17 +67,17 @@ const CreateEmployee = () => {
     console.log(data)
 
     e.preventDefault();
-     instance.post("/api/v1/employee/create_with_detail", data).then((res) => {
+    instance.post("/api/v1/employee/create_with_detail", data).then((res) => {
       console.log(res.data)
       alert(
-         "Malumot yuklandi"
+        "Malumot yuklandi"
       )
-   }).catch((err) => console.log(err,'ererere'))
+    }).catch((err) => console.log(err, 'ererere'))
   };
   return (
     <form onSubmit={submit}>
       <div className="row">
-        <div className="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 px-5">
+        <div className="px-5 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
           {/*  FULL NAME */}
           <div className="form-group">
             <label htmlFor="name_uz">Full NameUz</label>
@@ -163,13 +164,13 @@ const CreateEmployee = () => {
 
             ></textarea>
           </div>
-          <br/>
-        <button type="submit" className="btn mt-3 btn-primary">
-          Submit
-        </button>
+          <br />
+          <button type="submit" className="mt-3 btn btn-primary">
+            Submit
+          </button>
         </div>
 
-        <div className="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12 px-5">
+        <div className="px-5 col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
           {/* BODY DESCRIPTION */}
           <div className="form-group">
             <label htmlFor="bodyDescriptionUz">Body Description Uz</label>
@@ -210,7 +211,7 @@ const CreateEmployee = () => {
 
             ></textarea>
           </div>
-          <br/>
+          <br />
           <div className="form-group">
             <label htmlFor="youTubeVideo">YouTube Video</label>
             <input
@@ -222,7 +223,7 @@ const CreateEmployee = () => {
               name="youTubeVideo"
               value={data.youTubeVideo}
             />
-            </div>
+          </div>
           {/* SELECT COURSE */}
           <br />
           <label htmlFor="selectCourse">Select Course </label>
@@ -262,7 +263,7 @@ const CreateEmployee = () => {
           <input type="file" className="form-control" onChange={(e) => file(e)} />
         </div>
       </div>
-        
+
     </form>
   );
 };
