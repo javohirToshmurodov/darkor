@@ -50,7 +50,8 @@ function ExpertDetail(props) {
     }, [])
     const getCourseDetails = async () => {
         try {
-            const res = await instance.get(`/api/v1/courseDetails/get/?id=3`)
+            const res = await instance.get(`/api/v1/courseDetails/get/?id=${id}`)
+            console.log("11", res.data.body);
             setCourseDetails(res.data.body)
         } catch (err) {
             console.log(err);
@@ -155,6 +156,12 @@ function ExpertDetail(props) {
                             ))}
                         </div>
                     </div>
+                </div>
+                <div className="py-5 mt-5">
+                    {
+                        <iframe className='mt-3 rounded-2xl' width="100%" height="497" src={`https://www.youtube.com/embed/${employee?.youtubeVideo}`} >
+                        </iframe>
+                    }
                 </div>
                 <div className="py-5 mt-5">
                     <p>
