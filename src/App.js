@@ -23,11 +23,9 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
-<<<<<<< HEAD
 import CoursesTable from "./pages/Admin/CoursesTable";
-=======
-import CoursesTable from "./pages/Admin/CoursesTable"
->>>>>>> 9b27312eb8b0e93c1561d5c808c0d8b4bc6a7b12
+import { Table } from "react-bootstrap";
+import TableFormUsers from "./pages/Admin/TableForm";
 function App() {
   return (
     <>
@@ -49,6 +47,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="tableformusers" element={<TableFormUsers />} />
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />
