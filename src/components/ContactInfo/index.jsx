@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const ContactInfo = ({ link, title, description }) => {
   const { t, i18n } = useTranslation();
   return (
-    <div className="contact-container container">
+    <div className="contact-container container-fluid">
       <div className="col-6">
         <p style={{ color: "#007AFF" }}>{link}</p>
         <h1 className="services-title">{title}</h1>
