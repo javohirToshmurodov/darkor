@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { FaCommentDots, FaQuestion, FaList, FaTable } from "react-icons/fa"
+import { FaQuestion, FaList, FaTable } from "react-icons/fa"
 import { IoPersonOutline } from "react-icons/io5";
 import { BiBarChartAlt } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
@@ -17,11 +17,7 @@ const Admin = () => {
          icon: <FaList />,
          name: "Courses"
       },
-      {
-         pathname: "courses_info",
-         icon: <FaCommentDots />,
-         name: "Info-Cour"
-      },
+
       {
          pathname: "faq",
          icon: <FaQuestion />,
@@ -36,18 +32,18 @@ const Admin = () => {
          pathname: "form",
          icon: <IoPersonOutline />,
          name: "Users"
-      }, 
+      },
       {
          pathname: 'create-employee',
-         icon: <AiOutlineUsergroupAdd/>,
+         icon: <AiOutlineUsergroupAdd />,
          name: 'Employee',
       },
       {
          pathname: 'service',
-         icon: <FiShoppingCart/>,
+         icon: <FiShoppingCart />,
          name: 'Service',
       },
-      
+
       {
          pathname: 'coursetable',
          icon: <FaTable />,

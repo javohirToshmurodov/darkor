@@ -225,7 +225,7 @@ const CourseDetails = () => {
                               }
                            </ul>
 
-                           <button className="btn btn-primary btn-block w-100">{t("signUp")}</button>
+                           <button onClick={() => navigate(`${courseDetail?.course?.name}`)} className="btn btn-primary btn-block w-100">{t("signUp")}</button>
                         </CoursePriceCardWrapper>
 
                      </div>

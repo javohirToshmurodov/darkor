@@ -16,8 +16,8 @@ function ExpertDetail(props) {
   const { code, id } = useParams();
   const [employee, setEmployee] = useState({});
   const [loading, setLoading] = useState(false);
-  const [courseDetail, setCourseDetails] = useState({})
-  const [experts, setExperts] = useState([])
+  const [courseDetail, setCourseDetails] = useState({});
+  const [experts, setExperts] = useState([]);
   const [ids, setIds] = useState("");
   const [skills, setSkills] = useState([]);
   const [fullSkills, setFullSkills] = useState("");
@@ -37,31 +37,34 @@ function ExpertDetail(props) {
       });
   };
   const getExperts = () => {
-    setLoading(true)
-    instance.get("/api/v1/employee/list?type=STUDENT&size=10&page=1").then((res) => {
-      console.log("1", res.data.body);
-      setExperts([...res.data.body])
-      setLoading(false)
-    }).catch((err) => {
-      console.log(err);
-    })
-  }
+    setLoading(true);
+    instance
+      .get("/api/v1/employee/list?type=STUDENT&size=10&page=1")
+      .then((res) => {
+        console.log("1", res.data.body);
+        setExperts([...res.data.body]);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
-    getExperts()
+    getExperts();
     console.log("experts", experts);
-  }, [])
+  }, []);
   const getCourseDetails = async () => {
     try {
-      const res = await instance.get(`/api/v1/courseDetails/get/?id=3`)
+      const res = await instance.get(`/api/v1/courseDetails/get/?id=3`);
       console.log(res.data.body);
-      setCourseDetails(res.data.body)
+      setCourseDetails(res.data.body);
     } catch (err) {
       console.log(err);
     }
-  }
+  };
   useEffect(() => {
-    getCourseDetails()
-  }, [id])
+    getCourseDetails();
+  }, [id]);
   const getSkills = () => {
     instance
       .get(`/api/v1/skill/get_by_course/${ids}`)
@@ -163,6 +166,7 @@ function ExpertDetail(props) {
           </div>
         </div>
         <div className="py-5 mt-5">
+<<<<<<< HEAD
           {
             <iframe className='mt-3 rounded-2xl' width="100%" height="497" src={`https://www.youtube.com/embed/${employee?.youtubeVideo}`} >
             </iframe>
@@ -172,30 +176,39 @@ function ExpertDetail(props) {
           <p>
             {t("cetrificate")}
           </p>
+=======
+          <p>{t("cetrificate")}</p>
+>>>>>>> 9b27312eb8b0e93c1561d5c808c0d8b4bc6a7b12
           <TitleH1 title={t("certificateDarkor")} />
-          <p>
-            {t("certificateDesc")}
-          </p>
+          <p>{t("certificateDesc")}</p>
           <div className="row">
-            {
-              courseDetail?.file?.map((e, i) => <div className='' key={i}>
-                {
-                  e.fileType && e.fileType === "CERTIFICATE" ? <img className='img-fluid' src={e.url} /> : ""
-                }
-              </div>)
-            }
-
-
+            {courseDetail?.file?.map((e, i) => (
+              <div className="" key={i}>
+                {e.fileType && e.fileType === "CERTIFICATE" ? (
+                  <img className="img-fluid" src={e.url} />
+                ) : (
+                  ""
+                )}
+              </div>
+            ))}
           </div>
         </div>
         <div className="items-center justify-between mt-5 p-7 row bg-hoverBgColor rounded-2xl">
-          <p className="pt-5 text-base font-semibold uppercase">{t("bigExpert")}</p>
-          <p className="font-bold text-[44px] leading-[56px]">{t("youmayalsolike")}</p>
-          {
-            experts.map((e, i) => (
-              < DefaultExpertCard code={e.code} key={e.id} subtitle={e.courses[0].name} img={e.gallery.url} title={e.fullName} />
-            ))
-          }
+          <p className="pt-5 text-base font-semibold uppercase">
+            {t("bigExpert")}
+          </p>
+          <p className="font-bold text-[44px] leading-[56px]">
+            {t("youmayalsolike")}
+          </p>
+          {experts.map((e, i) => (
+            <DefaultExpertCard
+              code={e.code}
+              key={e.id}
+              subtitle={e.courses[0].name}
+              img={e.gallery.url}
+              title={e.fullName}
+            />
+          ))}
         </div>
       </div>
       <div className="py-5 mt-5">

@@ -23,12 +23,15 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
+<<<<<<< HEAD
 import CoursesTable from "./pages/Admin/CoursesTable";
+=======
+import CoursesTable from "./pages/Admin/CoursesTable"
+>>>>>>> 9b27312eb8b0e93c1561d5c808c0d8b4bc6a7b12
 function App() {
   return (
     <>
       <OffcanvasExample />
-      {/* <SpecialistForm /> */}
       <Routes>
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
@@ -37,6 +40,7 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:id" element={<CourseDetails />} />
+        <Route path="courses/:id/:name" element={<SpecialistForm />} />
         <Route path="employee" element={<Employees />} />
         <Route path="employee/:code" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
@@ -54,9 +58,9 @@ function App() {
             <Route path='service' element={<ServiceCRUD />} />
             <Route path='statiscs' element={<StatisticsCrud />} />
             <Route path='form' element={<Forms />} />
-          </Route>
-        </Route>
-      </Routes>
+          </Route >
+        </Route >
+      </Routes >
     </>
   );
 }
