@@ -68,7 +68,7 @@ const CreateEmployee = () => {
 
     e.preventDefault();
     instance.post("/api/v1/employee/create_with_detail", data).then((res) => {
-      console.log(res.data)
+      console.log("1", res.data.body)
       alert(
         "Malumot yuklandi"
       )

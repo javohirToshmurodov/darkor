@@ -23,7 +23,11 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
+<<<<<<< HEAD
+import CoursesTable from "./pages/Admin/CoursesTable";
+=======
 import CoursesTable from "./pages/Admin/CoursesTable"
+>>>>>>> 9b27312eb8b0e93c1561d5c808c0d8b4bc6a7b12
 function App() {
   return (
     <>

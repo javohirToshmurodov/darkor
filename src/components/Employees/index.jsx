@@ -42,7 +42,7 @@ const Employees = () => {
     instance
       .get(`/api/v1/faq/list?size=10&page=0&lang=uz`)
       .then((res) => {
-        console.log("Bu result", res);
+        console.log("Bu result", res.data.body);
         setFaq([...res.data.body]);
         setLoading(false);
       })
