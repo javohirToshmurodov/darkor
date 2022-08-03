@@ -20,6 +20,7 @@ const ServiceCRUD = () => {
     <div>
       {data.map((item, index) => (
         <button
+        key={index}
           className='mx-3 mb-3 btn btn-success'
           onClick={() => setActiveMenu(index)}
         >
