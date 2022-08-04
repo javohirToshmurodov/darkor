@@ -25,6 +25,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
 import CoursesTable from "./pages/Admin/CoursesTable";
 import TableFormUsers from "./pages/Admin/TableForm";
+import Faq from "./pages/Admin/Faq";
 function App() {
   return (
     <>
@@ -46,6 +47,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="faq" element={<Faq />} />
             <Route path="tableformusers" element={<TableFormUsers />} />
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
