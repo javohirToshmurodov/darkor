@@ -24,9 +24,7 @@ const Employees = () => {
   const getCourses = () => {
     setLoading(true);
     instance
-      .get(
-        "/api/v1/employee/list?type=STUDENT&size=10&page=1"
-      )
+      .get("/api/v1/employee/list?type=STUDENT&size=10&page=1")
       .then((res) => {
         console.log(res.data.body);
         setCourses([...res.data.body]);
@@ -128,8 +126,8 @@ const Employees = () => {
       <div className="container px-5 my-5">
         <ContactWithUs />
       </div>
-      <div className="container mt-4">
-        <h1>Faq is here</h1>
+      <div className="container px-5 mt-4">
+        <h1>{t("faq")}</h1>
         <Collapse className="mt-4" defaultActiveKey={["1"]}>
           {faq?.map((e, i) => (
             <Panel header={e.question}>

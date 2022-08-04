@@ -19,15 +19,15 @@ const ContactInfo = ({ link, title, description }) => {
         <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
           <ContactCardInfo
             phone="+999 (88) 109-20-22"
-            text={t("Пн-Пт с 8 утра до 5 вечера.")}
+            text={t("contactDesc1")}
             icon={icon3}
-            title={t("Номер телефона")}
+            title={t("contactPhone")}
           />
         </div>
         <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
           <ContactCardInfo
             phone="darkor2220@gmail.com"
-            text="Наша дружная команда здесь, чтобы помочь."
+            text={t("contactDesc2")}
             icon={icon2}
             title="Email"
           />

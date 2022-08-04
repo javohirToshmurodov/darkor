@@ -103,5 +103,9 @@
   "contactAdress": "Toshkent shahar, Mirobod tumani, Nukus ko'cha 81",
   "contactdesc": "Bizning office shtabimizga tashrif buyuring",
   "contactOffice": "Ofis",
-  "contactInfoTitle": "Biz bilan bog'laning"
+  "contactInfoTitle": "Biz bilan bog'laning",
+  "contactEmail": "Email",
+  "contactDesc1": "Dushanbadan juma soat 8:00 dan 17:00 gacha.",
+  "contactDesc2": "Bizning do'stona jamoamiz yordam berish uchun shu yerda.",
+  "contactPhone": "Telefon raqam"
 }

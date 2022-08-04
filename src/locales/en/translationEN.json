@@ -90,7 +90,7 @@
   "youmayalsolike": "You may also like",
   "carttitle1": "Branding ot A do Ya",
   "cartdesc1": "Gentlemen, constant quantitative growth and the scope of our activity determines the high demand.",
-  "cartitle2": "Web design",
+  "carttile2": "Web design",
   "cartdesc2": "The opposite view implies that the shareholders of the largest companies initiated exclusively.",
   "carttitle3": "SMM advertising",
   "cartesc3": "As has been repeatedly mentioned, the supporters of totalitarianism in science are nothing more than.",
@@ -101,5 +101,9 @@
   "more": "More...",
   "contactAdress": "Tashkent city, Mirabad district, Nukus street 81",
   "contactdesc": "Visit our office headquarters",
-  "contactOffice": "Office"
+  "contactOffice": "Office",
+  "contactDesc1": "Mon-Fri from 8 am to 5 pm.",
+  "contactDesc2": "Our friendly team is here to help.",
+  "contactEmail": "Email",
+  "contactPhone": "Phone number"
 }
