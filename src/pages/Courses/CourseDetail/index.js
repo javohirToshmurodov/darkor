@@ -123,7 +123,7 @@ const CourseDetails = () => {
                   } */}
                      {
                         courseDetail?.file?.map((e, i) => <div>
-                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='mb-2 img-fluid' />}
+                           {e.fileType == "MEDIA" && <img src={e.url} alt="rasmyoq" className='mb-2 img-fluid coursedetailimg' />}
                         </div>
                         )
                      }
@@ -157,9 +157,9 @@ const CourseDetails = () => {
 
                         <div>
                            <p className='mt-4'>{t("skillProgram")}</p>
-                           <TitleH1 title={t("practiceLearn")} />
+                           <TitleH1 title={courseDetail.secondTitleDescription} />
                            <p>
-                              {t("practiceLearnDesc")}
+                              {courseDetail.secondBodyDescription}
                            </p>
                         </div>
                         <hr />
@@ -252,7 +252,7 @@ const CourseDetails = () => {
                   </div>
                   <div className="py-5 mt-5" id='faq'>
                      <h1>
-                        Faq is here
+                        {t("faq")}
                      </h1>
                      <Collapse className='mt-4' defaultActiveKey={['1']} >
                         {

@@ -14,4 +14,3 @@ export const instance = axios.create({
       "Accept-Language": `${language}`,
    },
 })
-console.log(language);
