@@ -18,7 +18,7 @@ const ContactInfoCard = ({ icon, title, text, phone }) => {
         <div className="d-flex flex-column justify-content-between flex-1">
           <div>
             <h6 className="text-left mt-3">{title}</h6>
-            <p className=" text-left"> {text}</p>
+            <p className=" text-left minheightp "> {text}</p>
           </div>
           <div className="align-self-baseline">
             <p className="text-left text-primary">{phone}</p>

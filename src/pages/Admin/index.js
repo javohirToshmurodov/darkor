@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
-import { FaQuestion, FaList, FaTable } from "react-icons/fa"
+import { FaQuestion, FaList, FaTable, FaUsers } from "react-icons/fa"
 import { IoPersonOutline } from "react-icons/io5";
 import { BiBarChartAlt } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
@@ -58,6 +58,11 @@ const Admin = () => {
          pathname: 'coursetable',
          icon: <FaTable />,
          name: 'Table-Cour',
+      },
+      {
+         pathname: 'tableformusers',
+         icon: <FaUsers />,
+         name: 'Users Table',
       },
    ])
    return (

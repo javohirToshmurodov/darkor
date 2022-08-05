@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const ContactInfo = ({ link, title, description }) => {
   const { t, i18n } = useTranslation();
   return (
-    <div className="contact-container container">
+    <div className="contact-container container-fluid">
       <div className="col-6">
         <p style={{ color: "#007AFF" }}>{link}</p>
         <h1 className="services-title">{title}</h1>
@@ -18,26 +18,26 @@ const ContactInfo = ({ link, title, description }) => {
       <div className="row w-100">
         <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
           <ContactCardInfo
-            phone="+999 (99) 897-45-04"
-            text={t("Пн-Пт с 8 утра до 5 вечера.")}
+            phone="+999 (88) 109-20-22"
+            text={t("contactDesc1")}
             icon={icon3}
-            title={t("Номер телефона")}
+            title={t("contactPhone")}
           />
         </div>
         <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
           <ContactCardInfo
-            phone="darkor22@gmail.com"
-            text="Наша дружная команда здесь, чтобы помочь."
+            phone="darkor2220@gmail.com"
+            text={t("contactDesc2")}
             icon={icon2}
             title="Email"
           />
         </div>
         <div className="col-xl-4 mt-3 col-lg-4 col-md-6 col-sm-6 col-12">
           <ContactCardInfo
-            phone="100 Смит Стрит Коллингвуд Виктория 3066 AU"
-            text="Приходите поздороваться в наш офисный штаб."
+            phone={t("contactAdress")}
+            text={t("contactdesc")}
             icon={icons}
-            title="Офис"
+            title={t("contactOffice")}
           />
         </div>
       </div>

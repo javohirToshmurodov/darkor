@@ -23,10 +23,16 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
+<<<<<<< HEAD
 import CoursesTable from "./pages/Admin/CoursesTable"
 import PostAdd from "./pages/Admin/CreatePost/postAdd";
 import PostCrud from "./pages/Admin/CreatePost/postCrud";
 import EditPostModal from "./components/EditPostModal";
+=======
+import CoursesTable from "./pages/Admin/CoursesTable";
+import TableFormUsers from "./pages/Admin/TableForm";
+import Faq from "./pages/Admin/Faq";
+>>>>>>> efeae65c8007c2f196731ffaa72d5158af652e70
 function App() {
   return (
     <>
@@ -35,6 +41,7 @@ function App() {
         <Route path="*" element={<Navigate to={"/"} replace />} />
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<CourseDetails />} />
+        <Route path="/:id/:code" element={<SpecialistForm />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="courses" element={<Courses />} />
@@ -48,6 +55,8 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="faq" element={<Faq />} />
+            <Route path="tableformusers" element={<TableFormUsers />} />
             <Route path="create-employee" element={<CreateEmployee />} />
             <Route path="courses" element={<CoursesCrud />} />
             <Route path="courses_info" element={<CourseInfo />} />

@@ -166,6 +166,7 @@ function ExpertDetail(props) {
           </div>
         </div>
         <div className="py-5 mt-5">
+<<<<<<< HEAD
           {
             <iframe className='mt-3 rounded-2xl' width="100%" height="497" src={`https://www.youtube.com/embed/${employee?.youtubeVideo}`} >
             </iframe>
@@ -175,6 +176,8 @@ function ExpertDetail(props) {
           <p>
             {t("cetrificate")}
           </p>
+=======
+>>>>>>> efeae65c8007c2f196731ffaa72d5158af652e70
           <p>{t("cetrificate")}</p>
           <TitleH1 title={t("certificateDarkor")} />
           <p>{t("certificateDesc")}</p>

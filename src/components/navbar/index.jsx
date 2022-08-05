@@ -132,7 +132,7 @@ function OffcanvasExample() {
                   <img src={CallIcon} alt="img" />
                 </span>
                 <div className="phone_container">
-                  {t("admin")} <span>+998 99 897-45-44</span>
+                  {t("admin")} <span>+998 88 109-20-22</span>
                 </div>
               </Nav.Link>
             </Nav>

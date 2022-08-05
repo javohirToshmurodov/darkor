@@ -18,7 +18,6 @@ const CoursesTable = () => {
    const getCourses = () => {
       setLoading(true)
       instance.get(`api/v1/course/list/?size=${size}&page=0`).then((res) => {
-         console.log(res.data.body);
          setCourses([...res.data.body])
          setLoading(false)
       }).catch((err) => {
@@ -29,7 +28,6 @@ const CoursesTable = () => {
       console.log(id);
       setLoading(true)
       instance.delete(`/api/v1/courseDetails/delete/${id}`).then((res) => {
-         console.log(res.data);
          alert("Kurs muvaffaqiyatli o'chirildi")
          getCourses()
       }).catch((err) => {
