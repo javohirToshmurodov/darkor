@@ -5,7 +5,6 @@ import { instance } from '../../../redux/actions';
 import { CourseImgWrapper } from '../../../styles';
 import { FaPenAlt, FaTrashAlt } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
-import EditCouresModal from '../../../components/EditCourseModal';
 import { useNavigate } from 'react-router-dom';
 const CoursesTable = () => {
    const [courses, setCourses] = useState([])
@@ -65,7 +64,7 @@ const CoursesTable = () => {
                   courses?.map((e, i) => <tr key={e.code}>
                      <td>{i + 1}</td>
                      <td className=''>
-                        <div className="d-flex gap-3">
+                        <div className="gap-3 d-flex">
 
                            <CourseImgWrapper src={`${e?.galleries[0]?.url}`} className="img-fluid" alt='rasm topilmadi' />
                            {e.name}
@@ -77,7 +76,7 @@ const CoursesTable = () => {
                         }
                      </td>
                      <td className=''>
-                        <div className="d-flex gap-2 justify-content-center">
+                        <div className="gap-2 d-flex justify-content-center">
 
                            <Button variant="warning" onClick={(event) => openEdit(event, e.id)}>
                               <FaPenAlt />

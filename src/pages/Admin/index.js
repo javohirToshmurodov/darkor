@@ -9,6 +9,7 @@ import { FiShoppingCart } from "react-icons/fi";
 
 
 import { useNavigate } from 'react-router-dom';
+import { BsFillFilePostFill } from 'react-icons/bs';
 const Admin = () => {
    const navigate = useNavigate()
    const [menuItems, setMenuItems] = useState([
@@ -43,7 +44,16 @@ const Admin = () => {
          icon: <FiShoppingCart />,
          name: 'Service',
       },
-
+      {
+         pathname: 'postAdd',
+         icon: <BsFillFilePostFill />,
+         name: 'PostAdd',
+      },
+      {
+         pathname: 'postCrud',
+         icon: <BsFillFilePostFill />,
+         name: 'PostCrud',
+      },
       {
          pathname: 'coursetable',
          icon: <FaTable />,
@@ -52,7 +62,7 @@ const Admin = () => {
    ])
    return (
       <div className=''>
-         <div className="bg-dark py-3 d-flex gap-4 align-items-center justify-content-center text-white">
+         <div className="gap-4 py-3 text-white bg-dark d-flex align-items-center justify-content-center">
             <h4 className='text-white'>Admin Dashboard</h4>
          </div>
 
@@ -62,7 +72,7 @@ const Admin = () => {
                   <AdminMenuWrapper>
                      <ul className='p-5'>
                         {
-                           menuItems.map((e, i) => <li className='d-flex gap-2 mb-2 align-items-center' onClick={() => navigate(`${e.pathname}`)} key={i}>
+                           menuItems.map((e, i) => <li className='gap-2 mb-2 d-flex align-items-center' onClick={() => navigate(`${e.pathname}`)} key={i}>
                               {e.icon}
                               {e.name}
                            </li>)
@@ -70,7 +80,7 @@ const Admin = () => {
                      </ul>
                   </AdminMenuWrapper>
                </div>
-               <div className="col-xl-10 col-lg-9 col-md-8 col-sm-6 col-12 p-5">
+               <div className="p-5 col-xl-10 col-lg-9 col-md-8 col-sm-6 col-12">
                   <Outlet />
                </div>
             </div>

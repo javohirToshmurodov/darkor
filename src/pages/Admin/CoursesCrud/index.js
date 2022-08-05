@@ -283,7 +283,7 @@ const CoursesCrud = () => {
                </Form.Group>
                <hr />
                <h3 className='my-3'>Add media for course detail</h3>
-               <div className='d-flex gap-3 my-4'>
+               <div className='gap-3 my-4 d-flex'>
                   <div>
                      <Form.Group className='mb-3' controlId='formFileUz'>
                         <Form.Label>Media Uz</Form.Label>
@@ -379,7 +379,7 @@ const CoursesCrud = () => {
                   <Form.Control onChange={(e) => setCourseDescriptionEn(e.target.value)} as="textarea" rows={3} />
                </Form.Group>
                <h3>Course file upload here</h3>
-               <div className='d-flex gap-3 my-4'>
+               <div className='gap-3 my-4 d-flex'>
                   <div>
                      <Form.Group className='mb-3' controlId='fcourormFileUz'>
                         <Form.Label>Course File Uz</Form.Label>
@@ -423,7 +423,7 @@ const CoursesCrud = () => {
                   </Form.Group>
                   <h3>Adding offer here</h3>
                   <div>
-                     <button onClick={addOffer} className='btn btn-success mb-2'>add offerUz +</button>
+                     <button onClick={addOffer} className='mb-2 btn btn-success'>add offerUz +</button>
                      {
                         offersUz.map((e, i) => <Form.Group key={i} controlId={`formBasssic${i}`}>
                            <InputGroup className="mb-3">
@@ -433,13 +433,13 @@ const CoursesCrud = () => {
                                  aria-label="Usernamdse"
                                  aria-describedby="basic-addon1"
                               />
-                              <InputGroup.Text onClick={(e) => removeOffer(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                              <InputGroup.Text onClick={(e) => removeOffer(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                            </InputGroup>
                         </Form.Group>)
                      }
 
                   </div>
-                  <button onClick={addOfferRu} className='btn btn-success mb-2'>add offerRu +</button>
+                  <button onClick={addOfferRu} className='mb-2 btn btn-success'>add offerRu +</button>
                   {
                      offersRu.map((e, i) => <Form.Group key={`fds${i}`} controlId={`foarmBasicss${i}`}>
                         <InputGroup className="mb-3">
@@ -449,13 +449,13 @@ const CoursesCrud = () => {
                               aria-label="Usernafsdme"
                               aria-describedby="basic-addon123"
                            />
-                           <InputGroup.Text onClick={(e) => removeOfferRu(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                           <InputGroup.Text onClick={(e) => removeOfferRu(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                         </InputGroup>
                      </Form.Group>)
                   }
 
                   <div>
-                     <button onClick={addOfferEn} className='btn btn-success mb-2'>add offerEn +</button>
+                     <button onClick={addOfferEn} className='mb-2 btn btn-success'>add offerEn +</button>
                      {
                         offersEn.map((e, i) => <Form.Group key={`fds${i}`} controlId={`foasdrmBasicss${i}`}>
                            <InputGroup className="mb-3">
@@ -465,7 +465,7 @@ const CoursesCrud = () => {
                                  aria-label="Username"
                                  aria-describedby="basic-addon123"
                               />
-                              <InputGroup.Text onClick={(e) => removeOfferEn(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                              <InputGroup.Text onClick={(e) => removeOfferEn(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                            </InputGroup>
                         </Form.Group>)
                      }

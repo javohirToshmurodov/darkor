@@ -23,11 +23,10 @@ import Forms from "./pages/Admin/Form"
 import EditCouresModal from "./components/EditCourseModal";
 import ProtectedRoutes from "./ProtectedRoutes";
 import SpecialistForm from "./components/SpecialistForm"
-<<<<<<< HEAD
-import CoursesTable from "./pages/Admin/CoursesTable";
-=======
 import CoursesTable from "./pages/Admin/CoursesTable"
->>>>>>> 9b27312eb8b0e93c1561d5c808c0d8b4bc6a7b12
+import PostAdd from "./pages/Admin/CreatePost/postAdd";
+import PostCrud from "./pages/Admin/CreatePost/postCrud";
+import EditPostModal from "./components/EditPostModal";
 function App() {
   return (
     <>
@@ -58,6 +57,9 @@ function App() {
             <Route path='service' element={<ServiceCRUD />} />
             <Route path='statiscs' element={<StatisticsCrud />} />
             <Route path='form' element={<Forms />} />
+            <Route path="postAdd" element={<PostAdd />} />
+            <Route path="postCrud" element={<PostCrud />} />
+            <Route path="postCrud/:id" element={<EditPostModal />} />
           </Route >
         </Route >
       </Routes >

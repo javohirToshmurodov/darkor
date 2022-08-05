@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { instance } from '../../redux/actions'
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { useParams } from 'react-router-dom';
 import { Spin } from 'antd';
@@ -49,7 +48,7 @@ const EditCouresModal = (props) => {
    const getCourseDetailEdit = () => {
       setLoading(true)
       instance.put(`/api/v1/courseDetails/for/update/${id}`).then((res) => {
-         console.log(res.data.body);
+         console.log("1", res.data.body);
          setCourseEdit({ ...res.data.body })
 
       }).catch((err) => console.log(err))
@@ -57,7 +56,7 @@ const EditCouresModal = (props) => {
    }
 
    const inputTitleUz = (i, e) => {
-      offersUz.offer = e.target.value
+      offersUz[i].offer = e.target.value
       setOffersUz([...offersUz])
    }
 
@@ -264,7 +263,7 @@ const EditCouresModal = (props) => {
       <Spin spinning={loading}>
          <Form onSubmit={submitCourses}>
 
-            <div className='row p-2'>
+            <div className='p-2 row'>
                <div className='col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12'>
                   <h3>Coursedetail adding here</h3>
                   <Form.Group className="mb-3" controlId="formBasictitleDescriptionUz">
@@ -294,7 +293,7 @@ const EditCouresModal = (props) => {
                   </Form.Group>
                   <hr />
                   <h3 className='my-3'>Add media for course detail</h3>
-                  <div className='d-flex gap-3 my-4'>
+                  <div className='gap-3 my-4 d-flex'>
                      <div>
                         <Form.Group className='mb-3' controlId='formFileUz'>
                            <Form.Label>Media Uz</Form.Label>
@@ -399,7 +398,7 @@ const EditCouresModal = (props) => {
 
                   {/* course file updating */}
                   <h3>Course file upload here</h3>
-                  <div className='d-flex gap-3 my-4'>
+                  <div className='gap-3 my-4 d-flex'>
                      <div>
                         <Form.Group className='mb-3' controlId='fcourormFileUz'>
                            <Form.Label>Course File Uz</Form.Label>
@@ -441,7 +440,7 @@ const EditCouresModal = (props) => {
                         <Form.Label >Price</Form.Label>
                         <Form.Control defaultValue={courseEdit?.price?.price} onChange={(e) => setPrice(e.target.value)} min="0" type="number" placeholder="Enter price" />
                         <div className='mt-3'>
-                           <button onClick={addOffer} className='btn btn-success mb-2'>add offerUz +</button>
+                           <button onClick={addOffer} className='mb-2 btn btn-success'>add offerUz +</button>
                            {
                               courseEdit?.price?.offersUz.map((e, i) => <Form.Group key={i} controlId={`formBasssic${i}`}>
                                  <InputGroup className="mb-3">
@@ -451,13 +450,13 @@ const EditCouresModal = (props) => {
                                        aria-label="Usernamdse"
                                        aria-describedby="basic-addon1"
                                     />
-                                    <InputGroup.Text onClick={(e) => removeOffer(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                                    <InputGroup.Text onClick={(e) => removeOffer(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                                  </InputGroup>
                               </Form.Group>)
                            }
                         </div>
                         <div className='mt-3'>
-                           <button onClick={addOfferRu} className='btn btn-success mb-2'>add offerRu +</button>
+                           <button onClick={addOfferRu} className='mb-2 btn btn-success'>add offerRu +</button>
                            {
                               offersRu.map((e, i) => <Form.Group key={i} controlId={`formBasssic${i}`}>
                                  <InputGroup className="mb-3">
@@ -467,13 +466,13 @@ const EditCouresModal = (props) => {
                                        aria-label="Usernamdse"
                                        aria-describedby="basic-addon1"
                                     />
-                                    <InputGroup.Text onClick={(e) => removeOfferRu(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                                    <InputGroup.Text onClick={(e) => removeOfferRu(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                                  </InputGroup>
                               </Form.Group>)
                            }
                         </div>
                         <div className='mt-3'>
-                           <button onClick={addOfferEn} className='btn btn-success mb-2'>add offeren +</button>
+                           <button onClick={addOfferEn} className='mb-2 btn btn-success'>add offeren +</button>
                            {
                               offersEn.map((e, i) => <Form.Group key={i} controlId={`formBasssic${i}`}>
                                  <InputGroup className="mb-3">
@@ -483,7 +482,7 @@ const EditCouresModal = (props) => {
                                        aria-label="Usernamdse"
                                        aria-describedby="basic-addon1"
                                     />
-                                    <InputGroup.Text onClick={(e) => removeOfferEn(e, i)} className='bg-danger text-white' id={`basic-addon${i}`}>-</InputGroup.Text>
+                                    <InputGroup.Text onClick={(e) => removeOfferEn(e, i)} className='text-white bg-danger' id={`basic-addon${i}`}>-</InputGroup.Text>
                                  </InputGroup>
                               </Form.Group>)
                            }
