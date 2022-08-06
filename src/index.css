@@ -71,6 +71,9 @@ body {
    height: 40px;
    margin: 0 0 15px 0;
 }
+.minheightsubtitle{
+   height: 40px;
+}
 @import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');

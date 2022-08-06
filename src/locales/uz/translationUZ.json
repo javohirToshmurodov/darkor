@@ -107,5 +107,12 @@
   "contactEmail": "Email",
   "contactDesc1": "Dushanbadan juma soat 8:00 dan 17:00 gacha.",
   "contactDesc2": "Bizning do'stona jamoamiz yordam berish uchun shu yerda.",
-  "contactPhone": "Telefon raqam"
+  "contactPhone": "Telefon raqam",
+  "formTitle": "Kursga ro'yxatdan o'tish",
+  "fullName": "FIO",
+  "birthday": "Tug'ilgan sana",
+  "address": "Manzil",
+  "type": "Daraja",
+  "phone": "Telefon raqami",
+  "submit": "Yuborish"
 }

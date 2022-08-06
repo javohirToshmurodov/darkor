@@ -105,5 +105,12 @@
   "contactDesc1": "Пн-Пт с 8 утра до 5 вечера.",
   "contactDesc2": "Наша дружная команда здесь, чтобы помочь.",
   "contactEmail": "Email",
-  "contactPhone": "Номер телефона"
+  "contactPhone": "Номер телефона",
+  "formTitle": "Запишитесь на курс",
+  "fullName": "Полное имя",
+  "birthday": "День рождения",
+  "address": "Адрес",
+  "type": "Тип",
+  "phone": "Номер телефона",
+  "submit": "Oтправить"
 }

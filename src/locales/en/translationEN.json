@@ -105,5 +105,12 @@
   "contactDesc1": "Mon-Fri from 8 am to 5 pm.",
   "contactDesc2": "Our friendly team is here to help.",
   "contactEmail": "Email",
-  "contactPhone": "Phone number"
+  "contactPhone": "Phone number",
+  "formTitle": "Sign up for course",
+  "fullName": "Full name",
+  "birthday": "Birthday",
+  "address": "Address",
+  "type": "Type",
+  "phone": "Phone number",
+  "submit": "Submit"
 }

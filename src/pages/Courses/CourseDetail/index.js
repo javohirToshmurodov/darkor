@@ -40,7 +40,7 @@ const CourseDetails = () => {
       }
    }
    const getSkills = () => {
-      instance.get("/api/v1/skill/list?size=10&page=0").then((res) => {
+      instance.get(`/api/v1/skill/get_by_course/${id}`).then((res) => {
          setSkills([...res.data.body])
       }).catch((err) => {
          console.log(err);

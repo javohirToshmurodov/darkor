@@ -84,7 +84,7 @@ const Employees = () => {
                 </div>
               </div>
               <ul>
-                <li className="px-4 py-2 hovertitle">
+                <li className="px-4 py-2 d-flex justify-content-between">
                   Обзор-Специалист <img src={chevron} alt="up" />
                 </li>
                 {courses.map((e, i) => (
