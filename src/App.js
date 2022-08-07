@@ -29,6 +29,7 @@ import PostCrud from "./pages/Admin/CreatePost/postCrud";
 import Faq from "./pages/Admin/Faq"
 import TableFormUsers from "./pages/Admin/TableForm"
 import EditPostModal from "./components/EditPostModal";
+import HandleForm from "./components/HandleForm";
 function App() {
   return (
     <>
@@ -40,6 +41,7 @@ function App() {
         <Route path="/:id/:code" element={<SpecialistForm />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="handleform" element={<HandleForm />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:id" element={<CourseDetails />} />
         <Route path="courses/:id/:name" element={<SpecialistForm />} />
