@@ -30,6 +30,7 @@ import Faq from "./pages/Admin/Faq"
 import TableFormUsers from "./pages/Admin/TableForm"
 import EditPostModal from "./components/EditPostModal";
 import HandleForm from "./components/HandleForm";
+import Users from "./pages/Users";
 function App() {
   return (
     <>
@@ -39,6 +40,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<CourseDetails />} />
         <Route path="/:id/:code" element={<SpecialistForm />} />
+        <Route path="users" element={<Users />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="handleform" element={<HandleForm />} />

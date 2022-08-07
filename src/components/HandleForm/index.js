@@ -5,7 +5,9 @@ import Form from 'react-bootstrap/Form';
 import { useTranslation } from 'react-i18next';
 import { instance } from '../../redux/actions';
 import { UploadedImg } from '../../styles';
-import { MultiSelect } from "react-multi-select-component";
+// import { MultiSelect } from "react-multi-select-component";
+import Toast from '../Toast';
+import Select from 'react-select'
 const HandleForm = () => {
    const { t } = useTranslation()
    const [title, setTitle] = useState("")
@@ -21,12 +23,12 @@ const HandleForm = () => {
    const [courses, setCourses] = useState([])
    const [course, setCourse] = useState("")
    const [selected, setSelected] = useState([])
+   const [success, setSuccess] = useState(false)
    const getCourses = () => {
       setLoading(true);
       instance
          .get("api/v1/course/list/?size=10&page=0")
          .then((res) => {
-            console.log(res.data.body);
             setCourses([...res.data.body]);
             setLoading(false);
          })
@@ -73,15 +75,36 @@ const HandleForm = () => {
       }).catch((err) => {
          console.log(err);
       })
-   }
-   const options = [
-      { label: "Grapes 🍇", value: "grapes" },
-      { label: "Mango 🥭", value: "mango" },
-      { label: "Strawberry 🍓", value: "strawberry", disabled: true },
-   ];
-   const option = [
 
-   ]
+      setTitle("")
+      setDescription("")
+      setUserDescription("")
+      setYoutubeVideo("")
+      setPhoneNumber("")
+      setFile({})
+      setCertificate("")
+      setFullName("")
+      setUserFile({})
+      setSelected([])
+   }
+
+   const option = () => {
+      return courses.map((e, i) => (
+         {
+            value: e.id,
+            label: e.name
+         }
+      ))
+   }
+   const handleChange = (e) => {
+      // console.log(e);
+      const arr = []
+      e.map((e, i) => {
+         arr.push(e.value)
+         setSelected(arr)
+      })
+      console.log(arr);
+   }
 
    useEffect(() => {
       // console.log();
@@ -97,17 +120,26 @@ const HandleForm = () => {
          youTubeVideo: `${youtubeVideo}`,
          phoneNumber: `${phoneNumber}`,
          gallery: [
-            { ...file }
+            { ...file },
+            { ...certificate }
          ],
          userEmployee: {
             fullName: `${fullName}`,
-            gallery: [
-               { ...userFile }
+            gallery: {
+               ...userFile
+            },
+            courseIds: [
+               ...selected
             ]
-         },
-         course
+         }
       }).then((res) => {
          console.log(res.data);
+         setSuccess(true)
+         alert("Muvaffaqiyatli qo'shildi")
+
+      }).catch((err) => {
+         console.log(err);
+         setSuccess(false)
       })
    }
    return (
@@ -161,13 +193,13 @@ const HandleForm = () => {
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='course'>
                      <Form.Label>Select course</Form.Label>
-                     <pre>{JSON.stringify(selected)}</pre>
-                     <MultiSelect
-                        options={options}
-                        selected={selected}
-                        onChange={setSelected}
-                        labelledBy={"Select"}
-                     />
+                     <Select
+                        isMulti
+                        name="colors"
+                        options={option()}
+                        onChange={(e) => handleChange(e)}
+                        className="basic-multi-select"
+                        classNamePrefix="select" />
 
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="fileUser">
@@ -187,7 +219,9 @@ const HandleForm = () => {
                   </div>
                </Form>
             </div>
-
+            {
+               // success ? <Toast /> : ""
+            }
          </div>
       </Spin>
    )

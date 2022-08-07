@@ -47,6 +47,11 @@ function OffcanvasExample() {
       link: "/employee",
       dropdown: [],
     },
+    {
+      name: t("navbar-7"),
+      link: "/users",
+      dropdown: [],
+    },
   ];
   const languages = [
     {
@@ -107,7 +112,7 @@ function OffcanvasExample() {
                     ))}
                   </NavDropdown>
                 ) : (
-                  <Link key={index} to={item.link} className="mx-2 nav-link">
+                  <Link key={index} to={item.link} className="nav-link">
                     {item.name}
                   </Link>
                 )
