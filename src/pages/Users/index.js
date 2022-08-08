@@ -30,7 +30,7 @@ const Users = () => {
    };
    useEffect(() => {
       getCourses()
-
+      console.log(users);
    }, [])
    const handleClick = async (event, id) => {
       console.log(event.target);
