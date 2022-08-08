@@ -17,7 +17,7 @@ const Admin = () => {
          pathname: 'createcarousel',
          icon: <BiCarousel />,
          name: 'Carousel',
-      }, b
+      },
       {
          pathname: "courses",
          icon: <FaList />,
