@@ -8,8 +8,10 @@ import { UploadedImg } from '../../styles';
 // import { MultiSelect } from "react-multi-select-component";
 import Toast from '../Toast';
 import Select from 'react-select'
+import { useNavigate } from 'react-router-dom';
 const HandleForm = () => {
    const { t } = useTranslation()
+   const navigate = useNavigate()
    const [title, setTitle] = useState("")
    const [description, setDescription] = useState("")
    const [userDescription, setUserDescription] = useState("")
@@ -76,16 +78,7 @@ const HandleForm = () => {
          console.log(err);
       })
 
-      setTitle("")
-      setDescription("")
-      setUserDescription("")
-      setYoutubeVideo("")
-      setPhoneNumber("")
-      setFile({})
-      setCertificate("")
-      setFullName("")
-      setUserFile({})
-      setSelected([])
+
    }
 
    const option = () => {
@@ -105,7 +98,12 @@ const HandleForm = () => {
       })
       console.log(arr);
    }
+   const handleCrop = (e) => {
+      const word = e.substring(17)
+      setYoutubeVideo(word)
 
+      console.log(youtubeVideo);
+   }
    useEffect(() => {
       // console.log();
       getCourses()
@@ -135,12 +133,22 @@ const HandleForm = () => {
       }).then((res) => {
          console.log(res.data);
          setSuccess(true)
-         alert("Muvaffaqiyatli qo'shildi")
-
+         alert("24 soat ichida ma'lumotlaringiz Admin tomonidan ko'rib chiqiladi ")
+         setTitle("")
+         setDescription("")
+         setUserDescription("")
+         setYoutubeVideo("")
+         setPhoneNumber("")
+         setFile({})
+         setCertificate("")
+         setFullName("")
+         setUserFile({})
+         setSelected([])
       }).catch((err) => {
          console.log(err);
          setSuccess(false)
       })
+      navigate("/")
    }
    return (
       <Spin spinning={loading}>
@@ -162,7 +170,7 @@ const HandleForm = () => {
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="youtube">
                      <Form.Label>You Tube video</Form.Label>
-                     <Form.Control onChange={(e) => setYoutubeVideo(e.target.value)} required type="text" placeholder="....." />
+                     <Form.Control onChange={(e) => handleCrop(e.target.value)} required type="text" placeholder="....." />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="something">
                      <Form.Label>{t("phone")} </Form.Label>
