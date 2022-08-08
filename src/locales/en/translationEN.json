@@ -113,5 +113,6 @@
   "address": "Address",
   "type": "Type",
   "phone": "Phone number",
-  "submit": "Submit"
+  "submit": "Submit",
+  "add": "Add +"
 }

@@ -31,6 +31,7 @@ import TableFormUsers from "./pages/Admin/TableForm"
 import EditPostModal from "./components/EditPostModal";
 import HandleForm from "./components/HandleForm";
 import Users from "./pages/Users";
+import UserDetail from "./pages/Users/UserDetail";
 function App() {
   return (
     <>
@@ -41,6 +42,7 @@ function App() {
         <Route path="/:id" element={<CourseDetails />} />
         <Route path="/:id/:code" element={<SpecialistForm />} />
         <Route path="users" element={<Users />} />
+        <Route path="users/:id" element={<UserDetail />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route path="handleform" element={<HandleForm />} />

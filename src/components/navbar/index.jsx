@@ -29,7 +29,7 @@ function OffcanvasExample() {
     },
     {
       name: t("navbar-3"),
-      link: "/experts",
+      link: "/users",
       dropdown: [],
     },
     {
@@ -45,11 +45,6 @@ function OffcanvasExample() {
     {
       name: t("navbar-6"),
       link: "/employee",
-      dropdown: [],
-    },
-    {
-      name: t("navbar-7"),
-      link: "/users",
       dropdown: [],
     },
   ];
@@ -119,6 +114,12 @@ function OffcanvasExample() {
               )}
             </Nav>
             <Nav className="d-flex justify-content-center align-items-center">
+              <button
+                onClick={() => navigate("/handleform")}
+                className="btn btn-outline-success me-2"
+              >
+                {t("add")}
+              </button>
               <Form.Select
                 style={{ width: "70px" }}
                 onChange={(e) => changeLanguage(e.target.value)}

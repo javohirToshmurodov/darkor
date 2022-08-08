@@ -6,11 +6,14 @@ import { StickCardCourseDetailWrapper } from '../../styles'
 import Up from "../../assets/icons/upDown.svg"
 import SearchIcon from "../../assets/images/magnifyingglass.svg"
 import { instance } from '../../redux/actions'
+import DefaultCard from '../../components/DefaultCardCourses'
+import DefaultExpertCard from '../../components/DefaultCardExperts'
 const Users = () => {
    const { t } = useTranslation()
    const [courses, setCourses] = useState([])
    const [loading, setLoading] = useState(false)
-
+   const [courseId, setCourseId] = useState("")
+   const [users, setUsers] = useState([])
    const getCourses = () => {
       setLoading(true);
       instance
@@ -27,12 +30,19 @@ const Users = () => {
    };
    useEffect(() => {
       getCourses()
-      // const usersP = document.querySelectorAll(".menuUsers")
-      // usersP.addEventListener("click", handleClick)
-   }, [])
 
-   const handleClick = (e) => {
-      console.log(e);
+   }, [])
+   const handleClick = async (event, id) => {
+      console.log(event.target);
+      setCourseId(id);
+
+      const response = await instance.get(`/api/v1/user-employee/get-by-course/${id}?size=10&page=0`).then((res) => {
+         console.log(res.data.body);
+         setUsers([...res.data.body])
+      })
+         .catch((err) => {
+            console.log(err);
+         })
    }
    return (
       <Spin spinning={loading}>
@@ -58,15 +68,24 @@ const Users = () => {
                                  <img src={Up} alt="" />
                               </p>
                               {
-                                 courses.map((e, i) => <p className='cursor-pointer menuUsers' key={e.id}>
+                                 courses.map((e, i) => <p onClick={(event) => handleClick(event, e.id)} className='cursor-pointer menuUsers' key={e.id}>
                                     Эксперт по {e.name}
                                  </p>)
                               }
                            </div>
                         </StickCardCourseDetailWrapper>
                      </div>
-                     <div className='mt-4 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12'>
-                        dls
+                     <div className='mt-2 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12'>
+                        <div className="row mt-5">
+                           {users.map((e, i) => (
+                              <DefaultExpertCard
+                                 code={e.id}
+                                 key={i}
+                                 img={e.gallery?.url}
+                                 title={e.fullName}
+                              />
+                           ))}
+                        </div>
                      </div>
                   </div>
                </div>

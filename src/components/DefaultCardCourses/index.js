@@ -11,7 +11,7 @@ export default function DefaultCard(props) {
         <div className="pe-3 ">
           <div>
             <h4 className='mt-2'>{t("coursename")}: {props.title}</h4>
-            <p className='subtitle minheightsubtitle'>{props.subtitle.length > 30 ? `${props.subtitle.substring(0, 30)}...` : props.subtitle}</p>
+            <p className='subtitle minheightsubtitle'>{props.subtitle?.length > 30 ? `${props.subtitle.substring(0, 30)}...` : props.subtitle}</p>
           </div>
         </div>
         <div>
