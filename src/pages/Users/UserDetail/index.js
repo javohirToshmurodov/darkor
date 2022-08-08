@@ -73,7 +73,7 @@ const UserDetail = () => {
                         )
                      }
                      {
-                        <iframe className='mt-3' src={`https://www.youtube.com/embed/${userDetail?.youTubeVideo}`} >
+                        <iframe width={"100%"} height={"490px"} className='mt-3' src={`https://www.youtube.com/embed/${userDetail?.youTubeVideo}`} >
                         </iframe>
                      }
                   </div>

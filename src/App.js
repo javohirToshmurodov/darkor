@@ -32,6 +32,7 @@ import EditPostModal from "./components/EditPostModal";
 import HandleForm from "./components/HandleForm";
 import Users from "./pages/Users";
 import UserDetail from "./pages/Users/UserDetail";
+import CreateCarousel from "./pages/Admin/createCarousel";
 function App() {
   return (
     <>
@@ -50,6 +51,7 @@ function App() {
         <Route path="courses/:id" element={<CourseDetails />} />
         <Route path="courses/:id/:name" element={<SpecialistForm />} />
         <Route path="employee" element={<Employees />} />
+
         <Route path="employee/:code" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
         <Route path="experts" element={<Experts />} />
@@ -57,6 +59,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="createcarousel" element={<CreateCarousel />} />
             <Route path="faq" element={<Faq />} />
             <Route path="tableformusers" element={<TableFormUsers />} />
             <Route path="create-employee" element={<CreateEmployee />} />
