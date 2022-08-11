@@ -33,6 +33,7 @@ import HandleForm from "./components/HandleForm";
 import Users from "./pages/Users";
 import UserDetail from "./pages/Users/UserDetail";
 import CreateCarousel from "./pages/Admin/createCarousel";
+import SpecialistAccess from "./pages/Admin/Specialist";
 function App() {
   return (
     <>
@@ -59,6 +60,8 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="specalistaccess" element={<SpecialistAccess />} />
+            <Route path="specalistaccess/:id" element={<UserDetail />} />
             <Route path="createcarousel" element={<CreateCarousel />} />
             <Route path="faq" element={<Faq />} />
             <Route path="tableformusers" element={<TableFormUsers />} />

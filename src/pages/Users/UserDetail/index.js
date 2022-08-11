@@ -95,7 +95,9 @@ const UserDetail = () => {
                         </p>
                      </div>
                   </div>
-                  <hr />
+                  <div className="py-4">
+                     <hr />
+                  </div>
                   <div>
 
                      <div>
@@ -114,7 +116,7 @@ const UserDetail = () => {
                         <hr />
                      </div>
 
-                     <div className=" py-4">
+                     <div className="py-4">
                         <p>{t("skillProgram")}</p>
                         <div className="d-flex align-items-center">
                            <TitleH1 title={t("specialistby")} /> <h1 style={{ "fontSize": "44px", "fontWeight": "700" }} className='d-flex ms-2 gap-2'>
