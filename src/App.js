@@ -27,13 +27,13 @@ import CoursesTable from "./pages/Admin/CoursesTable"
 import PostAdd from "./pages/Admin/CreatePost/postAdd";
 import PostCrud from "./pages/Admin/CreatePost/postCrud";
 import Faq from "./pages/Admin/Faq"
-import TableFormUsers from "./pages/Admin/TableForm"
 import EditPostModal from "./components/EditPostModal";
-import HandleForm from "./components/HandleForm";
+import TableFormUsers from "./pages/Admin/TableForm";
 import Users from "./pages/Users";
 import UserDetail from "./pages/Users/UserDetail";
 import CreateCarousel from "./pages/Admin/createCarousel";
 import SpecialistAccess from "./pages/Admin/Specialist";
+import HandleForm from "./components/HandleForm";
 function App() {
   return (
     <>
