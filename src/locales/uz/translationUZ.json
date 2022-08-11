@@ -116,5 +116,7 @@
   "type": "Daraja",
   "phone": "Telefon raqami",
   "submit": "Yuborish",
-  "add": "Qo'shish +"
+  "add": "Qo'shish +",
+  "specialistby": "Mutaxassis mahorati",
+  "certificateby": "Sertifikat"
 }
