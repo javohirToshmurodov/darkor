@@ -7,7 +7,7 @@ import { AdminMenuWrapper } from "../../styles"
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
 import { MdFolderSpecial } from "react-icons/md"
-
+import { GiShakingHands } from "react-icons/gi"
 import { useNavigate } from 'react-router-dom';
 import { BsFillFilePostFill } from 'react-icons/bs';
 const Admin = () => {
@@ -48,6 +48,11 @@ const Admin = () => {
          pathname: 'specalistaccess',
          icon: <MdFolderSpecial />,
          name: 'Specialist',
+      },
+      {
+         pathname: 'partner',
+         icon: <GiShakingHands />,
+         name: 'Partner',
       },
       {
          pathname: 'postAdd',
