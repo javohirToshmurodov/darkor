@@ -71,6 +71,14 @@ body {
    height: 40px;
    margin: 0 0 15px 0;
 }
+.minheightsubtitle{
+   height: 40px;
+}
+nav{
+   position: sticky !important;
+   top: 0;
+   right: 0
+}
 @import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');

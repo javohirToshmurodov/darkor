@@ -76,6 +76,7 @@
   "navbar-5": "Contacts",
   "admin": "Administrator",
   "navbar-6": "Expert",
+  "navbar-7": "Users",
   "contactInfoTitle": "Contact with us",
   "contactInfoDescription": "Cartels do not allow a situation in which the direct participants in technological progress can be described in as much detail as possible.",
   "expertDescription": "It should be noted that in order to train strong specialists, it is necessary to hire knowledgeable teachers. Teachers must meet international education standards.",
@@ -105,5 +106,15 @@
   "contactDesc1": "Mon-Fri from 8 am to 5 pm.",
   "contactDesc2": "Our friendly team is here to help.",
   "contactEmail": "Email",
-  "contactPhone": "Phone number"
+  "contactPhone": "Phone number",
+  "formTitle": "Sign up for course",
+  "fullName": "Full name",
+  "birthday": "Birthday",
+  "address": "Address",
+  "type": "Type",
+  "phone": "Phone number",
+  "submit": "Submit",
+  "add": "Add +",
+  "specialistby": "Specialist Skills",
+  "certificateby": "Certificate"
 }

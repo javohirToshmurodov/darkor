@@ -4,8 +4,9 @@ import Form from 'react-bootstrap/Form';
 import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { instance } from '../../redux/actions';
 import { UploadedImg } from '../../styles';
-
+import { useTranslation } from 'react-i18next';
 function SpecialistForm() {
+   const { t } = useTranslation()
    const [fullName, setName] = useState("")
    const [date, setDate] = useState("")
    const [birthday, setBirthday] = useState("")
@@ -65,21 +66,21 @@ function SpecialistForm() {
          <div className="row justify-content-center">
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12 rounded shadow bordered px-5 py-3">
                <Form onSubmit={postSpecialist}>
-                  <h5 className="text-center">Kursga ro'yxatdan o'tish</h5>
+                  <h5 className="text-center">{t("formTitle")}</h5>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                     <Form.Label>Full name</Form.Label>
-                     <Form.Control onChange={(e) => setName(e.target.value)} required type="text" placeholder="Enter firstname" />
+                     <Form.Label>{t("fullName")}</Form.Label>
+                     <Form.Control onChange={(e) => setName(e.target.value)} required type="text" placeholder="...." />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formname">
-                     <Form.Label>Birthday</Form.Label>
+                     <Form.Label>{t("birthday")}</Form.Label>
                      <Form.Control onChange={(e) => setDate(e.target.value)} required type="date" />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formfathername">
-                     <Form.Label>Address </Form.Label>
-                     <Form.Control onChange={(e) => setAddress(e.target.value)} required type="text" placeholder="Your adress " />
+                     <Form.Label>{t("address")} </Form.Label>
+                     <Form.Control onChange={(e) => setAddress(e.target.value)} required type="text" placeholder="..... " />
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formDescription1">
-                     <Form.Label>Darajani tanlang</Form.Label>
+                     <Form.Label>{t("type")}</Form.Label>
                      <Form.Select onChange={(e) => setType(e.target.value)} aria-label="Default select example">
                         <option defaultValue="daraja">Daraja</option>
                         {
@@ -91,8 +92,8 @@ function SpecialistForm() {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="something">
-                     <Form.Label>Phone number </Form.Label>
-                     <Form.Control onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" maxLength={"13"} placeholder="123-45-678" required />
+                     <Form.Label>{t("phone")} </Form.Label>
+                     <Form.Control onChange={(e) => setPhone(e.target.value)} type="tel" name="phone" maxLength={"13"} placeholder="+998 _ _ _ _ _ _ _ _" required />
                   </Form.Group>
 
 
@@ -100,7 +101,7 @@ function SpecialistForm() {
 
                   <div className="text-end mt-2">
                      <Button variant="primary" type="submit">
-                        Submit
+                        {t("submit")}
                      </Button>
                   </div>
                </Form >

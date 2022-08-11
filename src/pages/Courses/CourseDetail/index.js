@@ -40,7 +40,7 @@ const CourseDetails = () => {
       }
    }
    const getSkills = () => {
-      instance.get("/api/v1/skill/list?size=10&page=0").then((res) => {
+      instance.get(`/api/v1/skill/get_by_course/${id}`).then((res) => {
          setSkills([...res.data.body])
       }).catch((err) => {
          console.log(err);
@@ -128,7 +128,7 @@ const CourseDetails = () => {
                         )
                      }
                      {
-                        <iframe className='mt-3' width="320" height="497" src={`https://www.youtube.com/embed/${courseDetail.youtubeVideo}`} >
+                        <iframe className='mt-3' width="320" height="497" src={`https://www.youtube.com/embed/${courseDetail?.youtubeVideo}`} >
                         </iframe>
                      }
                   </div>
@@ -157,9 +157,9 @@ const CourseDetails = () => {
 
                         <div>
                            <p className='mt-4'>{t("skillProgram")}</p>
-                           <TitleH1 title={courseDetail.secondTitleDescription} />
+                           <TitleH1 title={courseDetail?.secondTitleDescription} />
                            <p>
-                              {courseDetail.secondBodyDescription}
+                              {courseDetail?.secondBodyDescription}
                            </p>
                         </div>
                         <hr />

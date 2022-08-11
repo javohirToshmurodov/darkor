@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { FaQuestion, FaList, FaTable, FaUsers } from "react-icons/fa"
 import { IoPersonOutline } from "react-icons/io5";
-import { BiBarChartAlt } from "react-icons/bi";
+import { BiBarChartAlt, BiCarousel } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
@@ -14,16 +14,16 @@ const Admin = () => {
    const navigate = useNavigate()
    const [menuItems, setMenuItems] = useState([
       {
+         pathname: 'createcarousel',
+         icon: <BiCarousel />,
+         name: 'Carousel',
+      },
+      {
          pathname: "courses",
          icon: <FaList />,
          name: "Courses"
       },
 
-      {
-         pathname: "faq",
-         icon: <FaQuestion />,
-         name: "FAQ"
-      },
       {
          pathname: "statiscs",
          icon: <BiBarChartAlt />,
@@ -64,6 +64,12 @@ const Admin = () => {
          icon: <FaUsers />,
          name: 'Users Table',
       },
+      {
+         pathname: "faq",
+         icon: <FaQuestion />,
+         name: "FAQ"
+      },
+
    ])
    return (
       <div className=''>

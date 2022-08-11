@@ -26,9 +26,13 @@ import SpecialistForm from "./components/SpecialistForm"
 import CoursesTable from "./pages/Admin/CoursesTable"
 import PostAdd from "./pages/Admin/CreatePost/postAdd";
 import PostCrud from "./pages/Admin/CreatePost/postCrud";
+import Faq from "./pages/Admin/Faq"
 import EditPostModal from "./components/EditPostModal";
 import TableFormUsers from "./pages/Admin/TableForm";
-import Faq from "./pages/Admin/Faq";
+import Users from "./pages/Users";
+import UserDetail from "./pages/Users/UserDetail";
+import CreateCarousel from "./pages/Admin/createCarousel";
+import HandleForm from "./components/HandleForm";
 function App() {
   return (
     <>
@@ -38,12 +42,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<CourseDetails />} />
         <Route path="/:id/:code" element={<SpecialistForm />} />
+        <Route path="users" element={<Users />} />
+        <Route path="users/:id" element={<UserDetail />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="handleform" element={<HandleForm />} />
         <Route path="courses" element={<Courses />} />
         <Route path="courses/:id" element={<CourseDetails />} />
         <Route path="courses/:id/:name" element={<SpecialistForm />} />
         <Route path="employee" element={<Employees />} />
+
         <Route path="employee/:code" element={<EmployeeDetail />} />
         <Route path="services" element={<Services />} />
         <Route path="experts" element={<Experts />} />
@@ -51,6 +59,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
 
           <Route path="admin" element={<Admin />}>
+            <Route path="createcarousel" element={<CreateCarousel />} />
             <Route path="faq" element={<Faq />} />
             <Route path="tableformusers" element={<TableFormUsers />} />
             <Route path="create-employee" element={<CreateEmployee />} />

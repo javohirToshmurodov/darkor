@@ -79,6 +79,7 @@
   "navbar-5": "Bog'lanish",
   "admin": "Administrator",
   "navbar-6": "Expert",
+  "navbar-7": "Foydalanuvchilar",
   "expertDescription": "Shuni ta'kidlash kerakki, kuchli kadrlarni tayyorlash uchun bilimli o'qituvchilarni yollash kerak. O'qituvchilar xalqaro ta'lim standardlariga mos kelishi kerak.",
   "servicesTitle": "Xizmatlar haqida qo'shimcha.",
   "servicesDescription": "Sohalar bo'yicha qisqa kurslarimiz kadrlarning tezroq doimiy ish o'rinlarini egallashlari uchun tashkil etilgan. Bu kurslarni o'qitish uchun O'zbekiston bo'ylab eng yaxshi o'qituvchilar jalb qilingan.",
@@ -107,5 +108,15 @@
   "contactEmail": "Email",
   "contactDesc1": "Dushanbadan juma soat 8:00 dan 17:00 gacha.",
   "contactDesc2": "Bizning do'stona jamoamiz yordam berish uchun shu yerda.",
-  "contactPhone": "Telefon raqam"
+  "contactPhone": "Telefon raqam",
+  "formTitle": "Kursga ro'yxatdan o'tish",
+  "fullName": "FIO",
+  "birthday": "Tug'ilgan sana",
+  "address": "Manzil",
+  "type": "Daraja",
+  "phone": "Telefon raqami",
+  "submit": "Yuborish",
+  "add": "Qo'shish +",
+  "specialistby": "Mutaxassis mahorati",
+  "certificateby": "Sertifikat"
 }
