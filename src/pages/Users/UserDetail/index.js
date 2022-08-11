@@ -1,3 +1,4 @@
+import { CheckOutlined } from '@ant-design/icons'
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
@@ -9,26 +10,40 @@ import { EmployeeImgWrapper } from '../../../styles'
 const UserDetail = () => {
    const { id } = useParams()
    const [userDetail, setUserDetail] = useState({})
+   const [courseI, setCourseI] = useState("")
    const { t } = useTranslation()
-
+   const [skills, setSkills] = useState([])
+   let arr = []
    const getDetail = () => {
       instance.get(`/api/v1/user-employee/get-detail/${id}`).then((res) => {
-         // console.log(res.data);
+         console.log(res.data);
          setUserDetail({ ...res.data.body })
       })
    }
-   const getSkills = () => {
+   const getSkills = async () => {
       const courses = userDetail?.userEmployee?.courses
       for (let i = 0; i < courses?.length; i++) {
-         return console.log(courses?.id);
+
+         let courseId = courses[i]?.id
+         const res = await instance.get(`/api/v1/skill/get_by_course/${courseId}`)
+         const response = res?.data.body
+         for (let k = 0; k < response?.length; k++) {
+            arr.push(response[k])
+         }
       }
+
+      return setSkills([...arr])
+      console.log('arr', arr);
    }
+
    useEffect(() => {
       getDetail()
-   }, [id])
-   useEffect(() => {
       getSkills()
-   }, [])
+      console.log("skills", skills);
+      // getS()
+      // console.log(data);
+   }, [id])
+
 
    return (
       <div className='container'>
@@ -53,8 +68,13 @@ const UserDetail = () => {
                      <EmployeeImgWrapper src={userDetail?.userEmployee?.gallery?.url} alt="no image" />
                   </div>
                   <div className="col-xl-8 col-lg-8 col-md-6 col-sm-12 col-12">
-                     <p className='mt-4'>
-                        Эксперты Бухгалтер
+                     <p className='mt-4 d-flex gap-2'>
+                        {t("navbar-6")} {
+                           userDetail?.userEmployee?.courses?.map((e, i) => <span className='gap-2 d-flex' key={i}>
+                              {e.name}
+                           </span>
+                           )
+                        }
                      </p>
                      <h2>{userDetail?.userEmployee?.fullName}</h2>
                      <p className='fw-bold'>
@@ -73,27 +93,27 @@ const UserDetail = () => {
                         )
                      }
                      {
-                        <iframe width={"100%"} height={"490px"} className='mt-3' src={`https://www.youtube.com/embed/${userDetail?.youTubeVideo}`} >
+                        userDetail?.youTubeVideo && <iframe width={"100%"} height={"490px"} className='mt-3' src={`https://www.youtube.com/embed/${userDetail?.youTubeVideo}`} >
                         </iframe>
                      }
                   </div>
 
                   <p>{t("skillProgram")}</p>
                   <div className="row">
-                     {/* {
-                              skills.map((e, i) => <div className='mb-3 '>
-                                 <div className="d-flex w-100 ">
-                                    <div>
-                                       <CheckOutlined className='me-3' style={{ "color": "#34C759", "fontSize": "24px" }} />
-                                    </div>
-                                    <div className='flex-1'>
-                                       <h4>{e.name}</h4>
-                                       <p style={{ "color": "#3A3A3C" }} className='m-0'>{e.description}</p>
-                                       <hr />
-                                    </div>
-                                 </div>
-                              </div>)
-                           } */}
+                     {
+                        skills?.map((e, i) => <div className='mb-3 '>
+                           <div className="d-flex w-100 ">
+                              <div>
+                                 <CheckOutlined className='me-3' style={{ "color": "#34C759", "fontSize": "24px" }} />
+                              </div>
+                              <div className='flex-1'>
+                                 <h4>{e.name}</h4>
+                                 <p style={{ "color": "#3A3A3C" }} className='m-0'>{e.description}</p>
+                                 <hr />
+                              </div>
+                           </div>
+                        </div>)
+                     }
                   </div>
                </div>
                <h1>Detail</h1>

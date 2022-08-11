@@ -17,9 +17,8 @@ const Users = () => {
    const getCourses = () => {
       setLoading(true);
       instance
-         .get("api/v1/course/list/?size=10&page=0")
+         .get("/api/v1/course/list-for-filter/")
          .then((res) => {
-            console.log(res.data.body);
             setCourses([...res.data.body]);
             setLoading(false);
          })
@@ -30,10 +29,8 @@ const Users = () => {
    };
    useEffect(() => {
       getCourses()
-      console.log(users);
    }, [])
    const handleClick = async (event, id) => {
-      console.log(event.target);
       setCourseId(id);
 
       const response = await instance.get(`/api/v1/user-employee/get-by-course/${id}?size=10&page=0`).then((res) => {
