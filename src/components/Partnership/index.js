@@ -29,7 +29,7 @@ const Partnership = () => {
             <div className="container px-5 py-4">
                <div className="px-5 row">
                   {
-                     partners.map((e, i) => <PartnersCard key={e.id} linkTo={e?.link} img={e?.logo?.url} />)
+                     partners.map((e, i) => <PartnersCard key={e.id}  img={e?.logo?.url} />)
                   }
                </div>
             </div>

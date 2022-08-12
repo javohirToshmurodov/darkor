@@ -21,7 +21,7 @@ const Services = () => {
    const getMedia = async () => {
       setLoading(true);
       try {
-         const res = await instance.get("api/v1/homeService/list?size=10&page=0");
+         const res = await instance.get("/api/v1/post/list/SERVICE?size=10&page=0");
          console.log(res.data.body);
          setState(res.data);
          setLoading(false);
