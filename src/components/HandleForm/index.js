@@ -213,7 +213,7 @@ const HandleForm = () => {
                   </div>
                   <Form.Group className="mb-3" controlId="certificate">
                      <Form.Label>Sertifikatingizni yuklang!</Form.Label>
-                     <Form.Control onChange={(e) => handleFileMediaCertificate(e.target.files[0])} required type="file" placeholder="ds" />
+                     <Form.Control onChange={(e) => handleFileMediaCertificate(e.target.files[0])} type="file" placeholder="ds" />
                   </Form.Group>
                   <div>
                      {
