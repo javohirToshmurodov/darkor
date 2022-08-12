@@ -12,6 +12,7 @@ const GetAll = () => {
     try {
       const res = await instance.get("/api/v1/carousel/list");
       setData(res.data.body);
+      console.log(res.data);
     } catch (err) {
       alert(JSON.stringify(err));
     }

@@ -10,6 +10,7 @@ const Partnership = () => {
    const [partners, setPartners] = useState([])
    const getPartners = () => {
       instance.get("/api/v1/partner/list").then((res) => {
+         console.log(res.data);
          setPartners([...res.data.body])
       }).catch((err) => {
          console.log(err);
@@ -29,7 +30,7 @@ const Partnership = () => {
             <div className="container px-5 py-4">
                <div className="px-5 row">
                   {
-                     partners.map((e, i) => <PartnersCard key={e.id}  img={e?.logo?.url} />)
+                     partners.map((e, i) => <PartnersCard link={e.link} key={e.id} img={e?.logo?.url} />)
                   }
                </div>
             </div>

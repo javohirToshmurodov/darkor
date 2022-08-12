@@ -51,15 +51,13 @@ const UserDetail = () => {
 
    useEffect(() => {
       getDetail()
-      getSkills()
-      // getSkills()
       setAdded(true)
-      console.log("skills", skills);
+      getSkills()
    }, [id])
 
    return (
       <Spin spinning={loading}>
-         <div className=''>
+         <div className={""}>
             <section>
                <CarouselSlider />
             </section>
