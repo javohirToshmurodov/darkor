@@ -82,7 +82,7 @@ const Partner = () => {
          <div className="shadow rounded p-3 col-6">
 
             <Form onSubmit={addSubmit}>
-               <h5 className="text-center">Partner qo'shish</h5>
+               <h5 className="text-center">Hamkor qo'shish</h5>
 
                <Form.Group className='mb-3' controlId='form1'>
                   <Form.Label>Havola</Form.Label>
