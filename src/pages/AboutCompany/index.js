@@ -17,7 +17,7 @@ const AboutCompany = () => {
   const getMedia = async () => {
     setLoading(true);
     try {
-      const res = await instance.get("/api/v1/post/list/SERVICE?size=10&page=0");
+      const res = await instance.get("/api/v1/post/list/HOME?size=10&page=0");
       setState(res.data);
       console.log(res.data);
       setLoading(false);
@@ -29,7 +29,7 @@ const AboutCompany = () => {
   useEffect(() => {
     getMedia();
   }, []);
-
+console.log(state,'posttttttt');
   const { t, i18n } = useTranslation();
   return (
     <Spin spinning={loading}>

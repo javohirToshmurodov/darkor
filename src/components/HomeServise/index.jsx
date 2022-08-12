@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { instance } from "../../redux/actions";
 import icon from "../../assets/icons/chevronForward.svg";
+import { useNavigate } from 'react-router-dom'
+
 import TitleH1 from "../TitleH1";
 const HomeServise = () => {
+   const navigate = useNavigate()
+
   const [state, setState] = useState([]);
   const getData = async () => {
     try {
-      const res = await instance.get("api/v1/homeService/getOne/13");
+      const res = await instance.get("api/v1/homeService/getOne/10");
       setState(res.data.body);
     } catch (err) {
       console.log(err);
@@ -16,6 +20,7 @@ const HomeServise = () => {
   useEffect(() => {
     getData();
   }, []);
+
   return (
     <div
       style={{ backgroundColor: "#F2F2F7", marginTop: "5rem" }}
@@ -30,7 +35,7 @@ const HomeServise = () => {
             <div className="">
               <TitleH1 title={state?.title} />
               <p className="">{state?.description}</p>
-              <button className="btn py-2 align-items-center btn-outline-primary d-flex custom-btn">
+              <button onClick={()=>navigate('/services')}  className="btn py-2 align-items-center btn-outline-primary d-flex custom-btn">
                 Заказать услугу
                 <span className="ml-2">
                   <img src={icon} />

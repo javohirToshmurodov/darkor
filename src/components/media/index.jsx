@@ -12,10 +12,10 @@ const Media = ({ data, loading }) => {
           }`}
         >
           <div className="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12 d-flex align-items-center justify-content-center">
-            <iframe
+           {item.youTubeVideo ? (<iframe
               className="media"
               src={`https://www.youtube.com/embed/${item.youTubeVideo}`}
-            ></iframe>
+            ></iframe>): <img src={item.gallery.url} style={{borderRadius:'24px'}}/>}
           </div>
           <div className="content d-flex justify-content-center align-items-center flex-column col-lg-6 col-xl-6 col-md-6 col-sm-12 col-12">
             <h2>{item.title}</h2>

@@ -34,7 +34,7 @@ const PostAdd = () => {
         formData.append("file", e)
 
         instance.post("/upload/MEDIA", formData).then((res) => {
-            console.log(res.data.body);
+            console.log(res.data.body,"dfdfdf");
             setGalleryRu({ ...res.data.body })
             alert("Postfile ru muvaffaqiyatli yuklandi")
         }).catch((err) => {
@@ -54,6 +54,8 @@ const PostAdd = () => {
             console.log(err);
         })
     }
+    
+
     const submit = (e) => {
         e.preventDefault()
         instance.post('/api/v1/post/add/', {
@@ -76,7 +78,7 @@ const PostAdd = () => {
         }).catch((err) => console.log(err))
     }
     return (
-        <div className='row' onSubmit={submit}>
+        <div className='row' >
             <h3>Post Add</h3>
             <form onSubmit={submit}>
                 <div className='form-group'>
@@ -217,7 +219,6 @@ const PostAdd = () => {
                         youTubeVideo
                     </label>
                     <input
-                        required
                         type='text'
                         className='form-control'
                         id='youTubeVideo'

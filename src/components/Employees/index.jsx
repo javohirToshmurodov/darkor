@@ -1,147 +1,98 @@
-import { Spin } from "antd";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import CarouselSlider from "../Carousel";
-import ContactWithUs from "../ContactWithUs";
-import DefaultCard from "../DefaultCardCourses";
-import { Collapse } from "antd";
-import Footer from "../Footer";
-import { instance } from "../../redux/actions";
-import { DefaultCardWrapper, StickCardCourseDetailWrapper } from "../../styles";
-import DefaultButton from "../DefaultButton";
-import iconka from "../../assets/icons/searchIcon.svg";
-import DefaultExpertCard from "../DefaultCardExperts";
-import { useTranslation } from "react-i18next";
-import chevron from "../../assets/icons/upDown.svg";
+import { Spin } from 'antd'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import CarouselSlider from '../../components/Carousel'
+import { StickCardCourseDetailWrapper } from '../../styles'
+import Up from "../../assets/icons/upDown.svg"
+import SearchIcon from "../../assets/images/magnifyingglass.svg"
+import { instance } from '../../redux/actions'
+import DefaultCard from '../../components/DefaultCardCourses'
+import DefaultExpertCard from '../../components/DefaultCardExperts'
+const Users = () => {
+   const { t } = useTranslation()
+   const [courses, setCourses] = useState([])
+   const [loading, setLoading] = useState(false)
+   const [courseId, setCourseId] = useState("")
+   const [users, setUsers] = useState([])
+   const getCourses = () => {
+      setLoading(true);
+      instance
+         .get("api/v1/course/list/?size=10&page=0")
+         .then((res) => {
+            console.log(res.data.body);
+            setCourses([...res.data.body]);
+            setLoading(false);
+         })
+         .catch((err) => {
+            console.log(err);
+         })
 
-const Employees = () => {
-  const { code } = useParams();
-  const [courses, setCourses] = useState([]);
-  const [faq, setFaq] = useState([]);
-  const [search, setSearch] = useState("");
-  const { Panel } = Collapse;
-  const [loading, setLoading] = useState(false);
-  const getCourses = () => {
-    setLoading(true);
-    instance
-      .get("/api/v1/employee/list?type=STUDENT&size=10&page=1")
-      .then((res) => {
-        console.log(res.data.body);
-        setCourses([...res.data.body]);
-        setLoading(false);
+   };
+   useEffect(() => {
+      getCourses()
+      console.log(users);
+   }, [])
+   const handleClick = async (event, id) => {
+      console.log(event.target);
+      setCourseId(id);
+
+      const response = await instance.get(`/api/v1/employee/list?type=EXPERT&courseId=${id}&size=10&page=0`).then((res) => {
+         console.log(res.data.body);
+         setUsers([...res.data.body])
       })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+         .catch((err) => {
+            console.log(err);
+         })
+   }
+   return (
+      <Spin spinning={loading}>
+         <div className='container'>
+            <section>
+               <CarouselSlider />
+            </section>
 
-  const getFaq = () => {
-    setLoading(true);
-    instance
-      .get(`/api/v1/faq/list?size=10&page=0&lang=uz`)
-      .then((res) => {
-        console.log("Bu result", res.data.body);
-        setFaq([...res.data.body]);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-  };
+            <section>
+               <div className="container">
+                  <div className="row">
+                     <div className='mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12'>
+                        <StickCardCourseDetailWrapper className='mt-5 position-sticky'>
+                           <div className='p-3'>
+                              <h5>{t("navbar-6")}</h5>
+                              <hr />
+                              <div>
+                                 <input className='w-100  ' type="text" style={{ "background": `url(${SearchIcon})`, "backgroundRepeat": "no-repeat", "outline": "none", "border": "1px solid #E5E5EA", "padding": "8px 0 8px 32px", "borderRadius": "8px", "backgroundPosition": "10px", "caretColor": "#e5e5e5", "color": "#8E8E93" }} placeholder={t("signupnow")} />
+                              </div>
 
-  useEffect(() => {
-    getCourses();
-    console.log("courses", courses);
-    getFaq();
-  }, []);
-  const { t, i18n } = useTranslation();
+                              <p className='bg-light d-flex justify-between align-center px-3 my-4 p-2 rounded'>
+                                 Обзор-Экспертов
+                                 <img src={Up} alt="" />
+                              </p>
+                              {
+                                 courses.map((e, i) => <p onClick={(event) => handleClick(event, e.id)} className='cursor-pointer menuUsers' key={e.id}>
+                                    Эксперт по {e.name}
+                                 </p>)
+                              }
+                           </div>
+                        </StickCardCourseDetailWrapper>
+                     </div>
+                     <div className='mt-2 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12'>
+                        <div className="row mt-5">
+                           {users.map((e, i) => (
+                              <DefaultExpertCard
+                                 code={e.id}
+                                 key={i}
+                                 img={e.gallery?.url}
+                                 title={e.fullName}
+                              />
+                           ))}
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </Spin>
+   )
+}
 
-  return (
-    <Spin spinning={loading}>
-      <div className="container ">
-        <div className="row">
-          <div className="mt-4 col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-            <StickCardCourseDetailWrapper className="mt-5 ml-5 position-sticky ">
-              <div className="px-4 py-2">
-                {" "}
-                <h5 className="mt-3 mb-3">Кадры</h5>
-                <hr />
-                <div class="input-group">
-                  {/* <img
-                  style={{
-                    padding: "8px",
-                    border: "1px solid lightgrey",
-                    borderRight: "none",
-                  }}
-                  src={iconka}
-                  alt=""
-                /> */}
-                  <input
-                    type="text"
-                    class="form-control"
-                    aria-label="Text input with radio button"
-                    placeholder="Запишитесь сейчас"
-                    onChange={(e) => setSearch(e.target.value)}
-                  />
-                </div>
-              </div>
-              <ul>
-                <li className="px-4 py-2 d-flex justify-content-between">
-                  Обзор-Специалист <img src={chevron} alt="up" />
-                </li>
-                {courses.map((e, i) => (
-                  <li className="px-4 py-2 hover">{e.courses[0].name}</li>
-                ))}
-              </ul>
-            </StickCardCourseDetailWrapper>
-          </div>
-          <div className="mt-4 col-xl-9 col-lg-9 col-m-9 col-sm-12 col-12">
-            <div className="">
-              <div className="container ">
-                {/* <CarouselSlider /> */}
-                <div className="mt-5 row align-items-start justify-content-center">
-                  {courses.map((e, i) => (
-                    <div className="mb-5 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 justify-content-center d-flex ">
-                      {e.courses[0].description.includes(search) ? (
-                        <DefaultCardWrapper>
-                          <img className="img-fluid" src={e.gallery.url} />
-                          <div className="pe-5">
-                            <h4 className="mt-2">Имя: {e.fullName}</h4>
-                            <p className="subtitle">
-                              {e.courses[0].description}
-                            </p>
-                          </div>
-                          <div className="line"></div>
-                          <DefaultButton title={"Подробнее"} id={e.code} />
-                        </DefaultCardWrapper>
-                      ) : (
-                        ""
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container px-5 my-5">
-        <ContactWithUs />
-      </div>
-      <div className="container px-5 mt-4">
-        <h1>{t("faq")}</h1>
-        <Collapse className="mt-4" defaultActiveKey={["1"]}>
-          {faq?.map((e, i) => (
-            <Panel header={e.question}>
-              <p>{e.answer}</p>
-            </Panel>
-          ))}
-        </Collapse>
-      </div>
-
-      <div className="pt-5">
-        <Footer />
-      </div>
-    </Spin>
-  );
-};
-
-export default Employees;
+export default Users
