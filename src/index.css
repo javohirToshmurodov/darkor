@@ -57,9 +57,12 @@ body {
 }
 .carousel .control-dots .dot.selected{
    background: #0568FD;
-   transform: scale(1.2);
+   transform: scale(1.1);
    opacity: 1;
    border: none
+}
+.carousel-root{
+   transition:all .4s linear !important;
 }
 .coursedetailimg{
    object-fit: cover;
