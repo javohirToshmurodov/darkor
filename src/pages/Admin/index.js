@@ -6,8 +6,8 @@ import { BiBarChartAlt, BiCarousel } from "react-icons/bi";
 import { AdminMenuWrapper } from "../../styles"
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { FiShoppingCart } from "react-icons/fi";
-
-
+import { MdFolderSpecial } from "react-icons/md"
+import { GiShakingHands } from "react-icons/gi"
 import { useNavigate } from 'react-router-dom';
 import { BsFillFilePostFill } from 'react-icons/bs';
 const Admin = () => {
@@ -43,6 +43,16 @@ const Admin = () => {
          pathname: 'service',
          icon: <FiShoppingCart />,
          name: 'Service',
+      },
+      {
+         pathname: 'specalistaccess',
+         icon: <MdFolderSpecial />,
+         name: 'Specialist',
+      },
+      {
+         pathname: 'partner',
+         icon: <GiShakingHands />,
+         name: 'Partner',
       },
       {
          pathname: 'postAdd',

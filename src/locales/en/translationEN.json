@@ -114,5 +114,7 @@
   "type": "Type",
   "phone": "Phone number",
   "submit": "Submit",
-  "add": "Add +"
+  "add": "Add +",
+  "specialistby": "Specialist Skills",
+  "certificateby": "Certificate"
 }

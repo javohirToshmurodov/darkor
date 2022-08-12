@@ -101,6 +101,7 @@ export const PartnersCardWraper = styled.div`
 background: #F2F2F7;
 border-radius: 16px;
 min-height: 180px;
+max-height:181px;
 display: flex;
 justify-content: center;
 align-items: center;

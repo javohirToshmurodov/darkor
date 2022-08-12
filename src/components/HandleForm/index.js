@@ -155,52 +155,14 @@ const HandleForm = () => {
 
          <div className='row justify-content-center'>
             <div className="col-6 shadow bordered rounded p-5">
+               <h4 className="text-center">Ushbu formani to'ldiring</h4>
                <Form onSubmit={handleSubmit}>
-                  <Form.Group className="mb-3" controlId="title">
-                     <Form.Label>Title</Form.Label>
-                     <Form.Control onChange={(e) => setTitle(e.target.value)} required type="text" placeholder="....." />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="description">
-                     <Form.Label>Description here</Form.Label>
-                     <Form.Control onChange={(e) => setDescription(e.target.value)} required as={"textarea"} type="text" placeholder="......" />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="description">
-                     <Form.Label>UserDescription here</Form.Label>
-                     <Form.Control onChange={(e) => setUserDescription(e.target.value)} required as={"textarea"} type="text" placeholder="....." />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="youtube">
-                     <Form.Label>You Tube video</Form.Label>
-                     <Form.Control onChange={(e) => handleCrop(e.target.value)} required type="text" placeholder="....." />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="something">
-                     <Form.Label>{t("phone")} </Form.Label>
-                     <Form.Control required onChange={(e) => setPhoneNumber(e.target.value)} type="tel" name="phone" maxLength={"13"} placeholder="+998 _ _ _ _ _ _ _ _" />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="file">
-                     <Form.Label>Upload media</Form.Label>
-                     <Form.Control onChange={(e) => handleFileMedia(e.target.files[0])} required type="file" placeholder="ds" />
-                  </Form.Group>
-                  <div>
-                     {
-                        file?.url && <UploadedImg src={file?.url} alt='no image' />
-                     }
-                  </div>
-                  <Form.Group className="mb-3" controlId="certificate">
-                     <Form.Label>Upload certificate</Form.Label>
-                     <Form.Control onChange={(e) => handleFileMediaCertificate(e.target.files[0])} required type="file" placeholder="ds" />
-                  </Form.Group>
-                  <div>
-                     {
-                        certificate?.url && <UploadedImg src={certificate?.url} alt='no image' />
-                     }
-                  </div>
-                  <h4 className="text-center">UserEmployee</h4>
                   <Form.Group className="mb-3" controlId="fullname">
-                     <Form.Label>Full Name</Form.Label>
+                     <Form.Label>Familiya, ism, sharifingiz</Form.Label>
                      <Form.Control onChange={(e) => setFullName(e.target.value)} required type="text" placeholder="....." />
                   </Form.Group>
                   <Form.Group className='mb-3' controlId='course'>
-                     <Form.Label>Select course</Form.Label>
+                     <Form.Label>Qaysi sohalarda bilim olgansiz!</Form.Label>
                      <Select
                         isMulti
                         name="colors"
@@ -211,7 +173,7 @@ const HandleForm = () => {
 
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="fileUser">
-                     <Form.Label>Upload an image for avatar</Form.Label>
+                     <Form.Label>Shaxsiy suratingizning yuklang!</Form.Label>
                      <Form.Control onChange={(e) => handleFileMediaProfile(e.target.files[0])} required type="file" placeholder="" />
                   </Form.Group>
                   <div>
@@ -219,6 +181,47 @@ const HandleForm = () => {
                         userFile?.url && <UploadedImg src={userFile?.url} alt='no image' />
                      }
                   </div>
+                  <Form.Group className="mb-3" controlId="title">
+                     <Form.Label>Faoliyatingiz qisqacha</Form.Label>
+                     <Form.Control onChange={(e) => setTitle(e.target.value)} required type="text" placeholder="....." />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="description">
+                     <Form.Label>Soha bo'yicha bilimlaringiz, Batafsil
+                     </Form.Label>
+                     <Form.Control onChange={(e) => setDescription(e.target.value)} required as={"textarea"} type="text" placeholder="......" />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="description">
+                     <Form.Label>O'zingiz haqingizda batafsil</Form.Label>
+                     <Form.Control onChange={(e) => setUserDescription(e.target.value)} required as={"textarea"} type="text" placeholder="....." />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="youtube">
+                     <Form.Label>YouTube'dagi vlogingiz (mavjud bo'lsa)</Form.Label>
+                     <Form.Control onChange={(e) => handleCrop(e.target.value)} type="text" placeholder="....." />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="something">
+                     <Form.Label>{t("phone")} </Form.Label>
+                     <Form.Control required onChange={(e) => setPhoneNumber(e.target.value)} type="tel" name="phone" maxLength={"13"} placeholder="+998 _ _ _ _ _ _ _ _" />
+                  </Form.Group>
+                  <Form.Group className="mb-3" controlId="file">
+                     <Form.Label>Qilgan ishlaringiz bo'yicha media yuklang!</Form.Label>
+                     <Form.Control onChange={(e) => handleFileMedia(e.target.files[0])} required type="file" placeholder="ds" />
+                  </Form.Group>
+                  <div>
+                     {
+                        file?.url && <UploadedImg src={file?.url} alt='no image' />
+                     }
+                  </div>
+                  <Form.Group className="mb-3" controlId="certificate">
+                     <Form.Label>Sertifikatingizni yuklang!</Form.Label>
+                     <Form.Control onChange={(e) => handleFileMediaCertificate(e.target.files[0])} required type="file" placeholder="ds" />
+                  </Form.Group>
+                  <div>
+                     {
+                        certificate?.url && <UploadedImg src={certificate?.url} alt='no image' />
+                     }
+                  </div>
+                  {/* <h4 className="text-center">UserEmployee</h4> */}
+
 
                   <div className="text-end">
                      <Button variant="primary" type="submit">

@@ -79,6 +79,10 @@ nav{
    top: 0;
    right: 0
 }
+.maxheightImg{
+   object-fit: cover;
+   max-width: 180px;
+}
 @import url('./pages/Contact/contact.css');
 @import url("./pages/Services/services.css");
 @import url('./styles/static.css');
