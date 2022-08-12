@@ -68,7 +68,7 @@ const EditPartner = (props) => {
                </Form.Group>
                <Form.Group className='mb-3' controlId='forms3'>
                   <Form.Label>Hamkorlik rasmini yuklang</Form.Label>
-                  <Form.Control onChange={(e) => fileUpload(e.target.files[0])} type='file' placeholder='' />
+                  <Form.Control required onChange={(e) => fileUpload(e.target.files[0])} type='file' placeholder='' />
                </Form.Group>
                <div className='my-3'>
                   {
