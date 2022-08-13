@@ -18,7 +18,7 @@ const HandleForm = () => {
    const [youtubeVideo, setYoutubeVideo] = useState("")
    const [phoneNumber, setPhoneNumber] = useState("")
    const [file, setFile] = useState({})
-   const [certificate, setCertificate] = useState({})
+   const [certificate, setCertificate] = useState(null)
    const [fullName, setFullName] = useState("")
    const [userFile, setUserFile] = useState({})
    const [loading, setLoading] = useState(false)
@@ -119,7 +119,7 @@ const HandleForm = () => {
          phoneNumber: `${phoneNumber}`,
          gallery: [
             { ...file },
-            { ...certificate }
+            // certificate == {} ? null : { ...certificate }
          ],
          userEmployee: {
             fullName: `${fullName}`,
@@ -148,7 +148,7 @@ const HandleForm = () => {
          console.log(err);
          setSuccess(false)
       })
-      navigate("/")
+      // navigate("/")
    }
    return (
       <Spin spinning={loading}>

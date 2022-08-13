@@ -66,7 +66,7 @@ const Users = () => {
                               </p>
                               {
                                  courses.map((e, i) => <p onClick={(event) => handleClick(event, e.id)} className='cursor-pointer menuUsers' key={e.id}>
-                                    Эксперт по {e.name}
+                                    {t("specialist")} {e.name}
                                  </p>)
                               }
                            </div>
