@@ -18,7 +18,7 @@ const HandleForm = () => {
    const [youtubeVideo, setYoutubeVideo] = useState("")
    const [phoneNumber, setPhoneNumber] = useState("")
    const [file, setFile] = useState({})
-   const [certificate, setCertificate] = useState(null)
+   const [certificate, setCertificate] = useState({})
    const [fullName, setFullName] = useState("")
    const [userFile, setUserFile] = useState({})
    const [loading, setLoading] = useState(false)
@@ -90,7 +90,6 @@ const HandleForm = () => {
       ))
    }
    const handleChange = (e) => {
-      // console.log(e);
       const arr = []
       e.map((e, i) => {
          arr.push(e.value)
@@ -119,7 +118,7 @@ const HandleForm = () => {
          phoneNumber: `${phoneNumber}`,
          gallery: [
             { ...file },
-            // certificate == {} ? null : { ...certificate }
+            Object.keys(certificate).length !== 0 ? { ...certificate } : null
          ],
          userEmployee: {
             fullName: `${fullName}`,
