@@ -75,6 +75,7 @@ const Users = () => {
                            </div>
                         </StickCardCourseDetailWrapper>
                      </div>
+
                      <div className='mt-2 col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12'>
                         <div className="row mt-5">
                            {users.map((e, i) => (

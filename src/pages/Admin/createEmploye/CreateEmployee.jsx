@@ -148,7 +148,7 @@ const HandleForm = () => {
         fullNameRu: `${fullNameRu}`,
         fullNameEn: `${fullNameEn}`,
         type: "EXPERT",
-        courses: [selected],
+        courses: [...selected],
         youTubeVideo: `${youtubeVideo}`,
         titleDescriptionUz: `${descriptionUz}`,
         titleDescriptionRu: `${descriptionRu}`,
@@ -164,15 +164,21 @@ const HandleForm = () => {
         alert(
           "24 soat ichida ma'lumotlaringiz Admin tomonidan ko'rib chiqiladi "
         );
-        setTitle("");
         setDescriptionUz("");
+        setDescriptionRu("");
+        setDescriptionEn("");
         setUserDescriptionUz("");
+        setUserDescriptionRu("");
+        setUserDescriptionEn("");
         setYoutubeVideo("");
         setFile({});
         setCertificate("");
         setFullNameUz("");
+        setFullNameRu("");
+        setFullNameEn("");
         setUserFile({});
-        setSelected([]);
+        setCourses([]);
+        setSelected({})
       })
       .catch((err) => {
         console.log(err);
