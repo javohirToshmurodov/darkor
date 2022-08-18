@@ -32,12 +32,12 @@ const Admin = () => {
       {
          pathname: "form",
          icon: <IoPersonOutline />,
-         name: "Users"
+         name: "Administrat.."
       },
       {
          pathname: 'create-employee',
          icon: <AiOutlineUsergroupAdd />,
-         name: 'Employee',
+         name: 'Expert/ment.',
       },
       {
          pathname: 'service',
@@ -67,12 +67,12 @@ const Admin = () => {
       {
          pathname: 'coursetable',
          icon: <FaTable />,
-         name: 'Table-Cour',
+         name: 'Coursetable',
       },
       {
          pathname: 'tableformusers',
          icon: <FaUsers />,
-         name: 'Users Table',
+         name: 'Lead',
       },
       {
          pathname: "faq",

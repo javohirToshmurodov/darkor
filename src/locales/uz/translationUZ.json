@@ -119,6 +119,10 @@
   "add": "Qo'shish +",
   "specialistby": "Mutaxassis mahorati",
   "certificateby": "Sertifikat",
+<<<<<<< HEAD
   "expert-employee-detail-title":"Maqsadli auditoriya vakillarini jalb qilishning yuqori darajasi."
 
+=======
+  "specialist": "Mutaxassis"
+>>>>>>> a3337ba1fc67df98d5fd87d1adda7b530059fa27
 }

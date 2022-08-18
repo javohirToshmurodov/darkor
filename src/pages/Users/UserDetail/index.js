@@ -19,38 +19,51 @@ const UserDetail = () => {
    const { t } = useTranslation()
    const [skills, setSkills] = useState([])
    const [added, setAdded] = useState(false)
-   let arr = []
-   const getDetail = () => {
-      instance.get(`/api/v1/user-employee/get-detail/${id}`).then((res) => {
-         console.log(res.data);
+   const getDetail = async () => {
+      try {
+         const res = await instance.get(`/api/v1/user-employee/get-detail/${id}`)
          setUserDetail({ ...res.data.body })
-      })
+         console.log("courseemployee", res.data.body);
+         return res.data.body.userEmployee.courses
+      } catch (error) {
+         console.log(error);
+      }
    }
    const getSkills = async () => {
-      const courses = userDetail?.userEmployee?.courses
+      console.log("getskill ishladi");
+      const courses = await getDetail()
+      console.log("courses", courses);
       setLoading(true)
-      for (let i = 1; i < courses?.length; i++) {
+      try {
+         let arr = []
+         console.log("-----", courses);
+         for (let i = 0; i < courses?.length; i++) {
 
-         let courseId = courses[i]?.id
+            arr.push(courses[i]?.id)
+            console.log("idlar", courses[i].id);
+            // const response = await res?.data.body
+            // console.log("response", response);
+            // for (let k = 0; k < response?.length; k++) {
+            //    arr.push(response[k])
+            // }
+         }
          const res = await instance.post('/api/v1/skill/get_by_courses/', {
             courseIds: [
-               courseId
+               ...arr
             ]
          })
-         console.log(res.data);
-         const response = res?.data.body
-         for (let k = 0; k < response?.length; k++) {
-            arr.push(response[k])
-         }
+         console.log("response", res.data);
+         setLoading(false)
+         setAdded(false)
+         return setSkills([...res.data.body])
+      } catch (err) {
+         console.log(err);
       }
 
-      setLoading(false)
-      setAdded(false)
-      return setSkills([...arr])
+
    }
 
    useEffect(() => {
-      getDetail()
       setAdded(true)
       getSkills()
    }, [id])

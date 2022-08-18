@@ -25,8 +25,8 @@ const Contact = () => {
         title={t("contactInfoTitle")}
         description={t("contactInfoDescription")} />
       <div className="container py-5">
-        <div className="row">
-          <div className="col-4 offset-4">
+        <div className="row justify-content-center">
+          <div className="col-xl-4 col-lg-6 col-md-7 col-sm-8 col-10">
             <div className="mb-2">
               <TitleH1 title={t("contactus")} />
               <p style={{ "color": "#667085" }}>

@@ -90,7 +90,6 @@ const HandleForm = () => {
       ))
    }
    const handleChange = (e) => {
-      // console.log(e);
       const arr = []
       e.map((e, i) => {
          arr.push(e.value)
@@ -119,7 +118,7 @@ const HandleForm = () => {
          phoneNumber: `${phoneNumber}`,
          gallery: [
             { ...file },
-            { ...certificate }
+            Object.keys(certificate).length !== 0 ? { ...certificate } : null
          ],
          userEmployee: {
             fullName: `${fullName}`,
@@ -148,7 +147,7 @@ const HandleForm = () => {
          console.log(err);
          setSuccess(false)
       })
-      navigate("/")
+      // navigate("/")
    }
    return (
       <Spin spinning={loading}>

@@ -43,9 +43,7 @@ const SpecialistAccess = () => {
       })
 
    }
-   useEffect(() => {
-      // getAccessedUsers
-   }, [])
+
    return (
       <Spin spinning={
          ""
