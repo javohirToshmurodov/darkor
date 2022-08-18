@@ -132,7 +132,7 @@ function OffcanvasExample() {
               <div className="line ms-2 d-sm-none d-lg-block"></div>
               <Nav.Link
                 className="d-flex justify-content-center align-items-center"
-                href="tel:998998974544"
+                href="tel:998881092022"
               >
                 <span className="phone">
                   <img src={CallIcon} alt="img" />
